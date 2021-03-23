@@ -5,12 +5,12 @@ executors:
     working_directory: ~/repo
     description: The official CircleCI Ruby Docker image
     docker:
-      - image: cimg/ruby:3.0.0
+      - image: cimg/ruby:3.0.0-node
         environment:
           RAILS_ENV: test
           PGHOST: localhost
           PGUSER: postgres
-      - image: circleci/postgres:9.6.2-alpine
+      - image: circleci/postgres:9.6.9
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: bookstore_test
@@ -38,7 +38,7 @@ commands:
           command: |
             bin/rails db:schema:load --trace
             bin/rails db:migrate
-      - run: yarn install
+      - run: yarn install --path node_modules
       - run: bundle exec bin/rails webpacker:compile
       - save_cache:
           key: *bundle_cache_full
@@ -66,12 +66,6 @@ commands:
       - run:
           name: brakeman
           command: bundle exec brakeman
-  run_bundler-audit:
-    description: command to start bundler-audit
-    steps:
-      - run:
-          name: bundler-audit
-          command: bundle exec bundler-audit --ignore CVE-2015-9284
   run_database_consistency:
     description: command to start database_consistency
     steps:
@@ -95,7 +89,6 @@ jobs:
     steps:
       - defaults
       - run_brakeman
-      - run_bundler-audit
       - run_database_consistency
   code_style:
     executor: default
