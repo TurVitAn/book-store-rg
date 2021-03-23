@@ -1,0 +1,26 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0.0
+  NewCops: enable
+  Exclude:
+    - "bin/**"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "vendor/**/*"
+    - "node_modules/**/*"
+
+Layout/LineLength:
+  Max: 120
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
