@@ -23,6 +23,10 @@ PrePush:
     enabled: true
 
 CommitMsg:
+  CapitalizedSubject:
+    enabled: false
+    on_warn: fail
+
   TrailingPeriod:
     enabled: true
     on_warn: fail
