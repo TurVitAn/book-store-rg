@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['DB_USERNAME'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: book_store_rg_development
+  password: <%= ENV['DB_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: book_store_rg_test
+  password: <%= ENV['DB_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: book_store_rg_production
+  password: <%= ENV['BOOK_STORE_RG_DATABASE_PASSWORD'] %>
