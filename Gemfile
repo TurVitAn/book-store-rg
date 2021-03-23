@@ -15,6 +15,7 @@ gem 'webpacker', '~> 5.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'fasterer', '~> 0.9.0'
   gem 'ffaker', '~> 2.18'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
