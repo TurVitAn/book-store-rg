@@ -24,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman', '~> 5.0'
   gem 'database_consistency', '~> 0.8.13', require: false
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
