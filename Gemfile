@@ -34,6 +34,7 @@ group :development do
 end
 
 group :test do
+  gem 'rspec_junit_formatter', '~> 0.4.1'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
   gem 'simplecov', '~> 0.21.2', require: false
 end
