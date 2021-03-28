@@ -1,6 +1,12 @@
-# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'rails_helper'
+require 'capybara/rspec'
 
 RSpec.configure do |config|
+  config.expect_with :rspec do |expectations|
+    config.include Capybara::DSL
+    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  end
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

@@ -34,9 +34,12 @@ group :development do
 end
 
 group :test do
+  gem 'capybara', '~> 3.35', '>= 3.35.3'
   gem 'rspec_junit_formatter', '~> 0.4.1'
+  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
   gem 'simplecov', '~> 0.21.2', require: false
+  gem 'webdrivers', '~> 4.6'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
