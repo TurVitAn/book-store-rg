@@ -5,6 +5,9 @@ The web application will let registered users or guests find and buy books using
 
 [website specification](https://drive.google.com/drive/folders/0B3jvg6jQR0D9QlV3RjducDEta3M)
 
+## Deploy to Heroku
+[Book Store for RubyGarage](https://bookstore-rg-turvitan.herokuapp.com/)
+
 ## How to install
 
 - Run **'bundler install'** - installation of packages prescribed in *Gemfile*;
