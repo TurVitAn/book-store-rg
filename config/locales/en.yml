@@ -1,5 +1,22 @@
 en:
   brand: "BookStore-rg"
+  header:
+    links:
+      home: "Home"
+      shop: "Shop"
+      mobile_development: "Mobile development"
+      photo: "Photo"
+      web_design: "Web design"
+      log_out: "Log out"
+      my_account: "My account"
+  footer:
+    links:
+      home: "Home"
+      shop: "Shop"
+      orders: "Orders"
+      settings: "Settings"
+      support: "support@book_store-rg.com"
+      phone: "(555)-555-5555"
   buttons:
     get_started: "Get Started"
     buy_now: "Buy Now"
