@@ -3,31 +3,20 @@ RSpec.describe 'HomePage', type: :feature do
 
   before { home_page.load }
 
-  it 'has current path' do
-    expect(home_page).to have_current_path root_path
-  end
+  it { expect(home_page).to have_current_path(root_path) }
 
-  it "has #{I18n.t('brand')} title" do
-    expect(home_page.title).to eq I18n.t('brand')
-  end
+  it { expect(home_page).to have_header }
+  it { expect(home_page).to have_footer }
+  it { expect(home_page).to have_slider }
 
-  it 'has slider' do
-    expect(home_page).to have_slider
-  end
+  it { expect(home_page.slider).to have_buy_now_button }
+  it { expect(home_page.get_started).to have_get_started_button }
+  it { expect(home_page.get_started).to have_greeting }
+  it { expect(home_page.get_started).to have_introduction }
 
-  it "has `#{I18n.t('buttons.buy_now')}` button" do
-    expect(home_page.slider).to have_buy_now_button
-  end
+  context 'when click home link' do
+    before { home_page.click_home_link }
 
-  it "has `#{I18n.t('buttons.get_started')}` button" do
-    expect(home_page.get_started).to have_get_started_button
-  end
-
-  it 'has greeting text' do
-    expect(home_page.get_started.greeting.text).to eq I18n.t('home_page.greeting')
-  end
-
-  it 'has introduction text' do
-    expect(home_page.get_started.introduction.text).to eq I18n.t('home_page.introduction')
+    it { expect(home_page).to have_current_path(root_path) }
   end
 end
