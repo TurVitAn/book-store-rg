@@ -8,6 +8,7 @@
 
 .navbar-brand {
   font-size: $font-size-base;
+  padding: 30px;
 }
 
 .navbar-toggle {
@@ -252,10 +253,9 @@
 }
 
 .thumb-icon {
-  position: relative;
-  margin-top: 25%;
   font-size: 16px;
   color: white;
+  line-height: 36px;
 }
 
 .title {
@@ -375,7 +375,7 @@
   &:last-child:after {
     bottom: 0;
     top: unset;
-    @extend .divider-lg, :before;
+    @extend .divider-lg:before;
   }
 }
 
@@ -564,9 +564,11 @@
   }
 }
 
+
 @media (min-width: $grid-float-breakpoint) {
   .navbar-nav {
     float: right;
+    padding: 15px;
   }
   h1,
   .h1 {
