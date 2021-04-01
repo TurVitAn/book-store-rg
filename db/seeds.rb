@@ -1,1 +1,2 @@
-require './db/seeds/author'
+require './db/seeds/categories'
+require './db/seeds/authors'
