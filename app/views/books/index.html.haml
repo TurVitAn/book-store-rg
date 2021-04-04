@@ -1,0 +1,116 @@
+%main.container
+  %h1.general-title-margin
+    = t('catalog_page.page_name')
+  .hidden-xs.clearfix
+    .dropdowns.pull-right
+      .dropdown.width-240
+        %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+          = t('catalog_page.sorting.newest_desc')
+          %i.fa.fa-angle-down.dropdown-icon.pull-right
+        %ul.dropdown-menu
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.newest_desc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.popular_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.price_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.price_desc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.title_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.title_desc')
+    %ul.list-inline.pt-10.mb-25.mr-240
+      %li.mr-35
+        %a.filter-link{href: "#"}
+          = t('catalog_page.all')
+          %span.badge.general-badge
+            = @books.count
+      - @categories.each do |category|
+        %li.mr-35
+          %a.filter-link{href: "#"}
+            = category.name
+            %span.badge.general-badge
+              = category.books.count
+  .dropdowns.mb-25.visible-xs
+    %p.lead.small.mb-10
+      = t('catalog_page.filter_by_category')
+    .dropdown
+      %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+        = t('catalog_page.sorting.newest_desc')
+        %i.fa.fa-angle-down.dropdown-icon.pull-right
+      %ul.dropdown-menu
+        %li
+          %a{href: "#"}
+            = t('catalog_page.sorting.newest_desc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.popular_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.price_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.price_desc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.title_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.title_desc')
+    %p.lead.small.mb-10
+      = t('catalog_page.sort_by')
+    .dropdown
+      %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+        = t('catalog_page.sorting.newest_desc')
+        %i.fa.fa-angle-down.dropdown-icon.pull-right
+      %ul.dropdown-menu
+        %li
+          %a{href: "#"}
+            = t('catalog_page.sorting.newest_desc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.popular_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.price_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.price_desc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.title_asc')
+          %li
+            %a{href: "#"}
+              = t('catalog_page.sorting.title_desc')
+  .mb-120
+    - @books.each_slice(4).each do |books_group|
+      .row
+        - books_group.each do |book|
+          .col-xs-6.col-sm-3
+            .general-thumb-wrap
+              .thumbnail.general-thumbnail
+                %img.img-shadow.general-thumbnail-img{src: "http://jonathantweedy.com/resources/thumbs/SmashingBook5ResponsiveWebDesign.jpg", alt: "design-book"}
+                .thumb-hover
+                  .general-thumb-link-wrap
+                    %a.thumb-hover-link{href: "#"}
+                      %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+                    %a.thumb-hover-link{href: "#"}
+                      %i.fa.fa-shopping-cart.thumb-icon
+            .general-thumb-info
+              %p.title
+                = book.title
+              %p.font-16.in-gold-500
+                = number_to_currency(book.price, unit: '€')
+              %span.divider-sm
+              %p.lead.small
+                = book.authors_list
+    .text-center
+      %button.btn.btn-primary
+        = t('catalog_page.view_more')
