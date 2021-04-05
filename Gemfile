@@ -28,6 +28,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman', '~> 5.0'
+  gem 'bullet', '~> 6.1', '>= 6.1.4'
   gem 'bundler-audit', '0.7.0.1'
   gem 'database_consistency', '~> 0.8.13', require: false
   gem 'listen', '~> 3.3'
