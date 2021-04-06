@@ -1,4 +1,22 @@
-if Book.count.zero? && Rails.env.production?
+if Book.count.zero? && Rails.env.development?
+  authors = Author.all
+  50.times do
+    Book.create!(
+      title: FFaker::Book.title,
+      description: FFaker::Book.description,
+      category_id: rand(1..Category.count),
+      price: rand(1.0..1000.0).floor(2),
+      height: rand(7.0..40.0).floor(2),
+      width: rand(1.0..20.0).floor(2),
+      depth: rand(1.0..7.0).floor(2),
+      published_at: FFaker::Time.date,
+      materials: FFaker::Lorem.word,
+      authors: [authors.sample, authors.sample]
+    )
+  end
+end
+
+if Rails.env.production?
   Book.create!(
     title: 'Mobile Applications Development',
     description: 'The book covers the concepts of Python programming language along with mobile application development. Starting from fundamentals, the book continues with the explanation of mobile app development using Kivy framework. All the chapters offer questions and exercises for to better understanding of the subject. At the end of the book some hands-on projects are given to help the readers to improve their programming and project development skills.',
@@ -89,22 +107,5 @@ if Book.count.zero? && Rails.env.production?
     materials: 'optio',
     authors: [Author.all.sample, Author.all.sample]
   )
-else
-  if Book.count.zero? && Rails.env.development?
-    authors = Author.all
-    50.times do
-      Book.create!(
-        title: FFaker::Book.title,
-        description: FFaker::Book.description,
-        category_id: rand(1..Category.count),
-        price: rand(1.0..1000.0).floor(2),
-        height: rand(7.0..40.0).floor(2),
-        width: rand(1.0..20.0).floor(2),
-        depth: rand(1.0..7.0).floor(2),
-        published_at: FFaker::Time.date,
-        materials: FFaker::Lorem.word,
-        authors: [authors.sample, authors.sample]
-      )
-    end
-  end
 end
+
