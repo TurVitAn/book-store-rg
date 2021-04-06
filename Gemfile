@@ -5,9 +5,9 @@ ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'draper', '~> 4.0', '>= 4.0.1'
-gem 'ffaker', '~> 2.18'
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'jbuilder', '~> 2.7'
+gem 'pagy', '~> 4.1'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3'
@@ -19,6 +19,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.1'
   gem 'fasterer', '~> 0.9.0'
+  gem 'ffaker', '~> 2.18'
   gem 'pry', '~> 0.14.0'
   gem 'pry-rails', '~> 0.3.9'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'

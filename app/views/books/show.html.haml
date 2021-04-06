@@ -38,27 +38,33 @@
         %p
           = t('book_page.description')
         %p.lead.small.line-height-2
-          = @book.description
-          %a.in-gold-500.ml-10{href: "#"}
-            = t('book_page.links.read_more')
+          %span.short-description
+            = @book.short_description
+          - if @book.description.length > @book.short_description.length
+            %span.more-description
+              = @book.description
+            %a.read-more.in-gold-500{href: "#"}
+              = t('book_page.links.read_more')
+            %a.read-less.in-gold-500{href: "#"}
+              = t('book_page.links.hide')
       .general-info-wrap.divider-lg
         .clearfix
           %p.pull-left
             = t('book_page.publication_year')
           %p.lead.small.pull-right
-            = @book.published_at
+            = @book.published_at.year
       .general-info-wrap.divider-lg
         .clearfix
           %p.pull-left
             = t('book_page.dimensions')
           %p.lead.small.pull-right
-            H:6.4\" x W: 0.9\" x D: 5.0
+            = @book.dimensions
       .general-info-wrap.divider-lg
         .clearfix
           %p.pull-left
             = t('book_page.materials')
           %p.lead.small.pull-right
-            = @book.materials
+            = @book.materials_list
   .mb-80
     %h3
       = t('book_page.write_review')

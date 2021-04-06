@@ -31,7 +31,7 @@
         %a.filter-link{href: "#"}
           = t('catalog_page.all')
           %span.badge.general-badge
-            = @books.count
+            = @pagy.count
       - @categories.each do |category|
         %li.mr-35
           %a.filter-link{href: "#"}
@@ -89,7 +89,7 @@
           %li
             %a{href: "#"}
               = t('catalog_page.sorting.title_desc')
-  .mb-120
+  .mb-120.books-list
     - @books.each_slice(4).each do |books_group|
       .row
         - books_group.each do |book|
@@ -111,6 +111,6 @@
               %span.divider-sm
               %p.lead.small
                 = book.authors_list
-    .text-center
-      %button.btn.btn-primary
-        = t('catalog_page.view_more')
+    - if @pagy.next
+      .text-center
+        = render partial: 'pagination', locals: { pagy: @pagy }

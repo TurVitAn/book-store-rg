@@ -9,5 +9,7 @@ window.jQuery = $;
 import 'bootstrap-sass/assets/javascripts/bootstrap';
 import "@fortawesome/fontawesome-free/css/all"
 
+require("packs/custom/pagination")
+
 Rails.start()
 Turbolinks.start()

@@ -1,9 +1,8 @@
 class BooksController < ApplicationController
   def index
-    @books = BookDecorator.decorate_collection(
-      Book.includes(:authors).all.order(title: :asc)
-    )
-    @categories = Category.includes(:books).all
+    @pagy, books = pagy(Book.includes(:authors).all.order(title: :asc))
+    @books = BookDecorator.decorate_collection(books)
+    @categories = Category.all
   end
 
   def show
