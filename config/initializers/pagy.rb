@@ -7,6 +7,8 @@
 
 # Backend Extras
 
+require 'pagy/extras/array'
+
 # Array extra: Paginate arrays efficiently, avoiding expensive array-wrapping and without overriding
 # See https://ddnexus.github.io/pagy/extras/array
 # require 'pagy/extras/array'

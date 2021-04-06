@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   def index
-    @pagy, books = pagy(Book.includes(:authors).all.order(title: :asc))
-    @books = BookDecorator.decorate_collection(books)
-    @categories = Category.all
+    @pagy, @books = pagy_array(SortedBooksQuery.new(@categories, params).all.decorate)
+    @books_count = Book.count
+    @current_category = params[:category_id]
   end
 
   def show

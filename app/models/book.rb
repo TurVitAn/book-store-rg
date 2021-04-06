@@ -7,4 +7,6 @@ class Book < ApplicationRecord
 
   validates :title, :description, presence: true
   validates :description, length: { minimum: MIN_DESCRIPTION_SIZE }
+
+  scope :with_authors, -> { includes [:authors] }
 end
