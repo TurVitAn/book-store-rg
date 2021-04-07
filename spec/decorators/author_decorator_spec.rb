@@ -3,7 +3,7 @@ RSpec.describe AuthorDecorator do
 
   describe '#name' do
     it 'returns string' do
-      expect(author.decorate.name.class).to eq(String)
+      expect(author.decorate.full_name.class).to eq(String)
     end
   end
 end

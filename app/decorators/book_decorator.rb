@@ -1,17 +1,17 @@
 class BookDecorator < ApplicationDecorator
   NEWEST_BOOKS_COUNT = 3
   SHORT_DESCRIPTION_LENGTH = 250
-  CURRENCY = '₴'.freeze
+  CURRENCY = '€'.freeze
 
   delegate_all
   decorates_association :authors
 
   def authors_list
-    object.authors.map { |author| author.decorate.name }.join(', ')
+    object.authors.map { |author| author.decorate.full_name }.join(', ')
   end
 
   def materials_list
-    object.materials.sub(' ', ', ').capitalize
+    object.materials.split.join(', ').capitalize
   end
 
   def dimensions

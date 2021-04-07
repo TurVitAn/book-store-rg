@@ -2,9 +2,9 @@ if Book.count.zero?
   authors = Author.all
   50.times do
     Book.create!(
-      title: FFaker::LoremUA.sentence(word_count = 1),
-      description: FFaker::LoremUA.paragraph(sentence_count = 5),
-      materials: FFaker::LoremUA.words(num = 3),
+      title: FFaker::Book.title,
+      description: FFaker::Book.description(sentence_count = 8),
+      materials: FFaker::Lorem.word,
       category_id: rand(1..Category.count),
       price: rand(1.0..1000.0).floor(2),
       height: rand(7.0..40.0).floor(2),
