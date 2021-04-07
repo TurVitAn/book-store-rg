@@ -18,7 +18,7 @@
     .row
       .col-xs-12.col-md-4
         %p.h1.in-gold-500.mt-10
-          = number_to_currency(book.price)
+          = number_to_currency(book.price, unit: BookDecorator::CURRENCY)
       .col-xs-5.col-md-3
         .input-group.general-position
           %a.input-link{href: "#"}
@@ -46,17 +46,17 @@
       .clearfix
         %p.pull-left
           = t('book_page.publication_year')
-        %p.lead.small.pull-right
+        %p.lead.small.pull-right.publication_year
           = book.published_at.year
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left
           = t('book_page.dimensions')
-        %p.lead.small.pull-right
+        %p.lead.small.pull-right.dimensions
           = book.dimensions
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left
           = t('book_page.materials')
-        %p.lead.small.pull-right
+        %p.lead.small.pull-right.materials
           = book.materials_list
