@@ -12,7 +12,6 @@ import '@fortawesome/fontawesome-free/css/all'
 require('packs/book/read_more')
 require('packs/book/cart')
 require('packs/catalog/pagination')
-require('packs/flash')
 
 Rails.start()
 Turbolinks.start()

@@ -1,9 +1,30 @@
 uk:
   simple_form:
-    "yes": 'Так'
-    "no": 'Ні'
+    "yes": "Так"
+    "no": "Ні"
     required:
-      text: 'необхідний'
-      mark: '*'
+      html: ""
     error_notification:
       default_message: "Будь ласка, перегляньте наведені нижче проблеми:"
+    placeholders:
+      defaults:
+        first_name: "Ім'я"
+        last_name: "Прізвище"
+        address: "Адреса"
+        city: "Місто"
+        zip_code: "Поштовий індекс"
+        email: "Введіть електронну пошту"
+        country: "Виберіть країну"
+        phone: "Наприклад +355 66 123 4567"
+        current_password: "Старий пароль"
+        password: "Пароль"
+        password_confirmation: "Підтвердьте пароль"
+    labels:
+      defaults:
+        first_name: "Ім'я"
+        last_name: "Прізвище"
+        zip_code: "Поштовий індекс"
+        email: "Введіть електронну пошту"
+        current_password: "Старий пароль"
+        password: "Пароль"
+        password_confirmation: "Підтвердьте пароль"
