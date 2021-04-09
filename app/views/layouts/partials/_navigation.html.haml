@@ -1,0 +1,29 @@
+%ul.nav.navbar-nav
+  %li
+    = link_to t('.home'), root_path, class: 'home_link'
+  %li.dropdown
+    %a.shop_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+      = t('header.links.shop')
+    %ul.dropdown-menu
+      - categories.each do |category|
+        %li
+          = link_to category.name, books_path(category_id: category.id)
+  - if user_signed_in?
+    %li
+      %a.my_account_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+        = t('header.links.my_account')
+      %ul.dropdown-menu
+        %li
+          %a{href: '#'}
+            = t('header.links.orders')
+        %li
+          %a{href: '#'}
+            = t('header.links.settings')
+        %li.divider{role: "separator"}
+        %li
+          = link_to t('header.links.log_out'), destroy_user_session_path, method: :delete, class: 'log_out_link'
+  - else
+    %li
+      = link_to t('header.links.log_in'), new_user_session_path, class: 'log_in_link'
+    %li
+      = link_to t('header.links.sign_up'), new_user_registration_path, class: 'sign_up_link'
