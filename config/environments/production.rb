@@ -1,6 +1,19 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'bookstore-rg.turvitan.km.ua', protocol: 'http' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    port: 587,
+    address: Rails.application.credentials[:smtp][:address],
+    user_name: Rails.application.credentials[:smtp][:user_name],
+    password: Rails.application.credentials[:smtp][:password],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local       = false

@@ -6,9 +6,9 @@ Devise.setup do |config|
   # config.pepper = '9842398527ecc316df55bbff391268fcb95b696a50d04bda0b593963931a40b4540a715709d8e73a259cd9049177be325e
   # 8c86f3e0446f26037d7f3cee277cb1'
 
-  config.mailer_sender = 'book-store-rg@example.com'
-  config.mailer = 'Devise::Mailer'
-  config.parent_mailer = 'ActionMailer::Base'
+  config.mailer_sender = 'bookstore.rg.turvitan@gmail.com'
+  # config.mailer = 'Devise::Mailer'
+  # config.parent_mailer = 'ActionMailer::Base'
 
   require 'devise/orm/active_record'
 
