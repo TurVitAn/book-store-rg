@@ -2,10 +2,8 @@
   .text-center
     %h3.general-login-title
       = t('devise.sessions.new.header')
-    %a.general-login-icon{href: user_google_oauth2_omniauth_authorize_path}
-      %i.fab.fa-google
     %a.general-login-icon{href: user_facebook_omniauth_authorize_path}
-      %i.fab.fa-facebook
+      %i.fab.fa-facebook-square
     %p.general-login-text or
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'general-form' }) do |f|
     = f.input :email

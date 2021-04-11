@@ -4,4 +4,6 @@ class HomesController < ApplicationController
       Book.includes(:authors).last(BookDecorator::NEWEST_BOOKS_COUNT)
     )
   end
+
+  def privacy_policy; end
 end
