@@ -12,6 +12,8 @@ AllCops:
     - 'db/seeds/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
+    - 'config/initializers/devise.rb'
+    - 'app/models/user.rb'
 
 Layout/LineLength:
   Max: 120
@@ -30,3 +32,8 @@ Metrics/BlockLength:
     - 'config/environments/development.rb'
     - 'config/initializers/simple_form_bootstrap.rb'
     - 'config/environments/production.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/models/user.rb'
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
