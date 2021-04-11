@@ -1,0 +1,22 @@
+%main.container
+  %h2.text-center
+    = t('footer.links.privacy_policy')
+  %p
+    = t('privacy_policy.header')
+    = succeed "," do
+      %a{:href => "https://bookstore-rg-turvitan.herokuapp.com/"}
+        = t('brand')
+  %p
+    = t('privacy_policy.line1')
+  %p
+    = t('privacy_policy.line2')
+  %p
+    = t('privacy_policy.line3')
+  %p
+    = t('privacy_policy.line4')
+  %p
+    = t('privacy_policy.line5')
+  %p
+    = t('privacy_policy.line6')
+  %p
+    = t('privacy_policy.line7')

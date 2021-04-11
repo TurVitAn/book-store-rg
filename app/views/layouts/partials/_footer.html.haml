@@ -13,6 +13,8 @@
           %li
             %a.nav-link.settings_link{ href: '#' }
               = t('.settings')
+          %li
+            = link_to t('footer.links.privacy_policy'), privacy_policy_path, class: 'nav-link privacy_policy_link'
       .col-sm-3
         %p.general-nav-mail
           = t('.email')

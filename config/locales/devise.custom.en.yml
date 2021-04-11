@@ -7,6 +7,7 @@ en:
       have_account: "Have an Account?"
       no_account: "Don’t have an Account?"
       no_confirmation_email: "Didn't receive confirmation instructions?"
+      sign_up: "Sign Up"
     buttons:
       change_password: "Change my password"
       send_instructions: "Send instructions"
