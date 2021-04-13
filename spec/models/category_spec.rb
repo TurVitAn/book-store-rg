@@ -1,4 +1,4 @@
-RSpec.describe Category, type: :model do
+RSpec.describe Category do
   context 'with associations' do
     it { is_expected.to have_many(:books).dependent(:destroy) }
   end

@@ -1,4 +1,4 @@
-RSpec.describe User, type: :model do
+RSpec.describe User do
   describe 'datebase columns' do
     it { is_expected.to have_db_column(:email).of_type(:string) }
     it { is_expected.to have_db_column(:encrypted_password).of_type(:string) }
@@ -9,5 +9,14 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:password) }
     it { is_expected.to validate_uniqueness_of(:confirmation_token) }
     it { is_expected.to validate_uniqueness_of(:reset_password_token) }
+  end
+
+  describe '.from_omniauth' do
+    let(:auth) { OmniAuth.config.mock_auth[:facebook] }
+
+    it 'returns or create user' do
+      user = described_class.from_omniauth auth
+      expect(user.uid).to eq auth.uid
+    end
   end
 end
