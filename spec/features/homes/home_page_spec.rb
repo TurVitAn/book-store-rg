@@ -35,4 +35,17 @@ RSpec.describe 'HomePage', type: :feature do
 
     it { expect(home_page).to have_current_path(books_path) }
   end
+
+  context 'when user signed in' do
+    let(:user) { create(:user) }
+    let(:sign_in_page) { Pages::SignIn.new }
+
+    before do
+      sign_in_page.load
+      sign_in_page.sign_in_form.authenticate_user user.email, user.password
+    end
+
+    it { expect(home_page.header).to have_my_account_link }
+    it { expect(home_page.header).to have_log_out_link }
+  end
 end
