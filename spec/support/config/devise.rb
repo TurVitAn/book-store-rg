@@ -1,3 +1,5 @@
+require 'devise'
+
 OmniAuth.config.test_mode = true
 
 OmniAuth.config.mock_auth[:facebook] = {
