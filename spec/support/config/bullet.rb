@@ -1,7 +1,3 @@
-RSpec.configure do |config|
-  config.include ControllerMacros::InstanceMethods, bullet: true
-end
-
 module ControllerMacros
   module InstanceMethods
     %w[get post put patch delete options head].each do |method|

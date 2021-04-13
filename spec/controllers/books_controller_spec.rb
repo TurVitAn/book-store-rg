@@ -1,4 +1,4 @@
-RSpec.describe BooksController, type: :controller do
+RSpec.describe BooksController do
   describe 'GET /books' do
     before { get :index }
 

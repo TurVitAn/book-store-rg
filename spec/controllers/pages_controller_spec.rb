@@ -1,4 +1,4 @@
-RSpec.describe PagesController, type: :controller do
+RSpec.describe PagesController do
   before do
     stub_const('NEWEST_BOOKS_COUNT', 3)
     get :index
