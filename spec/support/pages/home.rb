@@ -6,9 +6,5 @@ module Pages
     section :footer, Sections::Footer, 'footer'
     section :get_started, Sections::GetStarted, 'div.jumbotron'
     section :slider, Sections::Slider, '#slider'
-
-    def click_home_link
-      header.home_link.click
-    end
   end
 end
