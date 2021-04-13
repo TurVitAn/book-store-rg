@@ -1,4 +1,4 @@
 %main.container
-  = render 'pages/partials/newest_books'
+  = render partial: 'pages/partials/newest_books', locals: { newest_books: @newest_books }
 .container
   = render 'pages/partials/get_started'
