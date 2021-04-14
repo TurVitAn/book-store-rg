@@ -1,8 +1,0 @@
-uk:
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            password:
-              invalid: "повинен містити принаймні 1 велику, мінімум 1 малу, принаймні 1 цифру"

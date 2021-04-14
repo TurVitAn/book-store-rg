@@ -2,10 +2,10 @@
   %span{'aria-hidden': "true"} &times;
 %ul.nav.navbar-nav
   %li
-    = link_to t('header.links.home'), root_path, class: 'home_link'
+    = link_to t('.home'), root_path, class: 'home_link'
   %li
     %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}
-      = t('header.links.shop')
+      = t('.shop')
     %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
       - categories.each do |category|
         %li
@@ -13,18 +13,18 @@
   - if user_signed_in?
     %li
       %a{type: "button", 'data-toggle': "collapse", href: "#menu_account", 'aria-expanded': "false", 'aria-controls': "menu"}
-        = t('header.links.my_account')
+        = t('.my_account')
       %ul#menu_account.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
         %li
           %a.collapse-link{href: '#'}
-            = t('header.links.orders')
+            = t('.link.orders')
         %li
           %a.collapse-link{href: '#'}
-            = t('header.links.settings')
+          = t('.link.settings')
     %li
-      = link_to t('header.links.log_out'), destroy_user_session_path, method: :delete
+      = link_to t('.link.log_out'), destroy_user_session_path, method: :delete
   - else
     %li
-      = link_to t('header.links.log_in'), new_user_session_path, class: 'log_in_link'
+      = link_to t('.link.log_in'), new_user_session_path
     %li
-      = link_to t('header.links.sign_up'), new_user_registration_path, class: 'sign_up_link'
+      = link_to t('.link.sign_up'), new_user_registration_path

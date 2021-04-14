@@ -5,18 +5,33 @@ en:
         title: BookStore-rg
       header:
         brand: BookStore-rg
+      navigation:
         home: Home
         shop: Shop
-        mobile_development: Mobile development
-        photo: Photo
-        web_design: Web design
-        log_out: Log out
         my_account: My account
+        link:
+          orders: Orders
+          settings: Settings
+          log_out: Log out
+          log_in: Log in
+          sign_up: Sign up
+      mobile:
+        navigation:
+          home: Home
+          shop: Shop
+          my_account: My account
+          link:
+            orders: Orders
+            settings: Settings
+            log_out: Log out
+            log_in: Log in
+            sign_up: Sign up
       footer:
         home: Home
         shop: Shop
         orders: Orders
         settings: Settings
+        privacy_policy: Privacy Policy
         email: support@book_store-rg.com
         phone: (555)-555-5555
     errors:

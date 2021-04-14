@@ -5,4 +5,4 @@ en:
         user:
           attributes:
             password:
-              invalid: "must contain at least 1 uppercase, at least 1 lowercase, at least 1 number"
+              invalid: must contain at least 1 uppercase, at least 1 lowercase, at least 1 number
