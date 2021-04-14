@@ -4,14 +4,9 @@ RSpec.describe 'devise/passwords#new', type: :feature do
 
   before { forgot_password_page.load }
 
+  it { expect(forgot_password_page).to be_all_there }
+
   context 'with passwords/new page' do
-    it { expect(forgot_password_page.auth_form_header).to have_page_name }
-
-    it { expect(forgot_password_page.forgot_password_form).to have_email_label }
-    it { expect(forgot_password_page.forgot_password_form).to have_email_field }
-    it { expect(forgot_password_page.forgot_password_form).to have_send_instructions_button }
-    it { expect(forgot_password_page.forgot_password_form).to have_cancel_button }
-
     context 'when fill registration form with valid data' do
       before { forgot_password_page.forgot_password_form.fill_in(user.email) }
 

@@ -4,20 +4,9 @@ RSpec.describe 'devise/sessions#new', type: :feature do
 
   before { sign_in_page.load }
 
+  it { expect(sign_in_page).to be_all_there }
+
   context 'with sessions/new page' do
-    it { expect(sign_in_page.auth_form_header).to have_page_name }
-    it { expect(sign_in_page.auth_form_header).to have_facebook_icon }
-
-    it { expect(sign_in_page.sign_in_form).to have_email_label }
-    it { expect(sign_in_page.sign_in_form).to have_email_field }
-    it { expect(sign_in_page.sign_in_form).to have_password_label }
-    it { expect(sign_in_page.sign_in_form).to have_password_field }
-    it { expect(sign_in_page.sign_in_form).to have_forgot_password_link }
-    it { expect(sign_in_page.sign_in_form).to have_remember_me_checkbox }
-    it { expect(sign_in_page.sign_in_form).to have_sign_in_button }
-
-    it { expect(sign_in_page).to have_links }
-
     context 'when fill log in form with valid data' do
       before do
         sign_in_page.sign_in_form.authenticate_user user.email, user.password
