@@ -4,22 +4,16 @@
       .col-sm-9
         %ul.list-inline.general-align.mb-25
           %li
-            %a.nav-link.home_link{href: root_path}
-              = t('footer.links.home')
+            %a.nav-link.home_link{href: root_path}= t'.home'
           %li
-            %a.nav-link.shop_link{href: "#"}
-              = t('footer.links.shop')
+            %a.nav-link.shop_link{href: "#"}= t'.shop'
           %li
-            %a.nav-link.orders_link{href: "#"}
-              = t('footer.links.orders')
+            %a.nav-link.orders_link{href: "#"}= t'.orders'
           %li
-            %a.nav-link.settings_link{href: "#"}
-              = t('footer.links.settings')
+            %a.nav-link.settings_link{href: "#"}= t'.settings'
       .col-sm-3
-        %p.general-nav-mail
-          = t('footer.links.support')
-        %p.general-nav-number
-          = t('footer.links.phone')
+        %p.general-nav-mail= t'.email'
+        %p.general-nav-number= t'.phone'
         %ul.list-inline.general-align
           %li
             %a.facebook-link.nav-link{href: "#"}

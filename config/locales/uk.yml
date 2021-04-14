@@ -1,0 +1,33 @@
+uk:
+  layouts:
+    partials:
+      head:
+        title: "BookStore-rg"
+      header:
+        brand: "BookStore-rg"
+        home: "Головна сторінка"
+        shop: "Магазин"
+        mobile_development: "Мобільна розробка"
+        photo: "Фото"
+        web_design: "Веб дизайн"
+        log_out: "Вийти"
+        my_account: "Мій обліковий запис"
+      footer:
+        home: "Головна сторінка"
+        shop: "Магазин"
+        orders: "Замовлення"
+        settings: "Налаштування"
+        email: "support@book_store-rg.com"
+        phone: "(555)-555-5555"
+  pages:
+    partials:
+      newest_books:
+        button:
+          buy_now: "Придбати зараз"
+          prev: "Попередня"
+          next: "Наступна"
+      get_started:
+        greeting: "Ласкаво просимо до нашого дивовижного BookStore-rg!"
+        introduction: "Щомісяця ми переглядаємо сотні нових книг і обираємо три найкращих, якими ми можемо поділитися з нашими учасниками."
+        button:
+          get_started: "Розпочати"
