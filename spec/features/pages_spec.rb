@@ -9,10 +9,6 @@ RSpec.describe Pages, type: :feature do
     it { expect(home_page.header).to be_all_there }
   end
 
-  context 'with slider elements' do
-    it { expect(home_page.slider).to be_all_there }
-  end
-
   context 'with get started elements' do
     it { expect(home_page.get_started).to be_all_there }
   end

@@ -6,7 +6,8 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand= t'.brand'
+      %a.navbar-brand
+        = t('.brand')
       %a.shop-link.pull-right.visible-xs{href: "#"}
         %span.shop-icon
           %span.shop-quantity 3
@@ -19,20 +20,23 @@
           %span{'aria-hidden': "true"} &times;
         %ul.nav.navbar-nav
           %li
-            %a{href: root_path}= t'.home'
+            = link_to t('.home'), root_path, class: 'home_link'
           %li
-            %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}= t'.shop'
+            %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}
+              = t('.shop')
             %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
               - categories.each do |category|
                 %li
                   %a.collapse-link{href: books_path(category_id: category.id)}
                     = category.name
           %li
-            %a{href: "#"}= t'.my_account'
+            %a{href: "#"}
+              = t('.my_account')
       .hidden-xs
         %ul.nav.navbar-nav
           %li
-            %a.home_link{href: root_path}= t'.home'
+            %a.home_link{href: root_path}
+              = t('.home')
           %li.dropdown
             %a.shop_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}= t'.shop'
             %ul.dropdown-menu
@@ -41,6 +45,8 @@
                   %a{href: books_path(category_id: category.id), name: category.name} #{category.name}
               %li.divider{role: "separator"}
               %li
-                %a.log_out_link{href: "#"}= t'.log_out'
+                %a.log_out_link{href: "#"}
+                  = t('.log_out')
           %li
-            %a.my_account_link{href: "#"}= t'.my_account'
+            %a.my_account_link{href: "#"}
+              = t('.my_account')

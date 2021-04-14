@@ -8,6 +8,6 @@ RSpec.describe 'CatalogPage' do
   it { expect(catalog_page).to be_all_there }
 
   it 'has page name' do
-    expect(catalog_page).to have_content(I18n.t('catalog_page.page_name'))
+    expect(catalog_page).to have_content(I18n.t('books.index.catalog'))
   end
 end

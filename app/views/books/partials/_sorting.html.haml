@@ -2,17 +2,17 @@
   .dropdowns.pull-right
     .dropdown.width-240
       %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
-        = t('catalog_page.sort_by')
+        = t('.sort_by')
         %i.fa.fa-angle-down.dropdown-icon.pull-right
       %ul.dropdown-menu
-        - t('catalog_page.sorting').map do |key, value|
+        - t('books.partials.sorting.catalog_by').map do |key, value|
           %li
             %a{href: books_path(category_id: params[:category_id], sort_by: key)}
               = value
   %ul.list-inline.pt-10.mb-25.mr-240
     %li.mr-35
       %a.filter-link{href: books_path}
-        = t('catalog_page.all')
+        = t('.all')
         %span#all_books.badge.general-badge
           = presenter.books_count
     - categories.each do |category|

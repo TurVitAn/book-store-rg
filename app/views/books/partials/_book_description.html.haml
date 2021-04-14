@@ -18,7 +18,7 @@
     .row
       .col-xs-12.col-md-4
         %p.h1.in-gold-500.mt-10
-          = number_to_currency(book.price, unit: BookDecorator::CURRENCY)
+          = number_to_currency(book.price)
       .col-xs-5.col-md-3
         .input-group.general-position
           %a#minus.input-link{href: "#"}
@@ -28,10 +28,10 @@
             %i.fa.fa-plus.line-height-40
       .col-xs-7.col-md-5
         %button.btn.btn-default.pull-right.general-position
-          = t('buttons.add_to_cart')
+          = t('.button.add_to_cart')
     .general-info-wrap.divider-lg
       %p
-        = t('book_page.description')
+        = t('.description')
       %p.lead.small.line-height-2
         %span.less-description
           = book.short_description
@@ -39,24 +39,24 @@
           %span.more-description
             = book.description
           %a.read-more.in-gold-500{href: "#", for: 'more'}
-            = t('book_page.links.read_more')
+            = t('.link.read_more')
           %a.read-less.in-gold-500{href: "#", for: 'less'}
-            = t('book_page.links.hide')
+            = t('.link.hide')
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left
-          = t('book_page.publication_year')
+          = t('.publication_year')
         %p.lead.small.pull-right.publication_year
           = book.published_at.year
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left
-          = t('book_page.dimensions')
+          = t('.dimensions')
         %p.lead.small.pull-right.dimensions
           = book.dimensions
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left
-          = t('book_page.materials')
+          = t('.materials')
         %p.lead.small.pull-right.materials
           = book.materials_list
