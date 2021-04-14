@@ -1,5 +1,6 @@
 require 'capybara/rspec'
 require 'site_prism'
+require 'site_prism/all_there'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
