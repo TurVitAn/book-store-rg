@@ -7,16 +7,6 @@ RSpec.describe 'devise/passwords#new', type: :feature do
   it { expect(forgot_password_page).to be_all_there }
 
   context 'with passwords/new page' do
-    context 'when fill registration form with valid data' do
-      before { forgot_password_page.forgot_password_form.fill_in(user.email) }
-
-      it 'show password reset message' do
-        expect(forgot_password_page).to have_content(
-          I18n.t('devise.passwords.send_instructions')
-        )
-      end
-    end
-
     context 'when fill registration form with invalid data' do
       let(:wrong_email) { 'test_user@test.com' }
 

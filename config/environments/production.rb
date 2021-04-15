@@ -2,6 +2,7 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'bookstore-rg.turvitan.km.ua', protocol: 'http' }
+  config.action_mailer.perform_caching = false
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
 
@@ -25,9 +26,6 @@ Rails.application.configure do
 
   config.active_storage.service = :local
 
-  config.log_level = :debug
-  config.log_tags = [:request_id]
-
   config.action_mailer.perform_caching = false
 
   config.i18n.fallbacks = true
@@ -36,6 +34,8 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation = :log
   config.active_support.disallowed_deprecation_warnings = []
 
+  config.log_level = :debug
+  config.log_tags = [:request_id]
   config.log_formatter = ::Logger::Formatter.new
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
