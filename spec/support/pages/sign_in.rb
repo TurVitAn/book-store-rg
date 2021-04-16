@@ -1,6 +1,6 @@
 module Pages
   class SignIn < SitePrism::Page
-    set_url '/users/sign_in'
+    set_url '/users/sign_in?locale=en'
 
     section :auth_form_header, Sections::AuthFormHeader, '.container>div.text-center'
     section :sign_in_form, Sections::SignInForm, '.general-form'

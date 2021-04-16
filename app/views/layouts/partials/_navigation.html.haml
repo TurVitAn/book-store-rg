@@ -29,3 +29,11 @@
       = link_to t('.link.log_in'), new_user_session_path, class: 'log_in_link'
     %li
       = link_to t('.link.sign_up'), new_user_registration_path, class: 'sign_up_link'
+  %li.dropdown
+    %a.my_account_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+      .fa.fa-language.fa-2x.form-header
+    %ul.dropdown-menu
+      %li
+        = link_to 'Українська', { locale: :uk }
+      %li
+        = link_to 'English', { locale: :en }

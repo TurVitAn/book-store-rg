@@ -141,6 +141,49 @@ a.read-less {
   margin-top: 10px;
 }
 
+.error-flash-message {
+  color: #222;
+  border-radius: 5px;
+  padding: 2px 5px;
+  display: table;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #c57171;
+}
+
+.error-message {
+  color: #c57171;
+  margin-bottom: -15px;
+}
+
+.field {
+  margin-top: 10px;
+}
+
+.flash-notice, .flash-alert {
+  margin-top: -60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flash-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.flash-alert {
+  color: red;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert > .close-flash {
+  cursor: pointer;
+}
+
 .navbar-brand {
   float: left;
   padding: 29.5px 15px;
@@ -156,6 +199,18 @@ a.read-less {
   border: 1px solid transparent;
 }
 
+.btn-default:hover {
+  color: white;
+  background-color: #040403;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.btn-default {
+  color: white;
+  background-color: #1e1e1c;
+  border-color: transparent;
+}
+
 .carousel-control {
   color: #8c8c8c;
   text-align: center;
@@ -169,37 +224,12 @@ a.read-less {
   background-color: white;
 }
 
-.btn-default:hover {
-  color: white;
-  background-color: #040403;
-  border-color: rgba(0, 0, 0, 0);
+.jumbotron p {
+  color: #8c8c8c;
 }
 
-.btn {
-  max-width: 100%;
-  font-size: 12px;
-  padding-left: 32px;
-  padding-right: 32px;
-  white-space: unset;
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  line-height: 1.5;
-  border-radius: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.btn-default {
-  color: white;
-  background-color: #1e1e1c;
-  border-color: transparent;
+.jumbotron p {
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 200;
 }
