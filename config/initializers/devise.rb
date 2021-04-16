@@ -13,5 +13,8 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@.\s-](?!.*(?:''|\.\.|--))\S{1,60}[^@.\s-]@[a-zA-z]+.[a-zA-z]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  config.omniauth :facebook, "#{Rails.application.credentials.dig(:facebook, :client)}", "#{Rails.application.credentials.dig(:facebook, :secret)}"
+  config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :client).to_s,
+                  Rails.application.credentials.dig(:facebook, :secret).to_s, scope: 'email,public_profile'
+  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google_oauth2, :client_id).to_s,
+                  Rails.application.credentials.dig(:google_oauth2, :client_secret).to_s
 end

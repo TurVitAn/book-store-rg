@@ -7,8 +7,6 @@ RSpec.describe User do
   context 'with validations' do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_presence_of(:password) }
-    it { is_expected.to validate_uniqueness_of(:confirmation_token) }
-    it { is_expected.to validate_uniqueness_of(:reset_password_token) }
   end
 
   describe '.from_omniauth' do

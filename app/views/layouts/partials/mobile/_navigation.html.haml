@@ -13,7 +13,9 @@
   - if user_signed_in?
     %li
       %a{type: "button", 'data-toggle': "collapse", href: "#menu_account", 'aria-expanded': "false", 'aria-controls': "menu"}
-        = t('.my_account')
+        .fa.fa-user
+        %b
+          = current_user.username
       %ul#menu_account.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
         %li
           %a.collapse-link{href: '#'}

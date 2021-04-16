@@ -8,10 +8,12 @@
       - categories.each do |category|
         %li
           = link_to category.name, books_path(category_id: category.id)
-  - if user_signed_in?
+  - if current_user
     %li
       %a.my_account_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
-        = t('.my_account')
+        .fa.fa-user
+        %b
+          = current_user.username
       %ul.dropdown-menu
         %li
           %a{href: '#'}

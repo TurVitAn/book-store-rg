@@ -12,7 +12,6 @@ AllCops:
     - 'db/seeds/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
-    - 'config/initializers/devise.rb'
 
 Layout/LineLength:
   Max: 120

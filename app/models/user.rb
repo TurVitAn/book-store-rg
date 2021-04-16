@@ -1,10 +1,9 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
   validates :email, :password, presence: true
-  validates :confirmation_token, :reset_password_token, uniqueness: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -12,5 +11,9 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
       user.skip_confirmation!
     end
+  end
+
+  def username
+    email.split(/@/).first
   end
 end
