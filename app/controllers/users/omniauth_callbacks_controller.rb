@@ -1,11 +1,14 @@
 module Users
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+    AUTH_KIND_GOOGLE = 'Google'.freeze
+    AUTH_KIND_FACEBOOK = 'Facebook'.freeze
+
     def google_oauth2
-      handle_auth t('.google')
+      handle_auth AUTH_KIND_GOOGLE
     end
 
     def facebook
-      handle_auth t('.facebook')
+      handle_auth AUTH_KIND_FACEBOOK
     end
 
     def handle_auth(kind)
@@ -15,7 +18,7 @@ module Users
     end
 
     def failure
-      redirect_to root_path, alert: t('.alert')
+      redirect_to root_path, alert: t('devise.omniauth_callbacks.failure')
     end
 
     private

@@ -1,9 +1,0 @@
-uk:
-  users:
-    omniauth_callbacks:
-      google_oauth2:
-        google: Google
-      facebook:
-        facebook: Facebook
-      failure:
-        alert: Невдача. Будь ласка, спробуйте ще раз

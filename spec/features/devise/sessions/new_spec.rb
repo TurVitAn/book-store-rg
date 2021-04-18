@@ -13,7 +13,7 @@ RSpec.describe 'devise/sessions#new', type: :feature do
       end
 
       it 'move to root path' do
-        expect(sign_in_page).to have_current_path('/?locale=en')
+        expect(sign_in_page).to have_current_path root_path
       end
     end
 
@@ -25,7 +25,7 @@ RSpec.describe 'devise/sessions#new', type: :feature do
       end
 
       it 'stays at the same page' do
-        expect(sign_in_page).to have_current_path('/users/sign_in?locale=en')
+        expect(sign_in_page).to have_current_path new_user_session_path
       end
     end
   end

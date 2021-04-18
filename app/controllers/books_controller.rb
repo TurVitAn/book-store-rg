@@ -16,6 +16,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.permit(:id, :category_id, :sort_by, :current_books_count, :locale)
+    params.permit(:id, :category_id, :sort_by, :current_books_count)
   end
 end

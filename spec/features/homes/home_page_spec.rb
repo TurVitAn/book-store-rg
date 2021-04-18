@@ -33,7 +33,7 @@ RSpec.describe 'HomePage', type: :feature do
   context 'when click get_started button' do
     before { home_page.get_started.get_started_link.click }
 
-    it { expect(home_page).to have_current_path('/books?locale=en') }
+    it { expect(home_page).to have_current_path(books_path) }
   end
 
   context 'when user signed in' do

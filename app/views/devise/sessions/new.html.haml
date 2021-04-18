@@ -1,23 +1,34 @@
 %main.container.general-main-wrap
   .text-center
     %h3.general-login-title
-      = t('devise.sessions.new.header')
-    = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'general-login-icon' do
-      .fab.fa-google.mr-20
-    = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'general-login-icon' do
-      .fab.fa-facebook-square
-    %p.general-login-text= t'devise.or'
-  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'general-form' }) do |f|
-    = f.input :email
-    = f.input :password
-    = link_to t('devise.links.forgot_password'), new_password_path(resource_name), class: 'help-block in-gold-500'
+      = t('.sign_in')
+    = render 'devise/shared/omniauth_authorize'
+    %p.general-login-text
+      = t('devise.or')
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'general-form'}) do |f|
+    .form-group.mb-30
+      = f.label :email, t('.email')
+      = f.input :email,
+        required: false,
+        autofocus: true,
+        label: false,
+        placeholder: t('.enter_email'),
+        input_html: { autocomplete: :on }
+    .form-group.mb-30
+      = f.label :password, t('.password')
+      = f.input :password,
+        required: false,
+        label: false,
+        placeholder: t('.enter_password'),
+        input_html: { autocomplete: :on }
+      = link_to t('.forgot_password'), new_password_path(resource_name), class: 'help-block in-gold-500'
     .form-group.checkbox.text-center.mb-30
-      = f.label(:remember_me, class: 'checkbox-label') do
-        = f.check_box :remember_me, hidden: true, class: 'checkbox-input'
+      %label.checkbox-label
+        %input.checkbox-input{type: "checkbox", hidden: "true"}
         %span.checkbox-icon
           %i.fa.fa-check
-        %span.checkbox-text
-          = t('devise.checkboxes.remember_me')
+        - if devise_mapping.rememberable?
+          = f.label :remember_me, class: 'checkbox-text remember-me'
     .text-center
-      = f.button :submit, t('devise.buttons.log_in')
-  = render "devise/shared/links"
+      = f.button :submit, t('.sign_in'), class: 'btn btn-default mb-20'
+    = render "devise/shared/links"
