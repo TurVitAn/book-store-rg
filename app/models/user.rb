@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
+  has_one :billing_address, -> { where(address_type: Address.address_types[:billing]) },
+          class_name: 'Address', as: :addressable, dependent: :destroy, inverse_of: :addressable
+  has_one :shipping_address, -> { where(address_type: Address.address_types[:shipping]) },
+          class_name: 'Address', as: :addressable, dependent: :destroy, inverse_of: :addressable
+
   validates :email, :password, :encrypted_password, presence: true
   validates :password, format: { with: PASSWORD_FORMAT }
 
