@@ -1,4 +1,4 @@
-RSpec.describe 'BooksList' do
+RSpec.describe 'BooksList', type: :feature do
   let(:catalog_page) { Pages::Catalog.new }
 
   before do

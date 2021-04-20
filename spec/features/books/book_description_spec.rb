@@ -1,4 +1,4 @@
-RSpec.describe 'BookDescription' do
+RSpec.describe 'BookDescription', type: :feature do
   let(:book) { create(:book) }
   let(:book_page) { Pages::Book.new }
 

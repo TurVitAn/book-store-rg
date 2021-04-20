@@ -1,4 +1,4 @@
-RSpec.describe 'Reviews' do
+RSpec.describe 'Reviews', type: :feature do
   let(:book) { create(:book) }
   let(:book_page) { Pages::Book.new }
 

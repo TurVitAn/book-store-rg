@@ -1,4 +1,4 @@
-RSpec.describe 'Sorting' do
+RSpec.describe 'Sorting', type: :feature do
   let(:catalog_page) { Pages::Catalog.new }
 
   before do

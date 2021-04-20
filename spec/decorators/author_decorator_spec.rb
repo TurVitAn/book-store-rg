@@ -1,9 +1,7 @@
 RSpec.describe AuthorDecorator do
-  let(:author) { create :author }
+  let(:author) { create(:author, first_name: 'Vitalii', last_name: 'Turzhanskyi').decorate }
 
-  describe '#name' do
-    it 'returns string' do
-      expect(author.decorate.full_name.class).to eq(String)
-    end
+  it '#full_name' do
+    expect(author.full_name).to eq('Vitalii Turzhanskyi')
   end
 end
