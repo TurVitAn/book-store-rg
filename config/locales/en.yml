@@ -2,32 +2,32 @@ en:
   layouts:
     partials:
       head:
-        title: "BookStore-rg"
+        title: BookStore-rg
       header:
-        brand: "BookStore-rg"
-        home: "Home"
-        shop: "Shop"
-        mobile_development: "Mobile development"
-        photo: "Photo"
-        web_design: "Web design"
-        log_out: "Log out"
-        my_account: "My account"
+        brand: BookStore-rg
+        home: Home
+        shop: Shop
+        mobile_development: Mobile development
+        photo: Photo
+        web_design: Web design
+        log_out: Log out
+        my_account: My account
       footer:
-        home: "Home"
-        shop: "Shop"
-        orders: "Orders"
-        settings: "Settings"
-        email: "support@book_store-rg.com"
-        phone: "(555)-555-5555"
+        home: Home
+        shop: Shop
+        orders: Orders
+        settings: Settings
+        email: support@book_store-rg.com
+        phone: (555)-555-5555
   pages:
     partials:
       newest_books:
         button:
-          buy_now: "Buy Now"
-          prev: "Previous"
-          next: "Next"
+          buy_now: Buy Now
+          prev: Previous
+          next: Next
       get_started:
-        greeting: "Welcome to our amazing BookStore-rg!"
-        introduction: "We pore through hundreds of new books each month and select the three best we can find to share with our members."
+        greeting: Welcome to our amazing BookStore-rg!
+        introduction: We pore through hundreds of new books each month and select the three best we can find to share with our members.
         button:
-          get_started: "Get Started"
+          get_started: Get Started

@@ -1,0 +1,89 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #222;
+  color: #c59c71;
+  margin-bottom: 45px;
+  box-shadow: 0 0 20px 3px rgba(1, 1, 1, 0.1);
+}
+
+.navbar-brand {
+  float: left;
+  padding: 29.5px 15px;
+  font-size: 16px;
+  line-height: 21px;
+  height: 80px;
+}
+
+.navbar {
+  position: relative;
+  min-height: 80px;
+  margin-bottom: 60px;
+  border: 1px solid transparent;
+}
+
+.btn {
+  max-width: 100%;
+  font-size: 12px;
+  padding-left: 32px;
+  padding-right: 32px;
+  white-space: unset;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+  color: white;
+  background-color: #040403;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.btn-default {
+  color: white;
+  background-color: #1e1e1c;
+  border-color: transparent;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #1e1e1c;
+  border-color: transparent;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #c59c71;
+  border-color: transparent;
+}
+
+.carousel-control {
+  color: #8c8c8c;
+  text-align: center;
+}
+
+.jumbotron {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  color: inherit;
+  background-color: white;
+}
+
+.jumbotron p {
+  color: #8c8c8c;
+}
+
+.jumbotron p {
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 200;
+}
