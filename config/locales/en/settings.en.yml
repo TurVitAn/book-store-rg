@@ -6,3 +6,7 @@ en:
       zip_format: consist of 0-9 only, ’-’ no special symbols
       phone_format: should has plus (+) at the beginning
       phone_country_code: should contain country code of chosen country in Country drop down list
+    create:
+      success: Your address has been successfully saved
+    update:
+      success: Your address has been successfully updated
