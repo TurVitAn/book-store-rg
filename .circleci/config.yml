@@ -60,12 +60,12 @@ commands:
       - run:
           name: fasterer
           command: bundle exec fasterer
-  run_brakeman:
-    description: command to start brakeman
+  run_bundler-audit:
+    description: command to start bundler-audit
     steps:
       - run:
-          name: brakeman
-          command: bundle exec brakeman
+          name: bundler-audit
+          command: bundle exec bundler-audit --ignore CVE-2015-9284
   run_database_consistency:
     description: command to start database_consistency
     steps:
@@ -88,7 +88,7 @@ jobs:
     executor: default
     steps:
       - defaults
-      - run_brakeman
+      - run_bundler-audit
       - run_database_consistency
   code_style:
     executor: default

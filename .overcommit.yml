@@ -18,10 +18,6 @@ PreCommit:
     quiet: false
     command: [ 'bundle', 'exec', 'database_consistency' ]
 
-PrePush:
-  Brakeman:
-    enabled: true
-
 CommitMsg:
   CapitalizedSubject:
     enabled: false
