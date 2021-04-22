@@ -5,24 +5,24 @@ class AddressesController < ApplicationController
   ADDRESS_ATTRIBUTES = %w[first_name last_name address address_type city zip_code country phone].freeze
 
   def create
-    service = AddressService.new(user: current_user, params: address_params)
+    service = Settings::AddressService.new(user: current_user, params: address_params)
     service.call
     if service.success
       redirect_to(edit_user_registration_path, notice: t('.success'))
     else
       set_addresses
-      render 'settings/index'
+      render 'devise/registrations/edit'
     end
   end
 
   def update
-    service = SaveAddressService.new(user: current_user, params: address_params, id: params[:id])
+    service = Settings::AddressService.new(user: current_user, params: address_params, id: params[:id])
     service.call
     if service.success
       redirect_to(edit_user_registration_path, notice: t('.success'))
     else
       set_addresses
-      render 'settings/index'
+      render 'devise/registrations/edit'
     end
   end
 

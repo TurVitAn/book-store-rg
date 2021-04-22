@@ -23,7 +23,7 @@
             .fa.fa-cog
             = t('.link.orders')
         %li
-          %a.collapse-link{ href: '#' }
+          = link_to edit_user_registration_path, class: 'collapse-link' do
             .fa.fa-cog
             = t('.link.settings')
     %li
