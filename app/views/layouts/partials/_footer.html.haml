@@ -12,8 +12,7 @@
               %a.nav-link.orders_link{ href: '#' }
                 = t('.orders')
             %li
-              %a.nav-link.settings_link{ href: '#' }
-                = t('.settings')
+              = link_to t('.settings'), settings_path, class: 'nav-link settings_link'
           %li
             = link_to t('.privacy_policy'), privacy_policy_path, class: 'nav-link privacy_policy_link'
       .col-sm-3
