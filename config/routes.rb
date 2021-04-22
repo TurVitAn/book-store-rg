@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'homes#privacy_policy'
 
   resources :books, only: %i[index show]
-  resources :addresses, only: %i[create update]
+  resources :addresses, only: :create
+  resources :settings, only: :index
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
