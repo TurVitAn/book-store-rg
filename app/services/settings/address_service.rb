@@ -21,8 +21,8 @@ module Settings
 
     def handle_address_status
       case params[:address_type]
-      when AddressForm::BILLING_TYPE then check_billing_address_presence
-      when AddressForm::SHIPPING_TYPE then check_shipping_address_presence
+      when SettingsPresenter::BILLING_TYPE then check_billing_address_presence
+      when SettingsPresenter::SHIPPING_TYPE then check_shipping_address_presence
       end
     end
 

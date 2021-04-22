@@ -11,9 +11,6 @@ class AddressForm
   VALIDATE_PHONE = /\A\+[0-9]+\z/
   VALIDATE_ZIP = /\A[0-9-]+\z/
 
-  BILLING_TYPE = 'billing'.freeze
-  SHIPPING_TYPE = 'shipping'.freeze
-
   attr_accessor :first_name, :last_name, :address, :city, :zip_code, :country, :phone, :address_type
 
   validates :first_name, :last_name, :address, :city, :zip_code, :country, :phone, presence: true
