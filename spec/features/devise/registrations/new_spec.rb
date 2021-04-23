@@ -1,5 +1,5 @@
 RSpec.describe 'devise/registrations#new', type: :feature do
-  let(:sign_up_page) { Pages::SignUp.new }
+  let(:sign_up_page) { Pages::Devise::SignUp.new }
 
   before { sign_up_page.load }
 

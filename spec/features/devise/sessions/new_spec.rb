@@ -1,6 +1,6 @@
 RSpec.describe 'devise/sessions#new', type: :feature do
   let(:user) { create(:user) }
-  let(:sign_in_page) { Pages::SignIn.new }
+  let(:sign_in_page) { Pages::Devise::SignIn.new }
 
   before { sign_in_page.load }
 

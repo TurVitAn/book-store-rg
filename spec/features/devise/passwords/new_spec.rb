@@ -1,6 +1,6 @@
 RSpec.describe 'devise/passwords#new', type: :feature do
   let(:user) { create(:user) }
-  let(:forgot_password_page) { Pages::ForgotPassword.new }
+  let(:forgot_password_page) { Pages::Devise::ForgotPassword.new }
 
   before { forgot_password_page.load }
 
