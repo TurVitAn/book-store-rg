@@ -1,5 +1,5 @@
-RSpec.describe Pages, type: :feature do
-  let(:home_page) { Pages::Home.new }
+RSpec.describe 'HomePage', type: :feature do
+  let(:home_page) { Pages::HomePage::Home.new }
 
   before do
     create(:book)

@@ -1,5 +1,5 @@
 RSpec.describe 'CatalogPage', type: :feature do
-  let(:catalog_page) { Pages::Catalog.new }
+  let(:catalog_page) { Pages::Books::Catalog.new }
 
   before { catalog_page.load }
 

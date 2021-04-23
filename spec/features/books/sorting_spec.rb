@@ -1,5 +1,5 @@
 RSpec.describe 'Sorting', type: :feature do
-  let(:catalog_page) { Pages::Catalog.new }
+  let(:catalog_page) { Pages::Books::Catalog.new }
 
   before do
     create_list(:category, 2)

@@ -1,6 +1,6 @@
 RSpec.describe 'BookDescription', type: :feature do
   let(:book) { create(:book) }
-  let(:book_page) { Pages::Book.new }
+  let(:book_page) { Pages::Books::Book.new }
 
   before { book_page.load(id: book.id) }
 
