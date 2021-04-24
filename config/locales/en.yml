@@ -23,6 +23,12 @@ en:
         settings: Settings
         email: support@book_store-rg.com
         phone: (555)-555-5555
+    errors:
+      not_found:
+        404: 404
+        oops: Oops! Nothing was found
+        page_not_found: The page you are looking for might have been removed had its name changed or is temporarily unavailable.
+        return_home_page: Return to home page
   pages:
     partials:
       newest_books:

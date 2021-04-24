@@ -6,10 +6,14 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.includes(:authors).find_by(id: book_params[:id]).decorate
+    book.present? ? @book = book.decorate : record_not_found
   end
 
   private
+
+  def book
+    Book.includes(:authors).find_by(id: book_params[:id])
+  end
 
   def book_params
     params.permit(:id, :category_id, :sort_by, :current_books_count)
