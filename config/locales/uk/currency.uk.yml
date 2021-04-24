@@ -1,0 +1,5 @@
+uk:
+  number:
+    currency:
+      format:
+        unit: €

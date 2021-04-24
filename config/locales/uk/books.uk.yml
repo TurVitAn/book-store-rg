@@ -1,0 +1,45 @@
+uk:
+  books:
+    index:
+      catalog: Каталог
+    show:
+      link:
+        back_to_results: Повернутись до результатів
+    partials:
+      book_description:
+        description: Опис
+        publication_year: Рік видання
+        dimensions: Розміри
+        materials: Матеріали
+        button:
+          add_to_cart: Додати в кошик
+        link:
+          read_more: Читати далі
+          hide: Сховати
+      pagination:
+        button:
+          view_more: Дивитись більше
+      reviews:
+        title: Відгуки (3)
+      sorting:
+        sort_by: Сортувати за
+        all: Усі
+        catalog_by:
+          newest_desc: Спочатку новіші
+          popular_asc: Спочатку популярні
+          price_asc: "Ціна: від низької до високої"
+          price_desc: "Ціна: від високої до низької"
+          title_asc: "Заголовок: А - Я"
+          title_desc: "Заголовок: Я - А"
+      write_review:
+        review: Відгук
+        score: Оцінка
+        title: Заголовок
+        button:
+          post: Опублікувати
+      mobile:
+        sorting:
+          filter_by_category: Фільтрувати за категоріями
+          categories: Категорії
+          filters: Фільтри
+          sort_by: Сортувати за

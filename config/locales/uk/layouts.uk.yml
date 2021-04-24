@@ -1,0 +1,27 @@
+uk:
+  layouts:
+    partials:
+      head:
+        title: BookStore-rg
+      header:
+        brand: BookStore-rg
+        home: Головна сторінка
+        shop: Магазин
+        mobile_development: Мобільна розробка
+        photo: Фото
+        web_design: Веб дизайн
+        log_out: Вийти
+        my_account: Мій обліковий запис
+      footer:
+        home: Головна сторінка
+        shop: Магазин
+        orders: Замовлення
+        settings: Налаштування
+        email: support@book_store-rg.com
+        phone: (555)-555-5555
+    errors:
+      not_found:
+        404: 404
+        oops: Ой! Нічого не знайдено
+        page_not_found: Сторінку, яку ви шукаєте, було видалено, її назву змінили або вона тимчасово недоступна.
+        return_home_page: Повернутися на головну сторінку

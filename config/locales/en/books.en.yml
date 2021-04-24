@@ -1,0 +1,45 @@
+en:
+  books:
+    index:
+      catalog: Сatalog
+    show:
+      link:
+        back_to_results: Back to results
+    partials:
+      book_description:
+        description: Description
+        publication_year: Year of publication
+        dimensions: Dimensions
+        materials: Materials
+        button:
+          add_to_cart: Add to Cart
+        link:
+          read_more: Read More
+          hide: Hide
+      pagination:
+        button:
+          view_more: View More
+      reviews:
+        title: Reviews (3)
+      sorting:
+        sort_by: Sort by
+        all: All
+        catalog_by:
+          newest_desc: Newest first
+          popular_asc: Popular first
+          price_asc: "Price: Low to hight"
+          price_desc: "Price: Hight to low"
+          title_asc: "Title: A - Z"
+          title_desc: "Title: Z - A"
+      write_review:
+        review: Review
+        score: Score
+        title: Title
+        button:
+          post: Post
+      mobile:
+        sorting:
+          filter_by_category: Filter by category
+          categories: Categories
+          filters: Filters
+          sort_by: Sort by
