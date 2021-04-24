@@ -10,44 +10,44 @@ en:
     failure:
       already_authenticated: You are already signed in.
       inactive: Your account is not activated yet.
-      invalid: "Invalid %{authentication_keys} or password."
+      invalid: Invalid %{authentication_keys} or password.
       last_attempt: You have one more attempt before your account is locked.
       locked: Your account is locked.
-      not_found_in_database: "Invalid %{authentication_keys} or password."
+      not_found_in_database: Invalid %{authentication_keys} or password.
       timeout: Your session expired. Please sign in again to continue.
       unauthenticated: You need to sign in or sign up before continuing.
       unconfirmed: You have to confirm your email address before continuing.
     mailer:
       confirmation_instructions:
         action: Confirm my account
-        greeting: "Welcome %{recipient}!"
-        instruction: "You can confirm your account email through the link below:"
+        greeting: Welcome %{recipient}!
+        instruction: 'You can confirm your account email through the link below:'
         subject: Confirmation instructions
       email_changed:
-        greeting: "Hello %{recipient}!"
-        message: "We're contacting you to notify you that your email has been changed to %{email}."
-        message_unconfirmed: "We're contacting you to notify you that your email is being changed to %{email}."
+        greeting: Hello %{recipient}!
+        message: We're contacting you to notify you that your email has been changed to %{email}.
+        message_unconfirmed: We're contacting you to notify you that your email is being changed to %{email}.
         subject: Email Changed
       password_change:
-        greeting: "Hello %{recipient}!"
-        message: We're contacting you to notify you that your password has been changed.
+        greeting: Hello %{recipient}!
+        message: Were are contacting you to notify you that your password has been changed.
         subject: Password Changed
       reset_password_instructions:
         action: Change my password
-        greeting: "Hello %{recipient}!"
+        greeting: Hello %{recipient}!
         instruction: Someone has requested a link to change your password. You can do this through the link below.
         instruction_2: If you didn't request this, please ignore this email.
         instruction_3: Your password won't change until you access the link above and create a new one.
         subject: Reset password instructions
       unlock_instructions:
         action: Unlock my account
-        greeting: "Hello %{recipient}!"
-        instruction: "Click the link below to unlock your account:"
+        greeting: Hello %{recipient}!
+        instruction: 'Click the link below to unlock your account:'
         message: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
         subject: Unlock instructions
     omniauth_callbacks:
-      failure: 'Could not authenticate you from %{kind} because "%{reason}".'
-      success: "Successfully authenticated from %{kind} account."
+      failure: Could not authenticate you from %{kind} because %{reason}.
+      success: Successfully authenticated from %{kind} account.
     passwords:
       edit:
         change_my_password: Change my password
@@ -72,9 +72,9 @@ en:
       edit:
         are_you_sure: Are you sure?
         cancel_my_account: Cancel my account
-        currently_waiting_confirmation_for_email: "Currently waiting confirmation for: %{email}"
+        currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
         leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
-        title: "Edit %{resource}"
+        title: Edit %{resource}
         unhappy: Unhappy?
         update: Update
         we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
@@ -112,20 +112,20 @@ en:
         didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
         forgot_your_password: Forgot your password?
         sign_in: Log in
-        sign_in_with_provider: "Sign in with %{provider}"
+        sign_in_with_provider: Sign in with %{provider}
         sign_up: Sign up
       minimum_password_length:
-        one: "(%{count} character minimum)"
-        other: "(%{count} characters minimum)"
+        one: (%{count} character minimum)
+        other: (%{count} characters minimum)
     or: or
     have_account: Have an Account?
   errors:
     messages:
       already_confirmed: was already confirmed, please try signing in
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
       expired: has expired, please request a new one
       not_found: not found
       not_locked: was not locked
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: '1 error prohibited this %{resource} from being saved:'
+        other: '%{count} errors prohibited this %{resource} from being saved:'
