@@ -10,8 +10,8 @@ module Sections
       element :sign_in_button, 'input[type="submit"]'
 
       def authenticate_user(email, password)
-        email_field.set email
-        password_field.set password
+        email_field.set(email)
+        password_field.set(password)
         sign_in_button.click
       end
     end

@@ -1,4 +1,4 @@
-RSpec.describe Users::OmniauthCallbacksController do
+RSpec.describe Users::OmniauthCallbacksController, type: :controller do
   context 'when auth via Facebook' do
     before do
       request.env['devise.mapping'] = Devise.mappings[:user]
@@ -10,7 +10,7 @@ RSpec.describe Users::OmniauthCallbacksController do
     context 'with default behavior' do
       it 'has redirect status' do
         get_facebook
-        expect(response).to have_http_status :redirect
+        expect(response).to have_http_status(:redirect)
       end
     end
 
@@ -44,7 +44,7 @@ RSpec.describe Users::OmniauthCallbacksController do
     context 'with default behavior' do
       it 'has redirect status' do
         get_google
-        expect(response).to have_http_status :redirect
+        expect(response).to have_http_status(:redirect)
       end
     end
 

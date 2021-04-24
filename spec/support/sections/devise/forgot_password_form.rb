@@ -7,7 +7,7 @@ module Sections
       element :cancel_button, 'button.reset-btn'
 
       def fill_in(email)
-        email_field.set email
+        email_field.set(email)
         send_instructions_button.click
       end
     end

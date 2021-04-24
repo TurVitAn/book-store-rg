@@ -1,7 +1,10 @@
 RSpec.describe 'HomePage', type: :feature do
   let(:home_page) { Pages::HomePage::Home.new }
 
-  before { home_page.load }
+  before do
+    create(:book)
+    home_page.load
+  end
 
   it { expect(home_page).to have_current_path(root_path) }
 
@@ -11,6 +14,10 @@ RSpec.describe 'HomePage', type: :feature do
     it { expect(home_page.header).to have_shop_link }
     it { expect(home_page.header).to have_log_in_link }
     it { expect(home_page.header).to have_sign_up_link }
+  end
+
+  context 'with slider elements' do
+    it { expect(home_page.slider).to have_buy_now_buttons(count: 1) }
   end
 
   context 'with get started elements' do
