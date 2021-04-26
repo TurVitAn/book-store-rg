@@ -27,10 +27,10 @@ en:
         catalog_by:
           newest_desc: Newest first
           popular_asc: Popular first
-          price_asc: "Price: Low to hight"
-          price_desc: "Price: Hight to low"
-          title_asc: "Title: A - Z"
-          title_desc: "Title: Z - A"
+          price_asc: 'Price: Low to hight'
+          price_desc: 'Price: Hight to low'
+          title_asc: 'Title: A - Z'
+          title_desc: 'Title: Z - A'
       write_review:
         review: Review
         score: Score
