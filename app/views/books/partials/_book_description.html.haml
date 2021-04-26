@@ -35,7 +35,7 @@
       %p.lead.small.line-height-2
         %span.less-description
           = book.short_description
-        - if book.description.length > book.short_description.length
+        - if book.more_description?
           %span.more-description
             = book.description
           %a.read-more.in-gold-500{href: "#", for: 'more'}
@@ -47,7 +47,7 @@
         %p.pull-left
           = t('.publication_year')
         %p.lead.small.pull-right.publication_year
-          = book.published_at.year
+          = book.year_publication
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left

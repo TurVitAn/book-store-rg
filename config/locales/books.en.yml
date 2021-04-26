@@ -5,6 +5,8 @@ en:
     show:
       link:
         back_to_results: Back to results
+    decorator:
+      dimensions_inches: 'H: %{height}" x W: %{width}" x D: %{depth}"'
     partials:
       book_description:
         description: Description

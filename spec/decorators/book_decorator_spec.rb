@@ -5,7 +5,7 @@ RSpec.describe BookDecorator, type: :decorator do
   end
   let(:authors_list_result) { 'Vitalii Turzhanskyi' }
   let(:materials_list_result) { 'Marbled, paper' }
-  let(:dimensions_result) { 'H:20.0" x W:13.0" x D:5.0"' }
+  let(:dimensions_result) { 'H: 20.0" x W: 13.0" x D: 5.0"' }
 
   it '#authors_list' do
     expect(book.authors_list).to eq(authors_list_result)
@@ -23,5 +23,13 @@ RSpec.describe BookDecorator, type: :decorator do
     expect(book.short_description).to eq(
       book.description.truncate(described_class::SHORT_DESCRIPTION_LENGTH)
     )
+  end
+
+  it '#more_description?' do
+    expect(book).to be_more_description
+  end
+
+  it '#year_publication' do
+    expect(book.year_publication).to eq(book.published_at.year)
   end
 end

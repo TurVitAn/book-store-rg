@@ -14,10 +14,18 @@ class BookDecorator < ApplicationDecorator
   end
 
   def dimensions
-    "H:#{object.height}\" x W:#{object.width}\" x D:#{object.depth}\""
+    I18n.t('books.decorator.dimensions_inches', height: object.height, width: object.width, depth: object.depth)
   end
 
   def short_description
     object.description.truncate(SHORT_DESCRIPTION_LENGTH)
+  end
+
+  def more_description?
+    object.description.length > SHORT_DESCRIPTION_LENGTH
+  end
+
+  def year_publication
+    object.published_at.year
   end
 end
