@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
-  validates :email, presence: true
+  validates :email, :encrypted_password, presence: true
   validates :password, format: { with: PASSWORD_FORMAT }
 
   def self.from_omniauth(auth)
