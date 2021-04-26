@@ -6,6 +6,6 @@ class Book < ApplicationRecord
   has_many :authors, through: :author_books, dependent: :destroy
   belongs_to :category
 
-  validates :title, :description, presence: true
+  validates :title, :description, :category_id, presence: true
   validates :description, length: { minimum: MIN_DESCRIPTION_SIZE }
 end
