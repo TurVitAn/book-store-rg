@@ -14,7 +14,7 @@ class BookDecorator < ApplicationDecorator
   end
 
   def dimensions
-    "H:#{object.height}\" x W:#{object.width}\" x D:#{object.depth}"
+    "H:#{object.height}\" x W:#{object.width}\" x D:#{object.depth}\""
   end
 
   def short_description

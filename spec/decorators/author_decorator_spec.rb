@@ -1,4 +1,4 @@
-RSpec.describe AuthorDecorator do
+RSpec.describe AuthorDecorator, type: :decorator do
   let(:first_name) { FFaker::Name.first_name }
   let(:last_name) { FFaker::Name.last_name }
   let(:author) { build(:author, first_name: first_name, last_name: last_name).decorate }
