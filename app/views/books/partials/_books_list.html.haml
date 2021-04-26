@@ -8,7 +8,7 @@
               %img.img-shadow.general-thumbnail-img{src: "https://jonathantweedy.com/resources/thumbs/SmashingBook5ResponsiveWebDesign.jpg", alt: "design-book"}
               .thumb-hover
                 .general-thumb-link-wrap
-                  %a.thumb-hover-link{href: book_path(book)}
+                  = link_to book_path(book), class: 'thumb-hover-link' do
                     %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
                   %a.thumb-hover-link{href: "#"}
                     %i.fa.fa-shopping-cart.thumb-icon
