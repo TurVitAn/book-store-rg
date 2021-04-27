@@ -19,7 +19,7 @@ OmniAuth.config.mock_auth[:facebook] = {
 }
 
 OmniAuth.config.mock_auth[:google_oauth2] = {
-  'uid' => '2222',
+  'uid' => '1111',
   'provider' => 'google',
   'credentials' => {
     'token' => 'token',

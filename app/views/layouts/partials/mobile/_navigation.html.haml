@@ -15,7 +15,7 @@
       %a{type: "button", 'data-toggle': "collapse", href: "#menu_account", 'aria-expanded': "false", 'aria-controls': "menu"}
         .fa.fa-user
         %b
-          = current_user.username
+          = current_user.email
       %ul#menu_account.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
         %li
           %a.collapse-link{href: '#'}

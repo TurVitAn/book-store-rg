@@ -6,11 +6,22 @@ RSpec.describe User, type: :model do
   end
 
   describe '.from_omniauth' do
-    let(:auth) { OmniAuth.config.mock_auth[:facebook] }
+    context 'when via Facebook' do
+      let(:auth) { OmniAuth.config.mock_auth[:facebook] }
+      let(:user) { described_class.from_omniauth(auth) }
 
-    it 'returns or create user' do
-      user = described_class.from_omniauth(auth)
-      expect(user.uid).to eq(auth.uid)
+      it 'returns or create user' do
+        expect(user.uid).to eq(auth.uid)
+      end
+    end
+
+    context 'when via Google' do
+      let(:auth) { OmniAuth.config.mock_auth[:google_oauth2] }
+      let(:user) { described_class.from_omniauth(auth) }
+
+      it 'returns or create user' do
+        expect(user.uid).to eq(auth.uid)
+      end
     end
   end
 end

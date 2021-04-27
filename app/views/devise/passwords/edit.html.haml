@@ -11,7 +11,7 @@
         required: true,
         label: false,
         autofocus: true,
-        hint: ("#{@minimum_password_length} #{t('.characters_minimum')}" if @minimum_password_length),
+        hint: (t('.characters_minimum', minimum_password_length: @minimum_password_length) if @minimum_password_length),
         placeholder: t('.enter_new_password'),
         input_html: { autocomplete: :on }
     .form-group.mb-30

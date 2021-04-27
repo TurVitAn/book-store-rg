@@ -15,8 +15,4 @@ class User < ApplicationRecord
       user.skip_confirmation!
     end
   end
-
-  def username
-    email.split(/@/).first
-  end
 end

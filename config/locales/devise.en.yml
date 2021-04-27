@@ -54,7 +54,7 @@ en:
         change_your_password: Change your password
         confirm_new_password: Confirm new password
         new_password: New password
-        characters_minimum: characters minimum
+        characters_minimum: '%{minimum_password_length} characters minimum'
         enter_new_password: Enter new password
         confirm_password: Confirm new password
       new:
@@ -84,7 +84,7 @@ en:
         enter_email: Enter email
         password: Password
         enter_password: Enter password
-        characters_minimum: characters minimum
+        characters_minimum: '%{minimum_password_length} characters minimum'
         confirm_password: Confirm password
         enter_confirm_password: Enter confirmation password
       signed_up: Welcome! You have signed up successfully.
