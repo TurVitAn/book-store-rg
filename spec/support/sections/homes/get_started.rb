@@ -1,5 +1,5 @@
 module Sections
-  module Pages
+  module Homes
     class GetStarted < SitePrism::Section
       element :get_started_link, 'a.btn-default'
       element :greeting, 'h2.h1'
