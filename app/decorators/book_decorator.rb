@@ -6,26 +6,26 @@ class BookDecorator < ApplicationDecorator
   decorates_association :authors
 
   def authors_list
-    object.authors.map { |author| author.decorate.full_name }.join(', ')
+    authors.map { |author| author.decorate.full_name }.join(', ')
   end
 
   def materials_list
-    object.materials.split.join(', ').capitalize
+    materials.split.join(', ').capitalize
   end
 
   def dimensions
-    I18n.t('books.decorator.dimensions_inches', height: object.height, width: object.width, depth: object.depth)
+    I18n.t('books.decorator.dimensions_inches', height: height, width: width, depth: depth)
   end
 
   def short_description
-    object.description.truncate(SHORT_DESCRIPTION_LENGTH)
+    description.truncate(SHORT_DESCRIPTION_LENGTH)
   end
 
   def more_description?
-    object.description.length > SHORT_DESCRIPTION_LENGTH
+    description.length > SHORT_DESCRIPTION_LENGTH
   end
 
   def year_publication
-    object.published_at.year
+    published_at.year
   end
 end
