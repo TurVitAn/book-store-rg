@@ -4,7 +4,7 @@ class BooksPresenter
   end
 
   def books_count
-    Book.count
+    @books_count ||= Book.count
   end
 
   def calculate_limit

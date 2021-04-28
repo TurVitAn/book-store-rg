@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-  before_action :set_categories
+  before_action :categories
 
   private
 
-  def set_categories
-    @categories = Category.all
+  def categories
+    @categories ||= Category.all
   end
 
   def record_not_found
