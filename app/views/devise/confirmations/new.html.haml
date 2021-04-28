@@ -2,7 +2,8 @@
   .text-center
     %h3.general-login-title
       = t('.resend_confirmation_instructions')
-  = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { class: 'general-form' }) do |f|
+  = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name),
+                                                      html: { class: 'general-form' }) do |f|
     .form-group.mb-30
     = f.input :email,
         required: true,

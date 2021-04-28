@@ -5,7 +5,8 @@
     = render 'devise/shared/omniauth_authorize'
     %p.general-login-text
       = t('devise.or')
-  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'general-form'}) do |f|
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+                                                        html: { class: 'general-form' }) do |f|
     .form-group.mb-30
       = f.label :email, t('.email')
       = f.input :email,
