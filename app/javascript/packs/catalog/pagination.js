@@ -3,18 +3,18 @@ $(document).ready(() => {
         event.preventDefault();
 
         let url = window.location.href;
-        let current_books_list = $('.books-list');
-        let current_books_count = $('#books_count').val();
+        let currentBooksList = $('.books-list');
+        let currentBooksCount = $('#books-count').val();
 
         $.ajax({
             url: url,
             type: 'GET',
             data: {
-                'current_books_count': current_books_count
+                'current_books_count': currentBooksCount
             },
             success: function (data) {
-                let new_books_list = $(data).find('.books-list');
-                $(current_books_list).replaceWith(new_books_list);
+                let newBooksList = $(data).find('.books-list');
+                $(currentBooksList).replaceWith(newBooksList);
             }
         });
     });

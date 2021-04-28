@@ -23,6 +23,17 @@ en:
           view_more: View More
       reviews:
         title: Reviews (3)
+        first:
+          date: 04/27/21
+          verified: Verified Reviewer
+          name: Rita J. Lewis
+          reviwer_message: Thank you BookStore, I was very pleased to receive my order for the Moleskine diary so soon after placing the order.
+        second:
+          logo_empty: M
+          date: 04/28/21
+          verified: Verified Reviewer
+          name: May J. Novoa
+          reviwer_message: If ‘Get a better job’ had landed on my desk a year ago, I might have been dismissive of it. Instead I was prepared to be open-minded. There have been many occasions where I turned to career books with practical activities to look for some inspiration when developing education activities for learners or assessment.
       sorting:
         sort_by: Sort by
         all: All

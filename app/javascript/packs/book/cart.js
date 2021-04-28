@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    let MIN_QUANTITY = 1;
+    let minQuantity = 1;
 
     $(document).on('click', '#plus', function (event) {
         event.preventDefault();
@@ -13,7 +13,7 @@ $(document).ready(() => {
 
         quantity = +$('.quantity-input').val();
 
-        if (quantity > MIN_QUANTITY) {
+        if (quantity > minQuantity) {
             $('.quantity-input').val(--quantity);
         }
     });

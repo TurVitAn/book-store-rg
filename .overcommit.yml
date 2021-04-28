@@ -4,6 +4,11 @@ PreCommit:
     on_warn: warn
     required: true
 
+  HamlLint:
+    enabled: true
+    on_warn: warn
+    required: true
+
   Fasterer:
     enabled: true
     on_warn: warn

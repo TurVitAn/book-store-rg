@@ -1,5 +1,5 @@
 - unless collection.count == books.count
   .text-center
-    %input#books_count{ type: 'hidden', value: books.count, data: { category_id: params[:category_id] } }
+    %input#books-count{ type: 'hidden', value: books.count, data: { category_id: params[:category_id] } }
     %a.btn.btn-primary.view-more
       = t('.button.view_more')
