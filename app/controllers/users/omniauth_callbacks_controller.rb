@@ -17,8 +17,8 @@ module Users
       @user.persisted? ? authenticate_user(kind) : registrate_user
     end
 
-    def failure
-      redirect_to root_path, alert: t('devise.omniauth_callbacks.failure')
+    def failure(kind)
+      redirect_to(root_path, alert: t('devise.omniauth_callbacks.failure'), kind: kind)
     end
 
     private
@@ -30,7 +30,7 @@ module Users
 
     def registrate_user
       session['devise.google_data'] = request.env['omniauth.auth'].except(:extra)
-      redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
+      redirect_to(new_user_registration_url, alert: @user.errors.full_messages.join("\n"))
     end
   end
 end

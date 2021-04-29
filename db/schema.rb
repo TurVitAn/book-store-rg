@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 2021_04_09_083318) do
     t.string "unconfirmed_email"
     t.string "provider"
     t.string "uid"
+    t.string "token"
+    t.integer "expires_at"
+    t.boolean "expires"
+    t.string "refresh_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token"

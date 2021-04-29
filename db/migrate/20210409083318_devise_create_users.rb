@@ -21,6 +21,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       ## Omniauth
       t.string   :provider
       t.string   :uid
+      t.string   :token
+      t.integer  :expires_at
+      t.boolean  :expires
+      t.string   :refresh_token
 
       t.timestamps null: false
     end

@@ -10,24 +10,32 @@
       - categories.each do |category|
         %li
           = link_to category.name, books_path(category_id: category.id), class: 'collapse-link'
-  - if user_signed_in?
+  - if current_user
     %li
       %a{ type: 'button', 'data-toggle': 'collapse', href: '#menu_account',
                           'aria-expanded': 'false', 'aria-controls': 'menu' }
         .fa.fa-user
         %b
-          = current_user.email
+          = username
       %ul.collapse.list-unstyled.pl-30.mb-10#menu-account{ 'aria-expanded': 'false' }
         %li
           %a.collapse-link{ href: '#' }
+            .fa.fa-cog
             = t('.link.orders')
         %li
           %a.collapse-link{ href: '#' }
+            .fa.fa-cog
             = t('.link.settings')
     %li
-      = link_to t('.link.log_out'), destroy_user_session_path, method: :delete
+      = link_to destroy_user_session_path, method: :delete do
+        .fa.fa-sign-out-alt
+        = t('.link.log_out')
   - else
     %li
-      = link_to t('.link.log_in'), new_user_session_path
+      = link_to new_user_session_path do
+        .fas.fa-sign-in-alt
+        = t('.link.log_in')
     %li
-      = link_to t('.link.sign_up'), new_user_registration_path
+      = link_to new_user_registration_path do
+        .fas.fa-user-plus
+        = t('.link.sign_up')

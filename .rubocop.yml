@@ -24,6 +24,10 @@ Style/FrozenStringLiteralComment:
 Style/Documentation:
   Enabled: false
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/models/user.rb'
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'

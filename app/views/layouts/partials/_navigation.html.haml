@@ -15,19 +15,27 @@
                                               'aria-haspopup': 'true', 'aria-expanded': 'false' }
         .fa.fa-user
         %b
-          = current_user.email
+          = username
       %ul.dropdown-menu
         %li
           %a{ href: '#' }
+            .fas.fa-shopping-cart
             = t('.link.orders')
         %li
           %a{ href: '#' }
+            .fa.fa-cog
             = t('.link.settings')
         %li.divider{ role: 'separator' }
         %li
-          = link_to t('.link.log_out'), destroy_user_session_path, method: :delete, class: 'log_out_link'
+          = link_to destroy_user_session_path, method: :delete, class: 'log_out_link' do
+            .fa.fa-sign-out-alt
+            = t('.link.log_out')
   - else
     %li
-      = link_to t('.link.log_in'), new_user_session_path, class: 'log_in_link'
+      = link_to new_user_session_path, class: 'log_in_link' do
+        .fas.fa-sign-in-alt
+        = t('.link.log_in')
     %li
-      = link_to t('.link.sign_up'), new_user_registration_path, class: 'sign_up_link'
+      = link_to new_user_registration_path, class: 'sign_up_link' do
+        .fas.fa-user-plus
+        = t('.link.sign_up')

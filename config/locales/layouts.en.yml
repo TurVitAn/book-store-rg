@@ -12,9 +12,9 @@ en:
         link:
           orders: Orders
           settings: Settings
-          log_out: Log out
-          log_in: Log in
-          sign_up: Sign up
+          log_out: Log Out
+          log_in: Log In
+          sign_up: Sign Up
       mobile:
         navigation:
           home: Home
@@ -23,9 +23,9 @@ en:
           link:
             orders: Orders
             settings: Settings
-            log_out: Log out
-            log_in: Log in
-            sign_up: Sign up
+            log_out: Log Out
+            log_in: Log In
+            sign_up: Sign Up
       footer:
         home: Home
         shop: Shop

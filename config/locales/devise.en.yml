@@ -46,7 +46,7 @@ en:
         message: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
         subject: Unlock instructions
     omniauth_callbacks:
-      failure: Could not authenticate you from %{kind} because %{reason}.
+      failure: Could not authenticate you from %{kind}.
       success: Successfully authenticated from %{kind} account.
     passwords:
       edit:
