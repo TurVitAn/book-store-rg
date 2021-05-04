@@ -1,0 +1,7 @@
+en:
+  notice:
+    admin:
+      created: Admin user was successfully created
+      updated: Admin user was successfully updated
+  alert:
+    blank: can't be blank

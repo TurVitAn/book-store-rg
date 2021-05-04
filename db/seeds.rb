@@ -16,3 +16,7 @@ if Book.count.zero?
     FactoryBot.create(:book, category_id: rand(1..4), authors: [Author.all.sample, Author.all.sample])
   end
 end
+
+if AdminUser.count.zero?
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+end
