@@ -4,9 +4,9 @@ FactoryBot.define do
     last_name  { FFaker::Name.last_name }
     address { FFaker::Address.street_name }
     city { FFaker::Address.city }
-    zip_code { rand(1000..9999).to_s }
+    zip_code { FFaker::AddressUA.zip_code }
     country { 'Ukraine' }
-    phone { '+3808005555555' }
+    phone { FFaker::PhoneNumberUA.international_mobile_phone_number.delete(' -') }
     address_type { 'billing' }
 
     trait :for_user do
