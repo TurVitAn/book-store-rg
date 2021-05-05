@@ -4,13 +4,13 @@ RSpec.describe AddressForm, type: :model do
       it { is_expected.to validate_presence_of(field) }
     end
 
-    it { is_expected.to validate_length_of(:first_name).is_at_most(described_class::NAME_MAX_LENGTH) }
-    it { is_expected.to validate_length_of(:last_name).is_at_most(described_class::NAME_MAX_LENGTH) }
-    it { is_expected.to validate_length_of(:country).is_at_most(described_class::NAME_MAX_LENGTH) }
-    it { is_expected.to validate_length_of(:city).is_at_most(described_class::NAME_MAX_LENGTH) }
-    it { is_expected.to validate_length_of(:address).is_at_most(described_class::ADDRESS_MAX_LENGTH) }
-    it { is_expected.to validate_length_of(:zip_code).is_at_most(described_class::ZIP_MAX_LENGTH) }
-    it { is_expected.to validate_length_of(:phone).is_at_most(described_class::PHONE_MAX_LENGTH) }
+    it { is_expected.to validate_length_of(:first_name).is_at_most(described_class::NAME_MAX_SIZE) }
+    it { is_expected.to validate_length_of(:last_name).is_at_most(described_class::NAME_MAX_SIZE) }
+    it { is_expected.to validate_length_of(:country).is_at_most(described_class::NAME_MAX_SIZE) }
+    it { is_expected.to validate_length_of(:city).is_at_most(described_class::NAME_MAX_SIZE) }
+    it { is_expected.to validate_length_of(:address).is_at_most(described_class::ADDRESS_MAX_SIZE) }
+    it { is_expected.to validate_length_of(:zip_code).is_at_most(described_class::ZIP_MAX_SIZE) }
+    it { is_expected.to validate_length_of(:phone).is_at_most(described_class::PHONE_MAX_SIZE) }
 
     context 'when params are valid' do
       let(:valid_address_params) { attributes_for(:address) }

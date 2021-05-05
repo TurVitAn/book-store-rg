@@ -1,10 +1,10 @@
 class AddressForm
   include ActiveModel::Model
 
-  ADDRESS_MAX_LENGTH = 50
-  NAME_MAX_LENGTH = 50
-  PHONE_MAX_LENGTH = 15
-  ZIP_MAX_LENGTH = 10
+  ADDRESS_MAX_SIZE = 50
+  NAME_MAX_SIZE = 50
+  PHONE_MAX_SIZE = 15
+  ZIP_MAX_SIZE = 10
 
   VALIDATE_ADDRESS = /\A[a-zA-z0-9,\-\s]+\z/
   VALIDATE_NAME = /\A[a-zA-z\s]+\z/
@@ -15,15 +15,15 @@ class AddressForm
 
   validates :first_name, :last_name, :address, :city, :zip_code, :country, :phone, presence: true
   validates :first_name, :last_name, :country, :city,
-            length: { maximum: NAME_MAX_LENGTH }, format: { with: VALIDATE_NAME,
-                                                            message: I18n.t('addresses.validation.names_format') }
-  validates :address, length: { maximum: ADDRESS_MAX_LENGTH },
+            length: { maximum: NAME_MAX_SIZE }, format: { with: VALIDATE_NAME,
+                                                          message: I18n.t('addresses.validation.names_format') }
+  validates :address, length: { maximum: ADDRESS_MAX_SIZE },
                       format: { with: VALIDATE_ADDRESS,
                                 message: I18n.t('addresses.validation.address_format') }
-  validates :phone, length: { maximum: PHONE_MAX_LENGTH },
+  validates :phone, length: { maximum: PHONE_MAX_SIZE },
                     format: { with: VALIDATE_PHONE,
                               message: I18n.t('addresses.validation.phone_format') }
-  validates :zip_code, length: { maximum: ZIP_MAX_LENGTH },
+  validates :zip_code, length: { maximum: ZIP_MAX_SIZE },
                        format: { with: VALIDATE_ZIP,
                                  message: I18n.t('addresses.validation.zip_format') }
 
