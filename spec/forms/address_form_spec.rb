@@ -12,16 +12,16 @@ RSpec.describe AddressForm, type: :model do
     it { is_expected.to validate_length_of(:zip_code).is_at_most(described_class::ZIP_MAX_SIZE) }
     it { is_expected.to validate_length_of(:phone).is_at_most(described_class::PHONE_MAX_SIZE) }
 
-    context 'when params are valid' do
-      let(:valid_address_params) { attributes_for(:address) }
-
-      it { expect(described_class.new(valid_address_params)).to be_valid }
-    end
-
     context 'when params validation fails' do
       let(:invalid_address_params) { attributes_for(:address, first_name: '!$&!') }
 
       it { expect(described_class.new(invalid_address_params)).to be_invalid }
+    end
+
+    context 'when params are valid' do
+      let(:valid_address_params) { attributes_for(:address) }
+
+      it { expect(described_class.new(valid_address_params)).to be_valid }
     end
   end
 end
