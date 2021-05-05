@@ -8,12 +8,6 @@ RSpec.describe BooksController, type: :controller do
   describe 'GET /books/{id}' do
     let(:book) { create(:book) }
 
-    context 'with valid attributes' do
-      before { get :show, params: { id: book.id } }
-
-      it { expect(response).to have_http_status(:success) }
-    end
-
     context 'with invalid attributes' do
       before { get :show, params: { id: '' } }
 
@@ -22,6 +16,12 @@ RSpec.describe BooksController, type: :controller do
       it 'renders the not found template' do
         expect(response).to render_template(:not_found)
       end
+    end
+
+    context 'with valid attributes' do
+      before { get :show, params: { id: book.id } }
+
+      it { expect(response).to have_http_status(:success) }
     end
   end
 end
