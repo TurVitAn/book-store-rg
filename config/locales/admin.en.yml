@@ -5,5 +5,7 @@ en:
       updated: Admin user was successfully updated
     category:
       saved: Category was successfully saved
+    author:
+      saved: Author was successfully saved
   alert:
     blank: can't be blank

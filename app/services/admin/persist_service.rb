@@ -3,7 +3,8 @@ module Admin
     attr_reader :errors
 
     ENTITIES = {
-      category: Category
+      category: Category,
+      author: Author
     }.freeze
 
     def initialize(entity:, params:)
