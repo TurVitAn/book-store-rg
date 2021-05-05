@@ -17,8 +17,8 @@ module Users
       @user.persisted? ? authenticate_user(kind) : registrate_user
     end
 
-    def failure(kind)
-      redirect_to(root_path, alert: t('devise.omniauth_callbacks.failure'), kind: kind)
+    def failure
+      redirect_to(root_path, alert: t('devise.omniauth_callbacks.failure'))
     end
 
     private

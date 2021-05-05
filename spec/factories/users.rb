@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :user do
-    email { FFaker::Internet.free_email }
+  factory :user do |f|
+    f.sequence(:email) { |n| "user#{n}@gmail.com" }
     password { 'Password_2021' }
     provider { 'Facebook' }
     uid { 9.times.map { FFaker::Random.rand(1..9) }.join }
