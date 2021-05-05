@@ -3,5 +3,8 @@ en:
     admin:
       created: Admin user was successfully created
       updated: Admin user was successfully updated
+    category:
+      created: Category was successfully created
+      updated: Category was successfully updated
   alert:
     blank: can't be blank
