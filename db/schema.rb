@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(version: 2021_04_04_031815) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "description", null: false
+    t.string "title"
+    t.text "description"
     t.float "price"
     t.float "height"
     t.float "width"
     t.float "depth"
     t.string "materials"
     t.date "published_at"
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_books_on_category_id"
