@@ -4,7 +4,8 @@ module Admin
 
     ENTITIES = {
       category: Category,
-      author: Author
+      author: Author,
+      book: Book
     }.freeze
 
     def initialize(entity:, params:)

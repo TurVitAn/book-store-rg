@@ -1,6 +1,6 @@
 class BookDecorator < ApplicationDecorator
   NEWEST_BOOKS_COUNT = 3
-  SHORT_DESCRIPTION_LENGTH = 250
+  SHORT_DESCRIPTION_SIZE = 250
 
   delegate_all
   decorates_association :authors
@@ -18,11 +18,11 @@ class BookDecorator < ApplicationDecorator
   end
 
   def short_description
-    description.truncate(SHORT_DESCRIPTION_LENGTH)
+    description.truncate(SHORT_DESCRIPTION_SIZE)
   end
 
   def more_description?
-    description.length > SHORT_DESCRIPTION_LENGTH
+    description.length > SHORT_DESCRIPTION_SIZE
   end
 
   def year_publication

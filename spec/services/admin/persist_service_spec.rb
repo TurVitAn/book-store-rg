@@ -31,5 +31,23 @@ RSpec.describe Admin::PersistService do
         expect(described_class.new(entity: :author, params: valid_author_params).call).to be true
       end
     end
+
+    context 'when save book with invalid params' do
+      let(:invalid_book_params) { { book: attributes_for(:book) } }
+
+      it 'returns new false' do
+        expect(described_class.new(entity: :book, params: invalid_book_params).call).to be false
+      end
+    end
+
+    context 'when save book with valid params' do
+      let(:author) { create(:author) }
+      let(:category) { create(:category) }
+      let(:valid_book_params) { { book: attributes_for(:book, category_id: category.id, author_ids: [author.id]) } }
+
+      it 'returns true' do
+        expect(described_class.new(entity: :book, params: valid_book_params).call).to be true
+      end
+    end
   end
 end
