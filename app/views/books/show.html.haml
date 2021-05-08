@@ -8,4 +8,4 @@
     .mb-80.write-review
       = render partial: 'books/partials/write_review', locals: { form: @review_form }
   .mb-80.reviews
-    = render partial: 'books/partials/reviews'
+    = render partial: 'books/partials/reviews', locals: { reviews: @reviews }

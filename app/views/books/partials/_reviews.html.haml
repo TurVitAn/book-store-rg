@@ -1,44 +1,24 @@
-.mb-80.reviews
-  %h3.in-gold-500.mb-25
-    = t('.title')
-  .general-message-wrap.divider-lg
-    .clearfix
-      %img.img-circle.logo-size.inlide-block.pull-left{ src: reviewer_image_logo }
-      .ml-70
-        %div
-          .general-message-date.hidden-xs
-            = t('.first.date')
-          .max-240
-            .general-message-verified
-              = t('.first.verified')
-            .general-message-name
-              = t('.first.name')
-        .mb-15
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-        %p.reviwer-message
-          = t('.first.reviwer_message')
+%h3.in-gold-500.mb-25 #{t('.title')} (#{reviews.count})
+- reviews.each do |review|
   .general-message-wrap.divider-lg
     .clearfix
       %span.img-circle.logo-size.inlide-block.pull-left.logo-empty
-        = t('.second.logo_empty')
+        = review.user_logo
       .ml-70
         %div
           .general-message-date.hidden-xs
-            = t('.second.date')
+            = review.creation_date
           .max-240
-            .general-message-verified.pull-right
-              = t('.second.verified')
+            - if review.is_verified
+              .general-message-verified.pull-right
+                = t('.verified_reviewer')
             .general-message-name
-              = t('.second.name')
+              = review.username
         .mb-15
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star
-          %i.fa.fa-star.rate-star.rate-empty
+          - ReviewForm::RATING_RANGE.each do |index|
+            - if index <= review.rating
+              %i.fa.fa-star.rate-star
+            - else
+              %i.fa.fa-star.rate-star.rate-empty
         %p.reviwer-message
-          = t('.second.reviwer_message')
+          = review.text

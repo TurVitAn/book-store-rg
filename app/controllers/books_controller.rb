@@ -6,7 +6,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    book.present? ? @book = book.decorate : record_not_found
+    if book.present?
+      @book = book.decorate
+      @reviews = ReviewDecorator.decorate_collection(ReviewsQuery.new(book_id: @book.id).call)
+    else
+      record_not_found
+    end
   end
 
   private
