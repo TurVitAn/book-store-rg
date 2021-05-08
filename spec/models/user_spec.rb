@@ -8,6 +8,7 @@ RSpec.describe User, type: :model do
   describe 'with associations' do
     it { is_expected.to have_one(:billing_address).class_name('Address').dependent(:destroy) }
     it { is_expected.to have_one(:shipping_address).class_name('Address').dependent(:destroy) }
+    it { is_expected.to have_many(:reviews).dependent(:destroy) }
   end
 
   describe '.from_omniauth' do
