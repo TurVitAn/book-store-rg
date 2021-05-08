@@ -4,5 +4,8 @@
       .general-back-link
         = t('.link.back_to_results')
   = render partial: 'books/partials/book_description', locals: { book: @book }
-  = render 'books/partials/write_review'
-  = render 'books/partials/reviews'
+  - if user_signed_in?
+    .mb-80.write-review
+      = render partial: 'books/partials/write_review', locals: { form: @review_form }
+  .mb-80.reviews
+    = render partial: 'books/partials/reviews'

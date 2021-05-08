@@ -1,10 +1,16 @@
 module Sections
   module Books
     class WriteReview < SitePrism::Section
-      element :write_review_text, 'h3'
-      element :scores, 'div.mb-15'
-      element :title_field, '#title'
-      element :review_field, '#review'
+      element :form_header, 'h3'
+      element :title_field, '#review_title'
+      element :text_field, '#review_text'
+      element :post_button, '.text-right > input[type="submit"]'
+
+      def submit(params)
+        title_field.set(params[:title])
+        text_field.set(params[:text])
+        post_button.click
+      end
     end
   end
 end

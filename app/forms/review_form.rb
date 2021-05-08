@@ -15,4 +15,8 @@ class ReviewForm
   validates :rating, numericality: { only_integer: true,
                                      greater_than_or_equal_to: RATING_MIN,
                                      less_than_or_equal_to: RATING_MAX }
+
+  def initialize(params = {})
+    super(params)
+  end
 end
