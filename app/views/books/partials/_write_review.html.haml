@@ -3,12 +3,10 @@
     = t('.review')
   %p.general-info-text.has-error
     = t('.score')
-  .mb-15
-    %i.fa.fa-star.rate-empty
-    %i.fa.fa-star.rate-empty
-    %i.fa.fa-star.rate-empty
-    %i.fa.fa-star.rate-empty
-    %i.fa.fa-star.rate-empty
+  .mb-15#stars
+    - ReviewForm::RATING_RANGE.each do |index|
+      %i.fa.fa-star.rate-star.rate-empty{ data: { value: index } }
+    = f.hidden_field :rating, value: 0
   .row
     .col-md-8
       .mb-40
