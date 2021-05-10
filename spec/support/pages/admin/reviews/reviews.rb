@@ -4,7 +4,7 @@ module Pages
       class Reviews < SitePrism::Page
         set_url 'admin/reviews'
 
-        section :main_content, Sections::Admin::Reviews::List, '#index_table_reviews'
+        section :main_content, Sections::Admin::Reviews::List, '#collection_selection'
       end
     end
   end
