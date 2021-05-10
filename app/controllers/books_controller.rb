@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   def show
     if book.present?
       @book = book.decorate
-      @reviews = ReviewDecorator.decorate_collection(ReviewsQuery.new(book_id: @book.id).call)
+      @reviews = @book.reviews.includes(:user).approved.decorate
     else
       record_not_found
     end
