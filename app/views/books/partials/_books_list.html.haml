@@ -5,7 +5,7 @@
         .col-xs-6.col-sm-3.book
           .general-thumb-wrap
             .thumbnail.general-thumbnail
-              %img.img-shadow.general-thumbnail-img{ src: general_thumbnail_image, alt: 'design-book' }
+              = image_tag book.decorate.image_url, alt: book.title, class: 'img-shadow general-thumbnail-img'
               .thumb-hover
                 .general-thumb-link-wrap
                   = link_to book_path(book), class: 'thumb-hover-link' do

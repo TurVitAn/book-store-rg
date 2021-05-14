@@ -1,6 +1,7 @@
 class BookDecorator < ApplicationDecorator
   NEWEST_BOOKS_COUNT = 3
   SHORT_DESCRIPTION_SIZE = 250
+  DEFAULT_IMAGE = 'active_admin/default.png'.freeze
 
   delegate_all
   decorates_association :authors
@@ -27,5 +28,9 @@ class BookDecorator < ApplicationDecorator
 
   def year_publication
     published_at.year
+  end
+
+  def image_url
+    object.image_url.presence || DEFAULT_IMAGE
   end
 end
