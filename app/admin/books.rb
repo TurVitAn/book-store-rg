@@ -29,18 +29,14 @@ ActiveAdmin.register Book do
   end
 
   preserve_default_filters!
-  remove_filter :author_books
+  remove_filter :author_books, :book_images
   filter :authors, as: :select, collection: proc { Author.order(:first_name).decorate }
 
   index do
     selectable_column
     id_column
     column :image do |book|
-      if book.image_url.present?
-        image_tag book.image_url, class: 'admin-image-book'
-      else
-        image_tag 'active_admin/default.png', class: 'admin-image-book'
-      end
+      image_tag(book.image_url(:small), alt: book.title, class: 'admin-image-book')
     end
     column :category
     column :title
@@ -67,11 +63,7 @@ ActiveAdmin.register Book do
       row :depth
       row :materials_list
       row :image do |book|
-        if book.image_url.present?
-          image_tag book.image_url, class: 'admin-image-book'
-        else
-          image_tag 'active_admin/default.png', class: 'admin-image-book'
-        end
+        image_tag(book.image_url(:small), alt: book.title, class: 'admin-image-book')
       end
     end
   end

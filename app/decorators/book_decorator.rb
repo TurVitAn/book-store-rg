@@ -2,16 +2,17 @@ class BookDecorator < ApplicationDecorator
   NEWEST_BOOKS_COUNT = 3
   SHORT_DESCRIPTION_SIZE = 250
   DEFAULT_IMAGE = 'active_admin/default.png'.freeze
+  COMA = ', '.freeze
 
   delegate_all
   decorates_association :authors
 
   def authors_list
-    authors.map { |author| author.decorate.full_name }.join(', ')
+    authors.map { |author| author.decorate.full_name }.join(COMA)
   end
 
   def materials_list
-    materials.split.join(', ').capitalize
+    materials.split.join(COMA).capitalize
   end
 
   def dimensions
@@ -30,7 +31,7 @@ class BookDecorator < ApplicationDecorator
     published_at.year
   end
 
-  def image_url
-    object.image_url.presence || DEFAULT_IMAGE
+  def image_url(thumbnail)
+    object.image_url(thumbnail).presence || DEFAULT_IMAGE
   end
 end
