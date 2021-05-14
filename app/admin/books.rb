@@ -1,6 +1,6 @@
 ActiveAdmin.register Book do
-  permit_params :title, :description, :price, :height, :width, :depth,
-                :materials, :published_at, :category_id, author_ids: []
+  permit_params :title, :description, :price, :height, :width, :depth, :materials, :published_at,
+                :category_id, book_images_attributes: %i[id book_id image], author_ids: []
 
   includes :category, :authors
 
@@ -35,6 +35,13 @@ ActiveAdmin.register Book do
   index do
     selectable_column
     id_column
+    column :book_image do |book|
+      if book.book_images.includes([:book_images]).any?
+        image_tag book.book_images.includes([:book_images]).first.image_url, class: 'admin-image-book'
+      else
+        image_tag 'active_admin/default.png', class: 'admin-image-book'
+      end
+    end
     column :category
     column :title
     column :authors_list
@@ -59,6 +66,13 @@ ActiveAdmin.register Book do
       row :width
       row :depth
       row :materials_list
+      row :book_cover do |book|
+        if book.book_images.includes([:book_images]).any?
+          image_tag book.book_images.includes([:book_images]).first.image_url, class: 'admin-image-book'
+        else
+          image_tag 'active_admin/default.png', class: 'admin-image-book'
+        end
+      end
     end
   end
 

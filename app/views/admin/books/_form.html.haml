@@ -12,6 +12,12 @@
     - %i[title description price height width depth materials].each do |field|
       = f.input field, required: true, wrapper_html: { class: ('error' if @errors&.messages&.key?(field)) }
       = render partial: 'admin/shared/errors', locals: { errors: @errors, field: field }
+
+    = f.input :image, as: :file, required: true, wrapper_html: { class: ('error' if @errors&.messages&.key?(:image)) }
+    = render partial: 'admin/shared/errors', locals: { errors: @errors, field: :image }
+    = f.input :book_images, as: :file, input_html: { multiple: true, name: 'images[]' }, required: true,
+                         wrapper_html: { class: ('error' if @errors&.messages&.key?(:book_images)) }
+    = render partial: 'admin/shared/errors', locals: { errors: @errors, field: :book_images }
   = f.actions do
     = f.action :submit
     = f.cancel_link
