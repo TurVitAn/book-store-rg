@@ -3,7 +3,23 @@
 The idea of the project is an online book shop for customers who are interested in mobile development, photo, web design, web development, and other topics. The list of topics can change depending on data in Admin Panel.
 The web application will let registered users or guests find and buy books using a mobile phone, tablet, laptop, or PC.
 
-[website specification](https://drive.google.com/drive/folders/0B3jvg6jQR0D9QlV3RjducDEta3M)
+- [Website specification](https://drive.google.com/drive/folders/0B3jvg6jQR0D9QlV3RjducDEta3M)
+- ToDo [Cards](https://github.com/TurVitAn/book-store-rg/projects/1) Book Store Rg 
+- Use [Tools](https://github.com/TurVitAn/book-store-rg/projects/1#card-62554416)
+
+## Deploy for testing on [Heroku](https://bookstore-rg-turvitan.herokuapp.com/) or [BookStore-rg](http://bookstore-rg.turvitan.km.ua/)
+- Available coupons for orders:
+    - coupon_10 (10%)
+    - coupon_25 (25%)
+    - coupon_30 (30%)
+    - coupon_50 (50%)
+    - or [create new](https://bookstore-rg-turvitan.herokuapp.com/admin/coupons)
+
+    **NOTE: Coupon can be applied only for ONE order**
+    
+## [Admin](https://bookstore-rg-turvitan.herokuapp.com/admin/login) for testing
+- **email:    admin@example.com**
+- **password: password**
 
 ## How to install
 
