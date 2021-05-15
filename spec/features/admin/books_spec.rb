@@ -19,6 +19,8 @@ RSpec.describe 'admin/books', type: :feature do
 
       it { expect(books_page.main_content).to have_id_column }
       it { expect(books_page.main_content.text).to have_content(book.id) }
+      it { expect(books_page.main_content).to have_image_column }
+      it { expect(books_page.main_content.text).to have_content(book.image) }
       it { expect(books_page.main_content).to have_category_column }
       it { expect(books_page.main_content.text).to have_content(book.category.name) }
       it { expect(books_page.main_content).to have_title_column }
@@ -42,8 +44,10 @@ RSpec.describe 'admin/books', type: :feature do
       it { expect(book_page.book_details).to have_header }
       it { expect(book_page.book_details).to have_category_row }
       it { expect(book_page.book_details).to have_materials_row }
+      it { expect(book_page.book_details).to have_image_row }
       it { expect(book_page.book_details.category_row.text).to have_content(book.category.name) }
       it { expect(book_page.book_details.materials_row.text).to have_content(book.materials_list) }
+      it { expect(book_page.book_details.image_row.text).to have_content(book.image) }
 
       it { expect(book_page.book_details).to have_authors_list_row }
       it { expect(book_page.book_details.authors_list_row.text).to have_content(book.authors_list) }

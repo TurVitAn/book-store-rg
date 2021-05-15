@@ -12,6 +12,7 @@ module Sections
         element :width_input, '#book_width'
         element :depth_input, '#book_depth'
         element :materials_input, '#book_materials'
+        element :image_file_input, '#book_image'
         element :create_button, '#book_submit_action > input'
         element :cancel_button, '.cancel'
 

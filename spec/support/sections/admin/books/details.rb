@@ -13,6 +13,7 @@ module Sections
         element :width_row, '.row-width'
         element :depth_row, '.row-depth'
         element :materials_row, '.row-materials_list'
+        element :image_row, '.row-image'
       end
     end
   end
