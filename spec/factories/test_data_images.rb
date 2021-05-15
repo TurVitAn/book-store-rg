@@ -16,7 +16,7 @@ module TestDataImages
   end
 
   def uploaded_image
-    file = File.open('spec/fixtures/image.jpg', binmode: true)
+    file = File.open('spec/fixtures/default.jpg', binmode: true)
 
     # for performance we skip metadata extraction and assign test metadata
     uploaded_file = Shrine.upload(file, :store, metadata: false)
