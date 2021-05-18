@@ -1,0 +1,4 @@
+en:
+  cart_items:
+    destroy:
+      success: Book was deleted from your cart!

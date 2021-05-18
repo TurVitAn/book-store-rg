@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :settings, only: :index
   resources :reviews, only: :create
   resources :carts, only: :show
+  resources :cart_items, only: %i[create destroy]
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   mount ImageUploader.derivation_endpoint => '/derivations/image'
