@@ -1,4 +1,28 @@
 en:
+  carts:
+    show:
+      title: Cart
+    partials:
+      empty_cart:
+        empty_cart: Your cart is empty yet?
+        go_to_shop: Go to shop!
+      order_summary:
+        apply_coupon: Apply Coupon
+        order_summary: Order Summary
+        subtotal: 'Subtotal:'
+        coupon: 'Coupon:'
+        order_total: 'Order Total:'
+        checkout: 'Checkout'
+      orders:
+        product: Product
+        price: Price
+        quantity: Quantity
+        sub_total: SubTotal
+      mobile:
+        orders:
+          price: Price
+          quantity: Quantity
+          sub_total: SubTotal
   cart_items:
     destroy:
       success: Book was deleted from your cart!
