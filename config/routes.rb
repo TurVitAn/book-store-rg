@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :addresses, only: :create
   resources :settings, only: :index
   resources :reviews, only: :create
+  resources :carts, only: :show
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   mount ImageUploader.derivation_endpoint => '/derivations/image'
