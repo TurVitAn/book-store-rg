@@ -1,14 +1,18 @@
 class CouponsController < ApplicationController
-  def check
-    service = Carts::CouponService.new(coupon_params[:code], @cart)
-    service.call
-    service.errors.any? ? flash[:alert] = service.errors.first : flash[:notice] = t('coupons.check.success')
+  def update
+    service = Carts::CouponService.new(coupon_params, @cart)
+    if service.call
+      flash[:notice] = t('coupons.check.success')
+    else
+      presenter = CouponPresenter.new(errors: service.errors)
+      flash[:alert] = presenter.errors
+    end
     redirect_to(cart_path(@cart))
   end
 
   private
 
   def coupon_params
-    params.require(:coupon).permit(:code).merge(cart_id: @cart.id)
+    params.require(:coupon).permit(:code)
   end
 end

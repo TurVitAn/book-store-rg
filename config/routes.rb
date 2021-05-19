@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :reviews, only: :create
   resources :carts, only: :show
   resources :cart_items, only: %i[create destroy]
-  post '/coupon', to: 'coupons#check'
+  resource :coupon, only: :update
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   mount ImageUploader.derivation_endpoint => '/derivations/image'
