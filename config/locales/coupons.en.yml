@@ -3,6 +3,6 @@ en:
     check:
       success: Coupon was successfully applied to your order
     alert:
-      not_exist: Coupon with such code is not exist
-      invalid: Coupon is invalid
-      used: Coupon is already used
+      not_exist: is not exist
+      invalid: is invalid
+      used: is already used
