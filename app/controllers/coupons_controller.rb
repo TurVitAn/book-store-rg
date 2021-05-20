@@ -7,7 +7,7 @@ class CouponsController < ApplicationController
       presenter = CouponPresenter.new(errors: service.errors)
       flash[:alert] = presenter.errors
     end
-    redirect_to(cart_path(@cart))
+    redirect_to(carts_path)
   end
 
   private

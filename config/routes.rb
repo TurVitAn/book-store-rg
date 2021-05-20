@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :addresses, only: :create
   resources :settings, only: :index
   resources :reviews, only: :create
-  resources :carts, only: :show
-  resources :cart_items, only: %i[create destroy]
+  resources :carts, only: :index
+  resources :cart_items, only: %i[create update destroy]
   resource :coupon, only: :update
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?

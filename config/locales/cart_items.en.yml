@@ -27,3 +27,7 @@ en:
   cart_items:
     destroy:
       success: Book was deleted from your cart!
+    create:
+      success: Book was successfully added to your cart!
+    update:
+      success: Book count was changed!

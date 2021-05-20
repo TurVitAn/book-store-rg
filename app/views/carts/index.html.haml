@@ -5,7 +5,7 @@
     %h1.general-title-margin
       = t('.title')
     .visible-xs
-      = render partial: 'carts/partials/mobile/orders', locals: { cart: @cart }
+      = render partial: 'carts/partials/mobile/orders', locals: { cart_items: @cart_items }
     .hidden-xs
-      = render partial: 'carts/partials/orders', locals: { cart: @cart }
+      = render partial: 'carts/partials/orders', locals: { cart_items: @cart_items }
     = render partial: 'carts/partials/order_summary', locals: { cart: @cart }

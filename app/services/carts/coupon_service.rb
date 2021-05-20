@@ -11,7 +11,7 @@ module Carts
       if coupon_form.invalid?
         @errors = coupon_form.errors
       else
-        coupon = Coupon.find_by(code: coupon_form.attributes[:code])
+        coupon = Coupon.find_by(code: coupon_form.code)
         coupon.update(cart: cart)
       end
 

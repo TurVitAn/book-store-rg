@@ -1,8 +1,5 @@
 module Carts
   class UpdateItemService
-    INCREMENT = 1
-    DECREMENT = -1
-
     def initialize(id:, quantity:)
       @id = id
       @quantity = quantity.to_i
