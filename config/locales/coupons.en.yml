@@ -6,3 +6,7 @@ en:
       not_exist: is not exist
       invalid: is invalid
       used: is already used
+  notice:
+    coupon:
+      created: Coupon was successfully created
+      updated: Coupon was successfully updated
