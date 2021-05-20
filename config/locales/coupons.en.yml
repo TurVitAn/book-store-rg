@@ -1,6 +1,6 @@
 en:
   coupons:
-    check:
+    update:
       success: Coupon was successfully applied to your order
     alert:
       not_exist: is not exist

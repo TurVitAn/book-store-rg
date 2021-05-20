@@ -1,9 +1,9 @@
 %main.container.general-main-wrap
-  %h1.general-title-margin
-    = t('.title')
-  - if @cart.cart_items.blank?
+  - if @cart_items.blank?
     = render 'carts/partials/empty_cart'
   - else
+    %h1.general-title-margin
+      = t('.title')
     .visible-xs
       = render partial: 'carts/partials/mobile/orders', locals: { cart: @cart }
     .hidden-xs

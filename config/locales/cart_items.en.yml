@@ -1,6 +1,6 @@
 en:
   carts:
-    show:
+    index:
       title: Cart
     partials:
       empty_cart:
@@ -13,6 +13,7 @@ en:
         coupon: 'Coupon:'
         order_total: 'Order Total:'
         checkout: 'Checkout'
+        coupon_is_applied: Coupon already applied to your order
       orders:
         product: Product
         price: Price

@@ -14,7 +14,7 @@
       %span.in-grey-600
         = t('.sub_total')
     %th.col-close
-  - cart.cart_items.includes([:book]).each do |item|
+  - cart_items.each do |item|
     %tr
       %td
         = link_to book_path(item.book) do
