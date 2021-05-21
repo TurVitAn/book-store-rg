@@ -9,6 +9,10 @@ class HeaderPresenter
     order ? order.items_count : DEFAULT_BOOKS_COUNT
   end
 
+  def categories
+    Category.all
+  end
+
   private
 
   attr_reader :order

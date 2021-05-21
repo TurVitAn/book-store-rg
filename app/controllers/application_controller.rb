@@ -2,13 +2,9 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   protect_from_forgery
 
-  before_action :categories, :header_presenter, :current_order
+  before_action :header_presenter, :current_order
 
   private
-
-  def categories
-    @categories ||= Category.all
-  end
 
   def header_presenter
     @header_presenter = HeaderPresenter.new(order: current_order)

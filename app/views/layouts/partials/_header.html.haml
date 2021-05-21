@@ -18,6 +18,6 @@
           = presenter.books_in_order
     .navbar-collapse.collapse.pl-30#navbar{ 'aria-expanded': 'false' }
       .visible-xs
-        = render partial: 'layouts/partials/mobile/navigation', locals: { categories: categories }
+        = render partial: 'layouts/partials/mobile/navigation', locals: { categories: presenter.categories }
       .hidden-xs
-        = render partial: 'layouts/partials/navigation', locals: { categories: categories }
+        = render partial: 'layouts/partials/navigation', locals: { categories: presenter.categories }
