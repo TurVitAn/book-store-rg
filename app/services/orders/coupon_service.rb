@@ -5,21 +5,21 @@ module Orders
     def initialize(params, order)
       @coupon_form = CouponForm.new(params)
       @order = order
+      @errors = []
     end
 
     def call
-      if coupon_form.invalid?
-        @errors = coupon_form.errors
-      else
-        coupon = Coupon.find_by(code: coupon_form.code)
-        coupon.update(order: order)
-      end
+      coupon_form.valid? ? coupon.update(order: order) : @errors = coupon_form.errors
 
-      errors.blank?
+      errors.empty?
     end
 
     private
 
     attr_reader :order, :coupon_form
+
+    def coupon
+      @coupon ||= Coupon.find_by(code: coupon_form.params[:code])
+    end
   end
 end
