@@ -6,6 +6,7 @@ en:
       not_exist: is not exist
       invalid: is invalid
       used: is already used
+      something_wrong: Something went wrong. Try again later!
   notice:
     coupon:
       created: Coupon was successfully created

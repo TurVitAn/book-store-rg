@@ -15,7 +15,7 @@ class CouponForm
   end
 
   def coupon_is_not_exists
-    errors.add(:code, t('coupons.alert.not_exist')) unless coupon
+    errors.add(:code, I18n.t('coupons.alert.not_exist')) unless coupon
   end
 
   def coupon_is_used
@@ -23,6 +23,6 @@ class CouponForm
   end
 
   def coupon_is_invalid
-    errors.add(:code, t('coupons.alert.invalid')) unless coupon.is_valid
+    errors.add(:code, I18n.t('coupons.alert.invalid')) unless coupon.is_valid
   end
 end
