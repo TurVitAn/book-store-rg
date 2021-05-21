@@ -14,7 +14,7 @@ en:
         dimensions: Dimensions
         materials: Materials
         button:
-          add_to_cart: Add to Cart
+          add_to_order: Add to Order
         link:
           read_more: Read More
           hide: Hide

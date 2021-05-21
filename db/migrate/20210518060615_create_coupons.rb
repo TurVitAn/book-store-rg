@@ -4,7 +4,7 @@ class CreateCoupons < ActiveRecord::Migration[6.1]
       t.string :code
       t.float :discount
       t.boolean :is_valid, default: true
-      t.references :cart, foreign_key: true, index: true
+      t.references :order, foreign_key: true, index: true
 
       t.timestamps
     end

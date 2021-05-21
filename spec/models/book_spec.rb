@@ -4,7 +4,7 @@ RSpec.describe Book, type: :model do
     it { is_expected.to have_many(:authors).through(:author_books).dependent(:destroy) }
     it { is_expected.to have_many(:reviews).dependent(:destroy) }
     it { is_expected.to have_many(:book_images).dependent(:destroy) }
-    it { is_expected.to have_many(:cart_items).dependent(:destroy) }
+    it { is_expected.to have_many(:order_items).dependent(:destroy) }
     it { is_expected.to belong_to(:category) }
   end
 end
