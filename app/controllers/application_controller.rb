@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
   private
 
   def header_presenter
-    @header_presenter = HeaderPresenter.new(order: current_order)
+    @header_presenter = HeaderPresenter.new(order: current_order&.decorate)
   end
 
   def current_order
-    Order.find_by(id: cookies[:order_id])&.decorate
+    Order.find_by(id: cookies[:order_id])
   end
 
   def record_not_found
