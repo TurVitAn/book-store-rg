@@ -4,6 +4,6 @@ class CartItemDecorator < ApplicationDecorator
   decorates_association :book
 
   def subtotal_price
-    object.quantity * object.book.price
+    quantity * book.price
   end
 end

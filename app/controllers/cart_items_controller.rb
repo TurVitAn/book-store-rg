@@ -1,6 +1,8 @@
 class CartItemsController < ApplicationController
   def create
-    Carts::PersistItemService.new(params: cart_item_params, cart: @cart).call
+    service = Carts::PersistItemService.new(params: cart_item_params, cart: current_cart)
+    service.call
+    cookies[:cart_id] = service.cart.id
     redirect_back_with_flash(t('.success'))
   end
 
@@ -10,7 +12,9 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
-    CartItem.find_by(id: params[:id]).destroy
+    service = Carts::DestroyItemService.new(item_id: params[:id], cart: current_cart)
+    service.call
+    cookies.delete(:cart_id) if service.cart_destroyed?
     redirect_to(carts_path, notice: t('.success'))
   end
 

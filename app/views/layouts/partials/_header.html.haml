@@ -11,11 +11,11 @@
       %a.shop-link.pull-right.visible-xs{ href: carts_path }
         %span.shop-icon
           %span.shop-quantity
-            = cart.items_count
+            = presenter.books_in_cart
     %a.shop-link.pull-right.hidden-xs{ href: carts_path }
       %span.shop-icon
         %span.shop-quantity
-          = cart.items_count
+          = presenter.books_in_cart
     .navbar-collapse.collapse.pl-30#navbar{ 'aria-expanded': 'false' }
       .visible-xs
         = render partial: 'layouts/partials/mobile/navigation', locals: { categories: categories }

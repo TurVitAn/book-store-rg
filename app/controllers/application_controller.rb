@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   protect_from_forgery
 
-  before_action :categories, :cart
+  before_action :categories, :header_presenter, :current_cart
 
   private
 
@@ -10,16 +10,12 @@ class ApplicationController < ActionController::Base
     @categories ||= Category.all
   end
 
-  def cart
-    if user_signed_in?
-      @cart = current_user.cart || current_user.create_cart
-    elsif cookies[:cart_id]
-      @cart = Cart.find_by(id: cookies[:cart_id])
-    else
-      @cart = Cart.create
-      cookies[:cart_id] = @cart.id
-    end
-    @cart = @cart.decorate
+  def header_presenter
+    @header_presenter = HeaderPresenter.new(cart: current_cart)
+  end
+
+  def current_cart
+    Cart.find_by(id: cookies[:cart_id])&.decorate
   end
 
   def record_not_found

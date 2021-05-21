@@ -1,6 +1,6 @@
 class CouponsController < ApplicationController
   def update
-    service = Carts::CouponService.new(coupon_params, @cart)
+    service = Carts::CouponService.new(coupon_params, current_cart)
     if service.call
       flash[:notice] = t('.success')
     else
