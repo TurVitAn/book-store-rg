@@ -30,7 +30,7 @@ module Orders
     def update_item(item)
       return if item.update(quantity: item.quantity + params[:quantity].to_i)
 
-      @errors << I18n.t('coupons.alert.something_wrong')
+      @errors << I18n.t('orders.alert.something_wrong')
     end
   end
 end

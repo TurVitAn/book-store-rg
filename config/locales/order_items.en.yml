@@ -24,6 +24,8 @@ en:
           price: Price
           quantity: Quantity
           sub_total: SubTotal
+    alert:
+      something_wrong: Something went wrong. Try again later!
   order_items:
     destroy:
       success: Book was deleted from your order!
