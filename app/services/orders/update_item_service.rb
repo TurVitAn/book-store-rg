@@ -9,9 +9,9 @@ module Orders
     end
 
     def call
-      item ? update_item : add_error(t('orders.alert.something_wrong'))
+      item ? update_item : add_error(I18n.t('orders.alert.something_wrong'))
 
-      errors.empty?
+      errors.blank?
     end
 
     private
@@ -23,13 +23,13 @@ module Orders
     end
 
     def update_item
-      return add_error(t('orders.alert.something_wrong')) unless valid_quantity?
+      return add_error(I18n.t('orders.alert.something_wrong')) unless valid_quantity?
 
       item_saved?
     end
 
     def item_saved?
-      add_error(t('orders.alert.something_wrong')) unless item.save
+      add_error(I18n.t('orders.alert.something_wrong')) unless item.save
     end
 
     def valid_quantity?
