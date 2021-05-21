@@ -12,7 +12,7 @@ module Orders
       @order ||= Order.create
       item ? update_item(item) : create_item
 
-      errors.blank?
+      errors.empty?
     end
 
     private

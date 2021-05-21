@@ -11,7 +11,7 @@ module Orders
     def call
       item ? update_item : add_error(t('orders.alert.something_wrong'))
 
-      errors.blank?
+      errors.empty?
     end
 
     private
