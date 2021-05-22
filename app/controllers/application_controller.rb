@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from ActiveRecord::RecordNotFound, ActiveRecord::ActiveRecordError, with: :record_not_found
   protect_from_forgery
 
-  before_action :header_presenter, :current_order
+  before_action :header_presenter, :merge_order_items
 
   private
 
@@ -11,7 +11,16 @@ class ApplicationController < ActionController::Base
   end
 
   def current_order
-    Order.find_by(id: cookies[:order_id])
+    return Order.find_by(id: cookies[:order_id]) unless user_signed_in?
+
+    current_user.orders.find_by(status: Order.statuses[:pending])
+  end
+
+  def merge_order_items
+    return unless user_signed_in?
+
+    Orders::MergeService.new(guest_order_id: cookies[:order_id], user: current_user).call
+    cookies.delete(:order_id)
   end
 
   def record_not_found

@@ -19,7 +19,7 @@ class CouponForm
   end
 
   def coupon_is_used
-    errors.add(:code, t('coupons.alert.used')) if coupon.order
+    errors.add(:code, I18n.t('coupons.alert.used')) if coupon.order
   end
 
   def coupon_is_invalid

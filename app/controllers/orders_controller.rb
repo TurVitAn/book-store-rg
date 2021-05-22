@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  def index
+  def show
     @order = current_order&.decorate
   end
 end

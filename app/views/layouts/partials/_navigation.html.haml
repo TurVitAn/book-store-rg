@@ -19,7 +19,7 @@
           = username
       %ul.dropdown-menu
         %li
-          %a{ href: '#' }
+          = link_to order_path do
             .fas.fa-shopping-cart
             = t('.link.orders')
         %li

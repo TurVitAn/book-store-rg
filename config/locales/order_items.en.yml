@@ -1,10 +1,17 @@
 en:
+  order_items:
+    destroy:
+      success: Book was deleted from your order!
+    create:
+      success: Book was successfully added to your order!
+    update:
+      success: Book count was changed!
   orders:
-    index:
-      title: Order
+    show:
+      title: Orders
     partials:
       empty_order:
-        empty_order: Your order is empty yet?
+        empty_orders: Your orders are empty yet?
         go_to_shop: Go to shop!
       order_summary:
         apply_coupon: Apply Coupon
@@ -24,12 +31,3 @@ en:
           price: Price
           quantity: Quantity
           sub_total: SubTotal
-    alert:
-      something_wrong: Something went wrong. Try again later!
-  order_items:
-    destroy:
-      success: Book was deleted from your order!
-    create:
-      success: Book was successfully added to your order!
-    update:
-      success: Book count was changed!

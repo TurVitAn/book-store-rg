@@ -1,4 +1,4 @@
-RSpec.describe 'OrdersPage', type: :feature do
+RSpec.describe 'Orders', type: :feature do
   let_it_be(:book) { create(:book).decorate }
   let(:user) { create(:user) }
   let(:home_page) { Pages::HomePage::Home.new }
@@ -6,7 +6,7 @@ RSpec.describe 'OrdersPage', type: :feature do
   before do
     login_as(user, scope: :user)
     home_page.load
-    home_page.slider.buy_first_book
+    home_page.slider.buy_now_buttons.map(&:click)
   end
 
   describe 'index page' do
@@ -37,10 +37,12 @@ RSpec.describe 'OrdersPage', type: :feature do
       it { expect(order_page).to have_content(I18n.t('order_items.update.success')) }
     end
 
-    context 'when click minus icon' do
+    context 'when click minus icon with one book' do
+      let(:error_message) { "Quantity must be greater than #{OrderItemForm::INVALID_QUANTITY}" }
+
       before { order_page.orders.minus_link.click }
 
-      it { expect(order_page).to have_content(I18n.t('order_items.update.success')) }
+      it { expect(order_page).to have_content(error_message) }
     end
 
     context 'when click remove item link' do

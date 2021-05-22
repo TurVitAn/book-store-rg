@@ -8,11 +8,11 @@
         %span.icon-bar
       %a.navbar-brand
         = t('.brand')
-      %a.shop-link.pull-right.visible-xs{ href: orders_path }
+      = link_to order_path, class: 'shop-link pull-right visible-xs' do
         %span.shop-icon
           %span.shop-quantity
             = presenter.books_in_order
-    %a.shop-link.pull-right.hidden-xs{ href: orders_path }
+    = link_to order_path, class: 'shop-link pull-right hidden-xs' do
       %span.shop-icon
         %span.shop-quantity
           = presenter.books_in_order

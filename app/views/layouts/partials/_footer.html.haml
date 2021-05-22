@@ -9,8 +9,7 @@
             = link_to t('.shop'), books_path, class: 'nav-link shop_link'
           - if user_signed_in?
             %li
-              %a.nav-link.orders_link{ href: '#' }
-                = t('.orders')
+              = link_to t('.orders'), order_path, class: 'nav-link orders_link'
             %li
               = link_to t('.settings'), settings_path, class: 'nav-link settings_link'
           %li

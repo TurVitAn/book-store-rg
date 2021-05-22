@@ -19,7 +19,7 @@ module Orders
     attr_reader :order, :coupon_form
 
     def coupon
-      @coupon ||= Coupon.find_by(code: coupon_form.params[:code])
+      @coupon ||= Coupon.find_by(code: coupon_form.code)
     end
   end
 end

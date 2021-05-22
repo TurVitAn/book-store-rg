@@ -1,27 +1,38 @@
 RSpec.describe OrderDecorator do
-  let(:first_book) { build(:book, price: 5.00) }
-  let(:second_book) { build(:book, price: 10.00) }
-  let(:first_order_item) { build(:order_item, book: first_book, quantity: 2) }
-  let(:second_order_item) { build(:order_item, book: second_book, quantity: 1) }
-  let(:order) { build(:order, order_items: [first_order_item, second_order_item]).decorate }
+  let(:first_item) { build(:order_item) }
+  let(:second_item) { build(:order_item) }
+  let(:order) { build(:order, order_items: [first_item, second_item]).decorate }
 
   describe '#items_count' do
-    it { expect(order.items_count).to eq(3) }
+    let(:items_count_result) { first_item.quantity + second_item.quantity }
+
+    it { expect(order.items_count).to eq(items_count_result) }
   end
 
   describe '#subtotal_price' do
-    it { expect(order.subtotal_price).to eq(20.00) }
+    let(:subtotal_price_result) do
+      second_item.book.price * second_item.quantity + first_item.book.price * first_item.quantity
+    end
+
+    it { expect(order.subtotal_price).to eq(subtotal_price_result) }
   end
 
   describe '#coupon_discount' do
-    before { build(:coupon, order: order, discount: 10.00) }
+    context 'when order without coupon' do
+      it { expect(order.coupon_discount).to eq(OrderDecorator::DEFAULT_DISCOUNT) }
+    end
 
-    it { expect(order.coupon_discount).to eq(2.00) }
+    context 'when order with coupon' do
+      let(:coupon) { build(:coupon, order: order) }
+      let(:coupon_discount_result) { (coupon.order.subtotal_price * coupon.discount / OrderDecorator::DIVIDER) }
+
+      it { expect(coupon.order.coupon_discount).to eq(coupon_discount_result) }
+    end
   end
 
   describe '#order_total' do
-    before { build(:coupon, order: order, discount: 50.00) }
+    let(:order_total_result) { order.subtotal_price - order.coupon_discount }
 
-    it { expect(order.order_total).to eq(10.00) }
+    it { expect(order.order_total).to eq(order_total_result) }
   end
 end

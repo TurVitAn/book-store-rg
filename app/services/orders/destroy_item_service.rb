@@ -1,18 +1,16 @@
 module Orders
   class DestroyItemService
-    attr_reader :errors
+    ITEMS_COUNT_TO_DESTROY_ORDER = 1
 
     def initialize(item_id:, order:)
       @id = item_id
       @order = order
-      @errors = []
     end
 
     def call
-      delete_order_item
-      destroy_order
+      return order.destroy if order.order_items.count == ITEMS_COUNT_TO_DESTROY_ORDER
 
-      errors.empty?
+      order_item.destroy
     end
 
     delegate :destroyed?, to: :order, prefix: true
@@ -21,16 +19,8 @@ module Orders
 
     attr_reader :id, :order
 
-    def delete_order_item
-      order_item ? order_item.delete : @errors << I18n.t('orders.alert.something_wrong')
-    end
-
-    def destroy_order
-      order.destroy if order.order_items.empty?
-    end
-
     def order_item
-      @order_item ||= order.order_items.find_by(id: id)
+      @order_item ||= order.order_items.find(id)
     end
   end
 end

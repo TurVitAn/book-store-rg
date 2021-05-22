@@ -1,13 +1,9 @@
 class CouponsController < ApplicationController
   def update
     service = Orders::CouponService.new(coupon_params, current_order)
-    if service.call
-      flash[:notice] = t('.success')
-    else
-      presenter = CouponPresenter.new(errors: service.errors)
-      flash[:alert] = presenter.errors
-    end
-    redirect_to(orders_path)
+    result = service.call ? :notice : :alert
+    flash[result] = service.errors.any? ? service.errors.full_messages.to_sentence : t('.success')
+    redirect_to(order_path)
   end
 
   private

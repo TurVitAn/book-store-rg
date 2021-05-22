@@ -4,12 +4,11 @@ module Orders
 
     def initialize(params:, order:)
       @params = params
-      @order = order
+      @order = order || Order.new
       @errors = []
     end
 
     def call
-      @order ||= Order.create
       item ? update_item(item) : create_item
 
       errors.empty?
@@ -17,20 +16,26 @@ module Orders
 
     private
 
-    attr_reader :params
+    attr_reader :params, :order_item_form
 
     def item
       @item ||= order.order_items.find_by(book_id: params[:book_id])
     end
 
     def create_item
-      order.order_items.create(params)
+      return @errors = order_item_form.errors unless quantity_valid?(params)
+
+      order.order_items.build(params).save
     end
 
     def update_item(item)
-      return if item.update(quantity: item.quantity + params[:quantity].to_i)
+      item.quantity += params[:quantity].to_i
+      quantity_valid?(item.attributes) ? item.save : @errors = order_item_form.errors
+    end
 
-      @errors << I18n.t('orders.alert.something_wrong')
+    def quantity_valid?(params)
+      @order_item_form = OrderItemForm.new(params)
+      order_item_form.valid?
     end
   end
 end
