@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :order_items, only: %i[create update destroy]
   resource :cart, only: :show
   resource :coupon, only: :update
+  get '/checkout_login', to: 'homes#checkout_login'
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   mount ImageUploader.derivation_endpoint => '/derivations/image'
