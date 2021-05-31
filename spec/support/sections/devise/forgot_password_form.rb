@@ -4,7 +4,7 @@ module Sections
       element :email_label, 'label[for="user_email"]'
       element :email_field, '#user_email'
       element :send_instructions_button, 'input[type="submit"]'
-      element :cancel_button, 'button.reset-btn'
+      element :cancel_link, '.in-gold-500'
 
       def fill_in(email)
         email_field.set(email)

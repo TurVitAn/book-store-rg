@@ -24,7 +24,7 @@ module Users
     private
 
     def authenticate_user(kind)
-      flash[:notice] = t 'devise.omniauth_callbacks.success', kind: kind
+      flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: kind)
       sign_in_and_redirect(@user, event: :authentication)
     end
 

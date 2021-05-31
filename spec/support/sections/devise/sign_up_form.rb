@@ -9,10 +9,10 @@ module Sections
       element :confirm_password_field, '#user_password_confirmation'
       element :sign_up_button, 'input[type="submit"]'
 
-      def registrate_user(email, password, password_confirmation)
+      def registrate_user(email, password, password_confirm)
         email_field.set(email)
         password_field.set(password)
-        confirm_password_field.set(password_confirmation)
+        confirm_password_field.set(password_confirm)
         sign_up_button.click
       end
     end

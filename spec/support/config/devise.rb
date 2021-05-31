@@ -3,33 +3,33 @@ require 'devise'
 OmniAuth.config.test_mode = true
 
 OmniAuth.config.mock_auth[:facebook] = {
-  'uid' => '1111',
+  'uid' => 9.times.map { FFaker::Random.rand(1..9) }.join,
   'provider' => 'facebook',
   'credentials' => {
-    'token' => 'token',
-    'secret' => 'secret'
+    'token' => FFaker::Lorem.characters(50),
+    'secret' => FFaker::Lorem.characters(10)
   },
   'extra' => {
     'raw_info' => {
-      'name' => 'Blonde Brain',
-      'username' => 'blonde_brain',
-      'email' => 'blonde@brain.com'
+      'name' => FFaker::Name.first_name,
+      'username' => FFaker::Name.last_name,
+      'email' => FFaker::Internet.free_email
     }
   }
 }
 
 OmniAuth.config.mock_auth[:google_oauth2] = {
-  'uid' => '1111',
+  'uid' => 9.times.map { FFaker::Random.rand(1..9) }.join,
   'provider' => 'google',
   'credentials' => {
-    'token' => 'token',
-    'secret' => 'secret'
+    'token' => FFaker::Lorem.characters(50),
+    'secret' => FFaker::Lorem.characters(10)
   },
   'extra' => {
     'raw_info' => {
-      'name' => 'Blonde Brain',
-      'username' => 'blonde_brain',
-      'email' => 'blonde@brain.com'
+      'name' => FFaker::Name.first_name,
+      'username' => FFaker::Name.last_name,
+      'email' => FFaker::Internet.free_email
     }
   }
 }

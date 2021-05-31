@@ -79,7 +79,7 @@ RSpec.describe Users::OmniauthCallbacksController, type: :controller do
     let(:valid_email) { 'user@gmail.com' }
     let(:user) { create(:user, email: valid_email) }
 
-    it { expect { user }.to change(User, :count).by(1) }
+    it { expect { user }.to change(User, :count).from(0).to(1) }
   end
 
   context 'when password invalid' do
@@ -94,6 +94,6 @@ RSpec.describe Users::OmniauthCallbacksController, type: :controller do
     let(:valid_password) { 'Az_123456' }
     let(:user) { create(:user, password: valid_password) }
 
-    it { expect { user }.to change(User, :count).by(1) }
+    it { expect { user }.to change(User, :count).from(0).to(1) }
   end
 end

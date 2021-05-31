@@ -59,6 +59,7 @@ en:
         confirm_password: Confirm new password
       new:
         forgot_your_password: Forgot your password?
+        email: Email
         enter_email: Enter email
         send_me_reset_password_instructions: Send me reset password instructions
         cancel: Cancel

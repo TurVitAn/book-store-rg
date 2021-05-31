@@ -4,7 +4,6 @@
   %p
     = t('.header')
     = succeed ',' do
-      %a{ href: 'https://bookstore-rg-turvitan.herokuapp.com/' }
-        = t('.brand')
+      = link_to t('.brand'), Rails.application.credentials[:link_app]
   %p
     = t('.lines')
