@@ -8,6 +8,7 @@
         = t('.quick_register')
       %p.general-info-text.font-12.mb-20
         = t('.create_password_later')
+      = f.hidden_field :quick_register, value: true
       = f.label :email, t('.email')
       = f.input :email,
         required: true,

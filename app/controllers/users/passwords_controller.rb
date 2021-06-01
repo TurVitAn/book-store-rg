@@ -1,9 +1,9 @@
 module Users
   class PasswordsController < Devise::RegistrationsController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only: :update
 
     def create
-      without_password? ? create_user_without_password : super
+      params[:user][:quick_register] ? quick_registrate_user : super
     end
 
     def update
@@ -12,14 +12,21 @@ module Users
 
     private
 
-    def without_password?
-      params[resource_name][:password].blank? && params[resource_name].key?(:email)
+    def quick_registrate_user
+      params[:user][:password] = params[:user][:password_confirmation] = Devise.friendly_token
+      build_resource(sign_up_params)
+      resource.skip_confirmation!
+      resource.save ? authenticate_user : redirect_back_with_errors
     end
 
-    def create_user_without_password
-      user = User.create(email: params[resource_name][:email], confirmed_at: Time.now.utc)
-      user.send_reset_password_instructions
-      redirect_back(fallback_location: root_path, notice: I18n.t('devise.passwords.send_instructions'))
+    def authenticate_user
+      sign_up(resource_name, resource)
+      resource.send_reset_password_instructions
+      redirect_to(checkout_index_path, notice: I18n.t('devise.passwords.send_instructions'))
+    end
+
+    def redirect_back_with_errors
+      redirect_back(fallback_location: cart_path, alert: resource.errors.full_messages_for(:email).to_sentence)
     end
 
     def update_resource(resource, params)
