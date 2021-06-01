@@ -16,7 +16,7 @@ module Users
 
     def send_fail_response
       flash.alert = t('devise.registrations.update.alert')
-      @presenter = SettingsPresenter.new(user: resource)
+      @settings_presenter = SettingsPresenter.new(user: resource)
       render 'settings/index'
     end
 

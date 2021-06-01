@@ -10,8 +10,8 @@
         = t('.privacy')
   .tab-content
     .tab-pane.fade.in.active#address{ role: 'tabpanel' }
-      = render partial: 'settings/partials/addresses', locals: { billing_address: @presenter.billing_address,
-                        shipping_address: @presenter.shipping_address, billing_errors: @presenter.billing_errors,
-                        shipping_errors: @presenter.shipping_errors, countries: @presenter.countries }
+      = render partial: 'settings/partials/addresses', locals: { billing_address: @settings_presenter.billing_address,
+             shipping_address: @settings_presenter.shipping_address, billing_errors: @settings_presenter.billing_errors,
+             shipping_errors: @settings_presenter.shipping_errors, countries: @settings_presenter.countries }
     .tab-pane.fade#privacy{ role: 'tabpanel' }
       = render partial: 'settings/partials/privacy'
