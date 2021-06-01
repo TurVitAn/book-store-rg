@@ -21,4 +21,11 @@ RSpec.describe HomesController, type: :controller do
     it { expect(response).to have_http_status(:success) }
     it { expect(response).to render_template(:privacy_policy) }
   end
+
+  describe 'GET /checkout_login' do
+    before { get :checkout_login }
+
+    it { expect(response).to have_http_status(:success) }
+    it { expect(response).to render_template(:checkout_login) }
+  end
 end
