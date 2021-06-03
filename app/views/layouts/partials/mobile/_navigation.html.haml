@@ -5,6 +5,7 @@
     = link_to t('.home'), root_path, class: 'home_link'
   %li
     %a{ type: 'button', 'data-toggle': 'collapse', href: '#menu', 'aria-expanded': 'false', 'aria-controls': 'menu' }
+      .fas.fa-book
       = t('.shop')
     %ul.collapse.list-unstyled.pl-30.mb-10#menu{ 'aria-expanded': 'false' }
       - categories.each do |category|
@@ -20,7 +21,7 @@
       %ul.collapse.list-unstyled.pl-30.mb-10#menu-account{ 'aria-expanded': 'false' }
         %li
           %a.collapse-link{ href: '#' }
-            .fa.fa-cog
+            .fas.fa-shopping-cart
             = t('.link.orders')
         %li
           = link_to settings_path, class: 'collapse-link' do
