@@ -14,8 +14,9 @@ en:
         remove_account: Remove Account
       forms:
         address:
-          country: Select a country
           save: Save
+        fields:
+          country: Select a country
         email:
           reconfirmation: 'Currently waiting confirmation for: '
           save: Save
