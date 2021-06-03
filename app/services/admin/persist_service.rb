@@ -13,13 +13,10 @@ module Admin
       @id = params[:id]
       @params = params[ENTITIES.key(@entity_class)]
       @form = "#{@entity_class}Form".constantize.new(@params)
-      @errors = {}
     end
 
     def call
-      form.valid? ? persist_entity : @errors = form.errors
-
-      errors.blank?
+      form.valid? ? persist_entity : collect_errors
     end
 
     private
@@ -27,7 +24,12 @@ module Admin
     attr_reader :entity_class, :id, :params, :form
 
     def persist_entity
-      id ? entity_class.find_by(id: id).update(params) : entity_class.create(params)
+      entity_class.find_or_initialize_by(id: id).update(params)
+    end
+
+    def collect_errors
+      @errors = form.errors || {}
+      errors.blank?
     end
   end
 end
