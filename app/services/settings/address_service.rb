@@ -11,6 +11,8 @@ module Settings
 
     def call
       form.valid? ? save_address : collect_errors
+
+      errors.blank?
     end
 
     private
@@ -27,7 +29,6 @@ module Settings
 
     def collect_errors
       @errors = form.errors
-      errors.blank?
     end
   end
 end

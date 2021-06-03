@@ -14,7 +14,7 @@ RSpec.describe 'SettingsPrivacy', type: :feature do
     end
 
     context 'when fill in email form with invalid email' do
-      let(:new_invalid_email) { '!!!' }
+      let(:new_invalid_email) { "@#{FFaker::Internet.free_email}" }
 
       before { settings_page.email_form.submit(new_invalid_email) }
 
@@ -39,7 +39,7 @@ RSpec.describe 'SettingsPrivacy', type: :feature do
     end
 
     context 'with invalid password input' do
-      let(:new_invalid_password) { '!' }
+      let(:new_invalid_password) { " #{FFaker::Internet.password(8)}" }
 
       before { settings_page.password_form.fill_in(user.password, new_invalid_password) }
 
@@ -57,7 +57,7 @@ RSpec.describe 'SettingsPrivacy', type: :feature do
     end
 
     context 'with valid password input' do
-      let(:new_valid_password) { 'RgRAILS2021' }
+      let(:new_valid_password) { "Aa1#{FFaker::Internet.password(8)}" }
 
       before { settings_page.password_form.fill_in(user.password, new_valid_password) }
 
