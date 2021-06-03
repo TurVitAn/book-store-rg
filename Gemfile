@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'aasm', '~> 5.2'
 gem 'activeadmin', '~> 2.9'
 gem 'aws-sdk-s3', '~> 1.94', '>= 1.94.1'
 gem 'bootsnap', '>= 1.4.4', require: false
