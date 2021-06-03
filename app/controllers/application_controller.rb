@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def current_order
     return Order.find_by(id: cookies[:order_id]) unless user_signed_in?
 
-    current_user.orders.find_by(status: Order.statuses[:pending])
+    current_user.orders.find_by(status: :pending) || current_user.orders.find_by(status: params[:step])
   end
 
   def merge_order_items
