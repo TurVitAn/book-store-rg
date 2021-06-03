@@ -10,21 +10,24 @@ module Settings
     end
 
     def call
-      form.valid? ? save_address : @errors = form.errors
-
-      errors.blank?
+      form.valid? ? save_address : collect_errors
     end
 
     private
 
     attr_reader :user, :params, :form
 
+    def save_address
+      address ? address.update(params) : Address.create(params)
+    end
+
     def address
       @address ||= Address.find_by(addressable_id: user.id, address_type: params[:address_type])
     end
 
-    def save_address
-      address ? address.update(params) : Address.create(params)
+    def collect_errors
+      @errors = form.errors
+      errors.blank?
     end
   end
 end
