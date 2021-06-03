@@ -1,4 +1,4 @@
-module Checkout
+module Checkouts
   class AddressService
     def initialize(params:, user:)
       @params = params
@@ -8,9 +8,10 @@ module Checkout
     end
 
     def call
+      validate_forms
       params[:use_billing_address] ? save_with_hidden_shipping : persist_addresses
 
-      shipping_form.valid? && billing_form.valid?
+      forms_valid?
     end
 
     def presenter
@@ -22,7 +23,7 @@ module Checkout
     attr_reader :params, :user, :billing_form, :shipping_form
 
     def persist_addresses
-      return if shipping_form.invalid? && billing_form.invalid?
+      return unless forms_valid?
 
       save_address(billing_form.attributes.merge(addressable: user))
       save_address(shipping_form.attributes.merge(addressable: user))
@@ -39,6 +40,15 @@ module Checkout
     def save_address(attributes)
       address = Address.find_by(addressable_id: user.id, address_type: attributes[:address_type])
       address ? address.update(attributes) : Address.create(attributes)
+    end
+
+    def forms_valid?
+      shipping_form.valid? && billing_form.valid?
+    end
+
+    def validate_forms
+      billing_form.validate
+      shipping_form.validate
     end
   end
 end

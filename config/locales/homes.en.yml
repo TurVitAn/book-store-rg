@@ -1,21 +1,6 @@
 en:
   homes:
     partials:
-      checkout_login:
-        new_customer_form:
-          new_customer: New Customer
-          quick_register: Quik Register
-          create_password_later: You’ll be able to create password later
-          continue_to_checkout: Continue to Checkout
-          email: Email
-          enter_email: Enter email
-        returning_customer_form:
-          returning_customer: Returning Customer
-          log_in_with_password: Log In with Password
-          email: Email
-          enter_email: Enter email
-          password: Password
-          enter_password: Enter password
       newest_books:
         button:
           buy_now: Buy Now

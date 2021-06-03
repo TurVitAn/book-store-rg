@@ -1,4 +1,4 @@
-module Checkout
+module Checkouts
   class ShowService
     PRESENTERS = {
       address: AddressPresenter

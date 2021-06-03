@@ -1,7 +1,7 @@
 .text-center
   %h3.general-subtitle
     = t('.new_customer')
-  = render partial: 'homes/partials/checkout_login/omniauth_authorize'
+  = render partial: 'checkouts/partials/login/omniauth_authorize'
   = simple_form_for(:user, url: registration_path(:user), html: { class: 'general-form' }) do |f|
     .mb-40
       %p.mb-5

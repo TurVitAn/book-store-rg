@@ -1,0 +1,34 @@
+en:
+  checkouts:
+    partials:
+      address:
+        form:
+          country: Select a country
+        billing_address: Billing Address
+        shipping_address: Shipping Address
+        fields_required: all fields are required
+        use_billing: Use Billing Adress
+        save_and_continue: Save and Continue
+      login:
+        new_customer_form:
+          new_customer: New Customer
+          quick_register: Quik Register
+          create_password_later: You’ll be able to create password later
+          continue_to_checkout: Continue to Checkout
+          email: Email
+          enter_email: Enter email
+        returning_customer_form:
+          returning_customer: Returning Customer
+          log_in_with_password: Log In with Password
+          email: Email
+          enter_email: Enter email
+          password: Password
+          enter_password: Enter password
+      order_summary:
+        order_summary: Order Summary
+        item_total: 'Item Total: '
+        coupon: 'Coupon: '
+        shipping: 'Shipping: '
+        order_total: 'Order Total: '
+      steps:
+        checkout: 'Checkout'

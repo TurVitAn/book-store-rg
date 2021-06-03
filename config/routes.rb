@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   resources :settings, only: :index
   resources :reviews, only: :create
   resources :order_items, only: %i[create update destroy]
-  resources :checkout, param: :step, only: %i[show update]
+  resources :checkouts, param: :step, only: %i[show update]
   resource :cart, only: :show
   resource :coupon, only: :update
-  get '/checkout_login', to: 'homes#checkout_login'
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   mount ImageUploader.derivation_endpoint => '/derivations/image'

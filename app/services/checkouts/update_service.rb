@@ -1,9 +1,9 @@
-module Checkout
+module Checkouts
   class UpdateService
     attr_reader :presenter
 
     SERVICES = {
-      address: Checkout::AddressService
+      address: Checkouts::AddressService
     }.freeze
 
     STEPS = {
