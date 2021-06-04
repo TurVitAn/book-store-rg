@@ -1,0 +1,36 @@
+RSpec.describe Checkouts::ShowService do
+  let(:order_item) { create(:order_item) }
+  let(:order) { create(:order, order_items: [order_item]) }
+
+  describe '#call' do
+    context 'when step is login' do
+      subject(:execute_service) { described_class.new(params: params, user: order.user, order: order).call }
+
+      let(:params) { { step: :login } }
+
+      it 'returns nil' do
+        expect(execute_service).to be_nil
+      end
+    end
+
+    context 'when step is address' do
+      subject(:execute_service) { described_class.new(params: params, user: order.user, order: order).call }
+
+      let(:params) { { step: :address } }
+
+      it 'returns AddressCheckoutPresenter' do
+        expect(execute_service.class).to eq(AddressPresenter)
+      end
+    end
+
+    context 'when step is delivery' do
+      subject(:execute_service) { described_class.new(params: params, user: order.user, order: order).call }
+
+      let(:params) { { step: :delivery } }
+
+      it 'returns DeliveryPresenter' do
+        expect(execute_service.class).to eq(DeliveryPresenter)
+      end
+    end
+  end
+end

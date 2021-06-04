@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_142902) do
+ActiveRecord::Schema.define(version: 2021_06_04_085015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,15 @@ ActiveRecord::Schema.define(version: 2021_05_18_142902) do
     t.index ["order_id"], name: "index_coupons_on_order_id"
   end
 
+  create_table "deliveries", force: :cascade do |t|
+    t.string "method"
+    t.float "price"
+    t.integer "from_days"
+    t.integer "to_days"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "book_id"
@@ -128,6 +137,8 @@ ActiveRecord::Schema.define(version: 2021_05_18_142902) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "delivery_id"
+    t.index ["delivery_id"], name: "index_orders_on_delivery_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -170,6 +181,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_142902) do
   add_foreign_key "coupons", "orders"
   add_foreign_key "order_items", "books"
   add_foreign_key "order_items", "orders"
+  add_foreign_key "orders", "deliveries"
   add_foreign_key "orders", "users", on_delete: :cascade
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"

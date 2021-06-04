@@ -19,14 +19,14 @@ RSpec.describe OrderDecorator do
 
   describe '#coupon_discount' do
     context 'when order without coupon' do
-      it { expect(order.coupon_discount).to eq(OrderDecorator::DEFAULT_DISCOUNT) }
+      it { expect(order.coupon_discount).to eq(OrderDecorator::DEFAULT_PRICE) }
     end
 
     context 'when order with coupon' do
       let(:coupon) { build(:coupon, order: order) }
-      let(:coupon_discount_result) { (coupon.order.subtotal_price * coupon.discount / OrderDecorator::DIVIDER) }
+      let(:result) { (coupon.order.subtotal_price * coupon.discount / OrderDecorator::PERCENTAGE_DIVIDER) }
 
-      it { expect(coupon.order.coupon_discount).to eq(coupon_discount_result) }
+      it { expect(coupon.order.coupon_discount).to eq(result) }
     end
   end
 

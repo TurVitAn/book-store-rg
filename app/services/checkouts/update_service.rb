@@ -1,9 +1,10 @@
 module Checkouts
   class UpdateService
-    attr_reader :presenter
+    attr_reader :checkout_presenter
 
     SERVICES = {
-      address: Checkouts::AddressService
+      address: Checkouts::AddressService,
+      delivery: Checkouts::DeliveryService
     }.freeze
 
     STEPS = {
@@ -20,15 +21,15 @@ module Checkouts
     end
 
     def call
-      service = SERVICES[params[:step].to_sym].new(params: params, user: user)
+      service = SERVICES[params[:step].to_sym].new(params: params, user: user, order: order)
       return true if service.call
 
-      @presenter = service.presenter
+      @checkout_presenter = service.presenter
       false
     end
 
     def next_step
-      STEPS[params[:step].to_sym].call(order)
+      STEPS[params[:step].to_sym].call(order) if params[:step] == order.status
       order.status
     end
 

@@ -1,17 +1,18 @@
 module Checkouts
   class AddressService
-    def initialize(params:, user:)
+    def initialize(params:, user:, order:)
       @params = params
       @user = user
+      @order = order
       @billing_form = AddressForm.new(params[:address][:billing_form])
       @shipping_form = AddressForm.new(params[:address][:shipping_form])
     end
 
     def call
-      validate_forms
-      params[:use_billing_address] ? save_with_hidden_shipping : persist_addresses
+      return save_with_hidden_shipping if params[:use_billing_address]
 
-      forms_valid?
+      validate_forms
+      persist_addresses
     end
 
     def presenter

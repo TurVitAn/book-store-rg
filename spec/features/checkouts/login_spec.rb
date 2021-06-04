@@ -1,5 +1,5 @@
 RSpec.describe 'CheckoutLogin', type: :feature do
-  let(:checkout_login_page) { Pages::HomePage::CheckoutLogin.new }
+  let(:checkout_login_page) { Pages::Checkouts::Login.new }
 
   before { checkout_login_page.load }
 
@@ -32,14 +32,6 @@ RSpec.describe 'CheckoutLogin', type: :feature do
     before { checkout_login_page.new_customer.fill_in_form('') }
 
     it { expect(checkout_login_page).to have_content(I18n.t('alert.blank')) }
-  end
-
-  context 'when fill in new customer form with valid email' do
-    let(:email) { FFaker::Internet.free_email }
-
-    before { checkout_login_page.new_customer.fill_in_form(email) }
-
-    it { expect(checkout_login_page).to have_content(I18n.t('devise.passwords.send_instructions')) }
   end
 
   context 'when fill in new customer form with existing email' do

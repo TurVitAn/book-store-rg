@@ -1,6 +1,6 @@
 module Sections
-  module Homes
-    module CheckoutLogin
+  module Checkouts
+    module Login
       class NewCustomer < SitePrism::Section
         element :form_header, 'h3.general-subtitle'
         element :email_label, '.user_email'

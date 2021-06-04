@@ -1,7 +1,8 @@
 module Checkouts
   class ShowService
     PRESENTERS = {
-      address: AddressPresenter
+      address: AddressPresenter,
+      delivery: DeliveryPresenter
     }.freeze
 
     def initialize(params:, user:, order:)
@@ -13,7 +14,7 @@ module Checkouts
     def call
       return if params[:step].to_sym == :login
 
-      order.address! if order.pending?
+      order.address! if order&.pending?
       PRESENTERS[params[:step].to_sym].new(user: user)
     end
 

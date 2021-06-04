@@ -35,5 +35,5 @@
           %span.checkbox-text
             = t('.use_billing')
   .general-text-align.mb-60
-    = render partial: 'checkouts/partials/order_summary', locals: { order: order }
+    = render partial: 'checkouts/partials/order_summary', locals: { order: order, move_right: false }
     = form.button :submit, t('.save_and_continue'), class: 'center-block'
