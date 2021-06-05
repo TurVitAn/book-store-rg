@@ -1,7 +1,7 @@
 RSpec.describe OrderDecorator do
   let(:first_item) { build(:order_item) }
   let(:second_item) { build(:order_item) }
-  let(:order) { build(:order, order_items: [first_item, second_item]).decorate }
+  let(:order) { create(:order, order_items: [first_item, second_item]).decorate }
 
   describe '#items_count' do
     let(:items_count_result) { first_item.quantity + second_item.quantity }
@@ -34,5 +34,11 @@ RSpec.describe OrderDecorator do
     let(:order_total_result) { order.subtotal_price - order.coupon_discount }
 
     it { expect(order.order_total).to eq(order_total_result) }
+  end
+
+  describe '#creation_date' do
+    let(:result) { order.created_at.strftime('%B %d, %Y') }
+
+    it { expect(order.creation_date).to eq(result) }
   end
 end

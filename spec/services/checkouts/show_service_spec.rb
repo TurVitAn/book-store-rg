@@ -52,5 +52,15 @@ RSpec.describe Checkouts::ShowService do
         expect(execute_service.class).to eq(ConfirmPresenter)
       end
     end
+
+    context 'when step is complete' do
+      subject(:execute_service) { described_class.new(params: params, user: order.user, order: order).call }
+
+      let(:params) { { step: :complete } }
+
+      it 'returns CompletePresenter' do
+        expect(execute_service.class).to eq(CompletePresenter)
+      end
+    end
   end
 end

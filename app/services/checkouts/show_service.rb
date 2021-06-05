@@ -4,7 +4,8 @@ module Checkouts
       address: AddressPresenter,
       delivery: DeliveryPresenter,
       payment: PaymentPresenter,
-      confirm: ConfirmPresenter
+      confirm: ConfirmPresenter,
+      complete: CompletePresenter
     }.freeze
 
     def initialize(params:, user:, order:)

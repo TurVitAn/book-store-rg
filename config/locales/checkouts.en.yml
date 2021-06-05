@@ -11,6 +11,22 @@ en:
         fields_required: all fields are required
         use_billing: Use Billing Adress
         save_and_continue: Save and Continue
+      complete:
+        thank_for_order: Thank You for your Order!
+        confirmation_sent: "An order confirmation has been has been sent to %{email}"
+        order_number: "Order %{number}"
+        phone: "Phone %{phone}"
+        back_to_store: Back to Store
+        mobile:
+          items:
+            price: Price
+            quantity: Quantity
+            total: Total
+        items:
+          book: Book
+          price: Price
+          quantity: Quantity
+          total: Total
       confirm:
         place_order: Place Order
         mobile:

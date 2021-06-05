@@ -9,6 +9,11 @@ RSpec.describe Order, type: :model do
     it { is_expected.to have_many(:order_items).dependent(:destroy) }
   end
 
+  describe 'with database indexes' do
+    it { is_expected.to have_db_index(:user_id) }
+    it { is_expected.to have_db_index(:delivery_id) }
+  end
+
   describe 'with enum for status' do
     it {
       expect(order).to define_enum_for(:status)
