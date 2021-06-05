@@ -65,5 +65,18 @@ RSpec.describe Checkouts::UpdateService do
         expect { execute_service }.to change(CreditCard, :count).by(1)
       end
     end
+
+    context 'when step is confirm' do
+      let(:params) { { step: step } }
+      let(:step) { :confirm }
+
+      it 'returns true' do
+        expect(execute_service).to eq(true)
+      end
+
+      it 'creates credit card for order' do
+        expect { execute_service }.to change(order.reload, :number)
+      end
+    end
   end
 end

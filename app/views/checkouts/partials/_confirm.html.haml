@@ -1,0 +1,17 @@
+= render 'checkouts/partials/steps'
+.row.mb-20
+  = render partial: 'checkouts/partials/confirm/address', locals: { address: current_user.shipping_address }
+  = render partial: 'checkouts/partials/confirm/address', locals: { address: current_user.billing_address }
+  .col-sm-3
+    = render partial: 'checkouts/partials/confirm/shipments', locals: { order: order }
+  .col-sm-3
+  = render partial: 'checkouts/partials/confirm/payment', locals: { order: order }
+.visible-xs
+  = render partial: 'checkouts/partials/confirm/mobile/items', locals: { order: order }
+.hidden-xs.divider-lg.pt-20
+  = render partial: 'checkouts/partials/confirm/items', locals: { order: order }
+.text-center.general-text-right
+  = render partial: 'checkouts/partials/order_summary', locals: { order: order, move_right: true }
+.text-center
+  = simple_form_for(checkout_path, method: :put) do |form|
+    = form.button :submit, t('.place_order')

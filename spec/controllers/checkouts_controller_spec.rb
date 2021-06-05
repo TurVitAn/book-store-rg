@@ -78,5 +78,12 @@ RSpec.describe CheckoutsController, type: :controller do
 
       it { expect(response).to have_http_status(:redirect) }
     end
+
+    context 'when step is confirm' do
+      let(:params) { { step: step } }
+      let(:step) { :confirm }
+
+      it { expect(response).to have_http_status(:redirect) }
+    end
   end
 end

@@ -5,7 +5,8 @@ module Checkouts
     SERVICES = {
       address: Checkouts::AddressService,
       delivery: Checkouts::DeliveryService,
-      payment: Checkouts::PaymentService
+      payment: Checkouts::PaymentService,
+      confirm: Checkouts::ConfirmService
     }.freeze
 
     STEPS = {

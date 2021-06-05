@@ -3,7 +3,8 @@ module Checkouts
     PRESENTERS = {
       address: AddressPresenter,
       delivery: DeliveryPresenter,
-      payment: PaymentPresenter
+      payment: PaymentPresenter,
+      confirm: ConfirmPresenter
     }.freeze
 
     def initialize(params:, user:, order:)
