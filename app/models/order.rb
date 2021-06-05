@@ -1,6 +1,12 @@
 class Order < ApplicationRecord
   include AASM
 
+  belongs_to :user, optional: true
+  belongs_to :delivery, optional: true
+  has_one :coupon, dependent: :nullify
+  has_one :credit_card, dependent: :destroy
+  has_many :order_items, dependent: :destroy
+
   enum status: { pending: 0, address: 1, delivery: 2, payment: 3, confirmation: 4, complete: 5 }
 
   aasm column: :status, enum: true do

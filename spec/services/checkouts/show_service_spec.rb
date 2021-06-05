@@ -32,5 +32,15 @@ RSpec.describe Checkouts::ShowService do
         expect(execute_service.class).to eq(DeliveryPresenter)
       end
     end
+
+    context 'when step is payment' do
+      subject(:execute_service) { described_class.new(params: params, user: order.user, order: order).call }
+
+      let(:params) { { step: :payment } }
+
+      it 'returns PaymentPresenter' do
+        expect(execute_service.class).to eq(PaymentPresenter)
+      end
+    end
   end
 end

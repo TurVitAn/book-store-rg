@@ -16,13 +16,12 @@ en:
             method: Method
             days: Days
             price: Price
-            delivery_time: "%{from} to %{to} days"
+            delivery_time: "from %{from} to %{to} days"
         deliveries_descriptions:
           method: Method
           days: Days
           price: Price
-          delivery_time: "%{from} to %{to} days"
-
+          delivery_time: "from %{from} to %{to} days"
       login:
         new_customer_form:
           new_customer: New Customer
@@ -44,5 +43,9 @@ en:
         coupon: 'Coupon: '
         shipping: 'Shipping: '
         order_total: 'Order Total: '
+      payment:
+        credit_card: Credit Card
+        cvv_hint: 3-digit security code, usually found on the back of your card.
+        save_and_continue: Save and Continue
       steps:
-        checkout: 'Checkout'
+        checkout: 'Checkouts'

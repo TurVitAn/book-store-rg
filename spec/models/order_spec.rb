@@ -5,6 +5,7 @@ RSpec.describe Order, type: :model do
     it { is_expected.to belong_to(:user).optional }
     it { is_expected.to belong_to(:delivery).optional }
     it { is_expected.to have_one(:coupon).dependent(:nullify) }
+    it { is_expected.to have_one(:credit_card).dependent(:destroy) }
     it { is_expected.to have_many(:order_items).dependent(:destroy) }
   end
 

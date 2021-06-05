@@ -2,7 +2,8 @@ module Checkouts
   class ShowService
     PRESENTERS = {
       address: AddressPresenter,
-      delivery: DeliveryPresenter
+      delivery: DeliveryPresenter,
+      payment: PaymentPresenter
     }.freeze
 
     def initialize(params:, user:, order:)

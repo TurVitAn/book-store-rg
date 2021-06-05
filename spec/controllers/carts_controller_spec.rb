@@ -5,5 +5,6 @@ RSpec.describe CartsController, type: :controller do
     before { get :show }
 
     it { expect(response).to have_http_status(:success) }
+    it { expect(response).to render_template(:show) }
   end
 end

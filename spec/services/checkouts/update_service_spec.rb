@@ -51,5 +51,19 @@ RSpec.describe Checkouts::UpdateService do
         expect { execute_service }.to change(order.reload, :delivery_id)
       end
     end
+
+    context 'when step is payment and params are valid' do
+      let(:params) { { step: step, credit_card: card_params } }
+      let(:step) { :payment }
+      let(:card_params) { attributes_for(:credit_card) }
+
+      it 'returns true' do
+        expect(execute_service).to eq(true)
+      end
+
+      it 'creates credit card for order' do
+        expect { execute_service }.to change(CreditCard, :count).by(1)
+      end
+    end
   end
 end
