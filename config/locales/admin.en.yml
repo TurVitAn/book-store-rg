@@ -12,6 +12,8 @@ en:
     book_image:
       created: Book image was successfully created
       updated: Book image was successfully updated
+    delivery:
+      saved: Delivery was successfully saved
   alert:
     blank: can't be blank
     must_exist: must exist

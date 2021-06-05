@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_100132) do
   end
 
   create_table "deliveries", force: :cascade do |t|
-    t.string "method"
+    t.string "kind"
     t.float "price"
     t.integer "from_days"
     t.integer "to_days"

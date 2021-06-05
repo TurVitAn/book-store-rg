@@ -1,4 +1,4 @@
-RSpec.describe 'admin/book_images', type: :feature do
+RSpec.describe 'Admin::BookImages', type: :feature do
   let_it_be(:book) { create(:book) }
   let_it_be(:book_image) { create(:book_image, book: book) }
   let(:admin) { create(:admin_user) }

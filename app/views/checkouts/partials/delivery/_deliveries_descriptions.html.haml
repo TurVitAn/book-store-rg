@@ -20,7 +20,7 @@
                            checked: presenter.check_delivery(order: order, delivery: delivery, delivery_index: index)
               %span.radio-icon
               %span.radio-text
-                = delivery.method
+                = delivery.kind
         %td
           %span
             = t('.delivery_time', from: delivery.from_days, to: delivery.to_days)

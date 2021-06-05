@@ -22,8 +22,8 @@ unless AdminUser.exists?
 end
 
 unless Delivery.exists?
-  Delivery.create(method: 'Нова Пошта', price: 50.00, from_days: 2, to_days: 5)
-  Delivery.create(method: 'Укрпошта', price: 30.00, from_days: 4, to_days: 10)
+  Delivery.create(kind: 'Нова Пошта', price: 50.00, from_days: 2, to_days: 5)
+  Delivery.create(kind: 'Укрпошта', price: 30.00, from_days: 4, to_days: 10)
 end
 
 Coupon.create(code: 'coupon_10', discount: 10.0)

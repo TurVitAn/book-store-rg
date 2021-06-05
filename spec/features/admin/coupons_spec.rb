@@ -1,4 +1,4 @@
-RSpec.describe 'admin/coupons', type: :feature do
+RSpec.describe 'Admin::Coupons', type: :feature do
   let(:admin) { create(:admin_user) }
 
   let_it_be(:coupon) { create(:coupon) }
