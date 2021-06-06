@@ -1,3 +1,15 @@
+a.read-less {
+  display: none;
+}
+.more-description {
+  display: none;
+}
+
+.view-more > a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;

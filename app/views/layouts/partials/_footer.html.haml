@@ -4,26 +4,30 @@
       .col-sm-9
         %ul.list-inline.general-align.mb-25
           %li
-            %a.nav-link.home_link{href: root_path}= t'.home'
+            = link_to t('.home'), root_path, class: 'nav-link home_link'
           %li
-            %a.nav-link.shop_link{href: "#"}= t'.shop'
+            = link_to t('.shop'), books_path, class: 'nav-link shop_link'
           %li
-            %a.nav-link.orders_link{href: "#"}= t'.orders'
+            %a.nav-link.orders_link{ href: '#' }
+              = t('.orders')
           %li
-            %a.nav-link.settings_link{href: "#"}= t'.settings'
+            %a.nav-link.settings_link{ href: '#' }
+              = t('.settings')
       .col-sm-3
-        %p.general-nav-mail= t'.email'
-        %p.general-nav-number= t'.phone'
+        %p.general-nav-mail
+          = t('.email')
+        %p.general-nav-number
+          = t('.phone')
         %ul.list-inline.general-align
           %li
-            %a.facebook-link.nav-link{href: "#"}
-              %i.fab.fa-facebook-f{'aria-hidden': "true"}
+            %a.facebook-link.nav-link{ href: '#' }
+              %i.fab.fa-facebook-f{ 'aria-hidden': 'true' }
           %li
-            %a.twitter-link.nav-link{href: "#"}
-              %i.fab.fa-twitter{'aria-hidden': "true"}
+            %a.twitter-link.nav-link{ href: '#' }
+              %i.fab.fa-twitter{ 'aria-hidden': 'true' }
           %li
-            %a.google-link.nav-link{href: "#"}
-              %i.fab.fa-google-plus-g{'aria-hidden': "true"}
+            %a.google-link.nav-link{ href: '#' }
+              %i.fab.fa-google-plus-g{ 'aria-hidden': 'true' }
           %li
-            %a.instagram-link.nav-link{href: "#"}
-              %i.fab.fa-instagram{'aria-hidden': "true"}
+            %a.instagram-link.nav-link{ href: '#' }
+              %i.fab.fa-instagram{ 'aria-hidden': 'true' }

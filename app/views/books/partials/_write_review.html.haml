@@ -1,0 +1,25 @@
+.mb-80.write-review
+  %h3
+    = t('.review')
+  %p.general-info-text
+    = t('.score')
+  .mb-15
+    %i.fa.fa-star.rate-empty
+    %i.fa.fa-star.rate-empty
+    %i.fa.fa-star.rate-empty
+    %i.fa.fa-star.rate-empty
+    %i.fa.fa-star.rate-empty
+  %form.row
+    .col-md-8
+      .mb-40
+        .form-group
+          %label.control-label.input-label.in-grey-600{ for: 'title' }
+            = t('.title')
+          %input.form-control#title{ name: 'title', type: 'text' }
+        .form-group
+          %label.control-label.input-label.in-grey-600{ for: 'review' }
+            = t('.review')
+          %textarea.form-control#review{ name: 'review', type: 'text' }
+      .text-right
+        %button.btn.disabled.mb-20
+          = t('.button.post')

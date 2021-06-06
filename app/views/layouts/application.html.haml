@@ -3,6 +3,6 @@
   = render 'layouts/partials/head'
 
   %body
-    = render 'layouts/partials/header', cached: true
+    = render partial: 'layouts/partials/header', locals: { categories: @categories }
     = yield
     = render 'layouts/partials/footer', cached: true
