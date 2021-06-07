@@ -6,6 +6,7 @@ module Pages
       section :header, Sections::Layouts::Header, 'header'
       section :slider, Sections::Homes::Slider, '#slider'
       section :get_started, Sections::Homes::GetStarted, 'div.jumbotron'
+      section :bestsellers, Sections::Homes::Bestsellers, 'div.bestsellers-list'
       section :footer, Sections::Layouts::Footer, 'footer'
 
       def click_home_link
