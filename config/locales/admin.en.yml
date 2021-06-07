@@ -24,3 +24,6 @@ en:
   links:
     approve: Approve
     reject: Reject
+    in_delivery: In Delivery
+    delivered: Delivered
+    canceled: Canceled
