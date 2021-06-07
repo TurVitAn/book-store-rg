@@ -1,0 +1,85 @@
+en:
+  orders:
+    index:
+      my_orders: My Orders
+      sort_by: Sort by
+      sorting:
+        complete: Waiting for processing
+        in_delivery: In Delivery
+        delivered: Delivered
+        canceled: Canceled
+    show:
+      order_number: "Order %{number}"
+    partials:
+      orders_list:
+        number: Number
+        created_at: Created at
+        status: Status
+        total: Total
+      address:
+        billing_address: Billing Address
+        shipping_address: Shipping Address
+        phone: "Phone %{phone}"
+      shipments:
+        shipments: Shipments
+      payment:
+        payment: Payment Information
+      items:
+        book: Book
+        price: Price
+        quantity: Quantity
+        total: Total
+      summary:
+        order_summary: Order Summary
+        subtotal: 'Subtotal:'
+        coupon: 'Coupon:'
+        shipping: 'Shipping: '
+        order_total: 'Order Total:'
+      mobile:
+        items:
+          book: Book
+          price: Price
+          quantity: Quantity
+          sub_total: SubTotal
+        orders_list:
+          number: Number
+          created_at: Created at
+          status: Status
+          total: Total
+
+
+  order_items:
+    destroy:
+      success: Book was deleted from your order!
+    create:
+      success: Book was successfully added to your order!
+    update:
+      success: Book count was changed!
+    alert: Quantity must be greater than 0 !
+
+
+  carts:
+    show:
+      title: Cart
+    partials:
+      empty_order:
+        empty_orders: Your Cart are empty yet?
+        go_to_shop: Go to Shop!
+      cart_summary:
+        apply_coupon: Apply Coupon
+        cart_summary: Cart Summary
+        subtotal: 'Subtotal:'
+        coupon: 'Coupon:'
+        cart_total: 'Cart Total:'
+        checkout: 'Checkout'
+        coupon_is_applied: Coupon already applied to your order
+      orders:
+        product: Product
+        price: Price
+        quantity: Quantity
+        sub_total: SubTotal
+      mobile:
+        orders:
+          price: Price
+          quantity: Quantity
+          sub_total: SubTotal

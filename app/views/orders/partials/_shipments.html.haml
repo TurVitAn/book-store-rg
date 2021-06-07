@@ -1,0 +1,6 @@
+%h3.general-subtitle.mt-0
+  = t('.shipments')
+%p.general-address
+  = order.delivery.kind
+  %br
+  = number_to_currency(order.delivery.price)

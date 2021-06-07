@@ -1,10 +1,9 @@
 .col-sm-3
-  %h3.general-subtitle
-    = t("#{address.address_type}_address")
+  %h3.general-subtitle.mt-0
+    = t(".#{address.address_type}_address")
   %p.general-address
     = address.first_name
     = address.last_name
-    = link_to t('.edit'), checkout_path(step: :address), class: 'general-edit'
     %br
     = address.address
     %br

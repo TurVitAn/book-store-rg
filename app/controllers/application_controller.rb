@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_order
-    return Order.includes(order_items: [:book]).find_by(id: cookies[:order_id]) unless user_signed_in?
+    return Order.find_by(id: cookies[:order_id]) unless user_signed_in?
 
-    Order.includes(order_items: [:book]).where('status < ?', Order.statuses[:complete]).find_by(user: current_user)
+    Order.where('status < ?', Order.statuses[:complete]).find_by(user: current_user)
   end
 
   def merge_order_items
