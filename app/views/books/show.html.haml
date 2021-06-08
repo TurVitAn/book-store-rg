@@ -1,8 +1,8 @@
 %main.container
-  = link_to url_for(:back), class: 'general-back-link' do
+  = link_to books_path, class: 'general-back-link' do
     .fas.fa-long-arrow-alt-left.mr-15
       .general-back-link
-        = t('.link.back_to_results')
+        = t('.link.back_to_shop')
   = render partial: 'books/partials/book_description', locals: { book: @book }
   - if user_signed_in?
     .mb-80.write-review

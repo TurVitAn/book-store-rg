@@ -4,7 +4,7 @@ en:
       catalog: Сatalog
     show:
       link:
-        back_to_results: Back to results
+        back_to_shop: Back to Shop
     decorator:
       dimensions_inches: 'H: %{height}" x W: %{width}" x D: %{depth}"'
     partials:
