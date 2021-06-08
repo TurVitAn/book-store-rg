@@ -11,7 +11,7 @@ class OrderItemsController < ApplicationController
     service = Orders::DestroyItemService.new(item_id: params[:id], order: current_order)
     service.call
     cookies.delete(:order_id) if service.order_destroyed?
-    redirect_to(order_path, notice: t('.success'))
+    redirect_to(cart_path, notice: t('.success'))
   end
 
   private

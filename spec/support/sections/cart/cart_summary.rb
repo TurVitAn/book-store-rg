@@ -1,6 +1,6 @@
 module Sections
-  module Orders
-    class OrderSummary < SitePrism::Section
+  module Cart
+    class CartSummary < SitePrism::Section
       element :coupon_code_field, '#coupon_code'
       element :apply_coupon_button, 'form.coupon > input[type="submit"]'
       element :summary_block, '.general-summary-table'

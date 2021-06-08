@@ -20,7 +20,7 @@
           = username
       %ul.collapse.list-unstyled.pl-30.mb-10#menu-account{ 'aria-expanded': 'false' }
         %li
-          %a.collapse-link{ href: '#' }
+          = link_to cart_path do
             .fas.fa-shopping-cart
             = t('.link.orders')
         %li

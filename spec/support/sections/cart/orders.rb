@@ -1,5 +1,5 @@
 module Sections
-  module Orders
+  module Cart
     class Orders < SitePrism::Section
       element :book_image, '.general-img-wrap-table > a > img'
       element :book_title, 'a.title'

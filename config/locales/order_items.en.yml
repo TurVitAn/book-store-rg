@@ -6,19 +6,21 @@ en:
       success: Book was successfully added to your order!
     update:
       success: Book count was changed!
-  orders:
+
+
+  carts:
     show:
-      title: Orders
+      title: Cart
     partials:
       empty_order:
-        empty_orders: Your orders are empty yet?
-        go_to_shop: Go to shop!
-      order_summary:
+        empty_orders: Your Cart are empty yet?
+        go_to_shop: Go to Shop!
+      cart_summary:
         apply_coupon: Apply Coupon
-        order_summary: Order Summary
+        cart_summary: Cart Summary
         subtotal: 'Subtotal:'
         coupon: 'Coupon:'
-        order_total: 'Order Total:'
+        cart_total: 'Cart Total:'
         checkout: 'Checkout'
         coupon_is_applied: Coupon already applied to your order
       orders:
