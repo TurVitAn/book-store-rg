@@ -27,19 +27,22 @@ class AddressForm
                        format: { with: VALIDATE_ZIP,
                                  message: I18n.t('addresses.validation.zip_format') }
 
-  validate :country_presense_in_list, unless: -> { country.blank? }
+  validate :country_selected_from_list, unless: -> { country.blank? }
   validate :country_code_of_phone, unless: -> { phone.blank? }
 
   private
 
-  def country_presense_in_list
-    errors.add(:country, :invalid) unless ISO3166::Country.find_country_by_name(country)
+  def country_selected_from_list
+    errors.add(:country, :invalid) unless selected_country
   end
 
   def country_code_of_phone
-    selected_country = ISO3166::Country.find_country_by_name(country)
     return if country.present? && phone.include?(selected_country.country_code)
 
     errors.add(:phone, I18n.t('addresses.validation.phone_country_code'))
+  end
+
+  def selected_country
+    ISO3166::Country.find_country_by_name(country)
   end
 end

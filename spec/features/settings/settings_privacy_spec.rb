@@ -10,17 +10,6 @@ RSpec.describe 'SettingsPrivacy', type: :feature do
       it { expect(settings_page.email_form).to have_header }
       it { expect(settings_page.email_form).to have_email_label }
       it { expect(settings_page.email_form).to have_email_input }
-      it { expect(settings_page.email_form).to have_save_button }
-    end
-
-    context 'when fill in email form with invalid email' do
-      let(:new_invalid_email) { "@#{FFaker::Internet.free_email}" }
-
-      before { settings_page.email_form.submit(new_invalid_email) }
-
-      it { expect(settings_page).to have_content(I18n.t('devise.registrations.update.alert')) }
-      it { expect(settings_page).to have_content(I18n.t('activerecord.errors.models.user.attributes.email.invalid')) }
-      it { expect(settings_page.email_form.email_input.value).to have_content(new_invalid_email) }
     end
   end
 

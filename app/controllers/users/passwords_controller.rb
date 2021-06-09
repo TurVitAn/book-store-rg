@@ -8,15 +8,9 @@ module Users
 
     private
 
-    def update_resource(resource, params)
-      return super unless params.key?(:email)
-
-      resource.update_without_password(params)
-    end
-
     def send_successful_response
       set_flash_message_for_update(resource, resource.unconfirmed_email)
-      bypass_sign_in(resource, scope: resource_name) if sign_in_after_change_password?
+      bypass_sign_in(resource, scope: resource_name)
       respond_with(resource, location: settings_path)
     end
 
