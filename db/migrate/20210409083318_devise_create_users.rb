@@ -16,15 +16,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
-      t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :unconfirmed_email
 
       ## Omniauth
       t.string   :provider
       t.string   :uid
-      t.string   :token
-      t.integer  :expires_at
-      t.boolean  :expires
-      t.string   :refresh_token
 
       t.timestamps null: false
     end
