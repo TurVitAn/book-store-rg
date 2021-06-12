@@ -123,9 +123,10 @@ img {
 
 .general-back-link {
   font-size: $font-size-base;
+  font-weight: bold;
   color: $grey-600;
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 
   &:hover,
   &:focus {

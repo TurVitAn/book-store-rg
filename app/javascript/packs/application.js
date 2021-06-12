@@ -9,6 +9,8 @@ window.jQuery = $;
 import 'bootstrap-sass/assets/javascripts/bootstrap';
 import '@fortawesome/fontawesome-free/css/all'
 
+require ('@fortawesome/fontawesome-free/js/all')
+
 require('packs/book/read_more')
 require('packs/book/stars_review')
 require('packs/book/cart')
