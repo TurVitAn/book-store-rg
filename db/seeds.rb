@@ -20,3 +20,8 @@ end
 unless AdminUser.exists?
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 end
+
+Coupon.create(code: 'coupon_10', discount: 10.0)
+Coupon.create(code: 'coupon_25', discount: 25.0)
+Coupon.create(code: 'coupon_30', discount: 30.0)
+Coupon.create(code: 'coupon_50', discount: 50.0)
