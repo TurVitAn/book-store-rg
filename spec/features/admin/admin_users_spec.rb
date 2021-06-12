@@ -88,6 +88,10 @@ RSpec.describe 'admin/admin_users', type: :feature do
         expect(admin_page.admin_details.reset_password_sent_at_row.text)
           .to have_content(admin.reset_password_sent_at)
       }
+
+      it { expect(admin_page.admin_comments).to have_header }
+      it { expect(admin_page.admin_comments).to have_comment_input }
+      it { expect(admin_page.admin_comments).to have_add_comment_button }
     end
   end
 
