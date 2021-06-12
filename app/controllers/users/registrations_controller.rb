@@ -1,5 +1,5 @@
 module Users
-  class PasswordsController < Devise::RegistrationsController
+  class RegistrationsController < Devise::RegistrationsController
     before_action :authenticate_user!, only: :update
 
     def create

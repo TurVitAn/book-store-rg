@@ -1,4 +1,4 @@
-RSpec.describe Users::PasswordsController, type: :controller do
+RSpec.describe Users::RegistrationsController, type: :controller do
   describe '#create' do
     before do
       request.env['devise.mapping'] = Devise.mappings[:user]

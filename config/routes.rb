@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users,
-             controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/passwords' }
+             controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
 
   root 'homes#index'
   get 'privacy_policy', to: 'homes#privacy_policy'
