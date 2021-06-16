@@ -9,7 +9,7 @@ RSpec.describe 'Reviews', type: :feature do
   end
 
   describe 'reviews partial' do
-    let_it_be(:review) { create(:review, book: book, user: user).decorate }
+    let_it_be(:review) { create(:review, status: :approved, book: book, user: user).decorate }
 
     context 'with page elements' do
       it { expect(book_page.reviews).to have_reviews }

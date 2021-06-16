@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
       flash[:alert] = presenter.errors
     end
 
-    redirect_back fallback_location: books_path
+    redirect_back(fallback_location: books_path)
   end
 
   private

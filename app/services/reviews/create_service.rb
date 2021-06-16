@@ -8,14 +8,14 @@ module Reviews
     end
 
     def call
-      review_form.valid? ? review_create(params) : collect_errors
+      review_form.valid? ? review_create : collect_errors
     end
 
     private
 
     attr_reader :params, :review_form
 
-    def review_create(params)
+    def review_create
       Review.create(params)
     end
 

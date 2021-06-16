@@ -1,7 +1,12 @@
 class ReviewForm
   include ActiveModel::Model
+  include Virtus.model
 
-  attr_accessor :title, :text, :rating, :book_id, :user_id
+  attribute :title, String
+  attribute :text, String
+  attribute :rating, Integer
+  attribute :book_id, Integer
+  attribute :user_id, Integer
 
   TITLE_MAX_SIZE = 80
   TEXT_MAX_SIZE = 500
@@ -15,8 +20,4 @@ class ReviewForm
   validates :rating, numericality: { only_integer: true,
                                      greater_than_or_equal_to: RATING_MIN,
                                      less_than_or_equal_to: RATING_MAX }
-
-  def initialize(params = {})
-    super(params)
-  end
 end
