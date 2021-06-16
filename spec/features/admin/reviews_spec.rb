@@ -13,10 +13,15 @@ RSpec.describe 'admin/reviews', type: :feature do
     context 'with page elements' do
       let_it_be(:review) { create(:review, status: :unprocessed, book: book, user: user) }
 
-      %i[id_column book_column title_column created_at_column user_column status_column unprocessed_link approved_link
-         rejected_link].each do |element|
-        it { expect(reviews_page.main_content).to public_send("have_#{element}") }
-      end
+      it { expect(reviews_page.main_content).to have_id_column }
+      it { expect(reviews_page.main_content).to have_book_column }
+      it { expect(reviews_page.main_content).to have_title_column }
+      it { expect(reviews_page.main_content).to have_created_at_column }
+      it { expect(reviews_page.main_content).to have_user_column }
+      it { expect(reviews_page.main_content).to have_status_column }
+      it { expect(reviews_page.main_content).to have_unprocessed_link }
+      it { expect(reviews_page.main_content).to have_approved_link }
+      it { expect(reviews_page.main_content).to have_rejected_link }
     end
 
     context 'with unprocessed reviews' do
@@ -60,9 +65,13 @@ RSpec.describe 'admin/reviews', type: :feature do
     before { review_page.load(id: review.id) }
 
     context 'with page elements' do
-      %i[title_row text_row rating_row status_row is_verified_row user_row book_row].each do |element|
-        it { expect(review_page.review_details).to public_send("have_#{element}") }
-      end
+      it { expect(review_page.review_details).to have_title_row }
+      it { expect(review_page.review_details).to have_text_row }
+      it { expect(review_page.review_details).to have_rating_row }
+      it { expect(review_page.review_details).to have_status_row }
+      it { expect(review_page.review_details).to have_is_verified_row }
+      it { expect(review_page.review_details).to have_user_row }
+      it { expect(review_page.review_details).to have_book_row }
 
       it { expect(review_page.actions).to have_approve_button }
       it { expect(review_page.actions).to have_reject_button }
