@@ -69,7 +69,6 @@ RSpec.describe 'admin/reviews', type: :feature do
       it { expect(review_page.review_details).to have_text_row }
       it { expect(review_page.review_details).to have_rating_row }
       it { expect(review_page.review_details).to have_status_row }
-      it { expect(review_page.review_details).to have_is_verified_row }
       it { expect(review_page.review_details).to have_user_row }
       it { expect(review_page.review_details).to have_book_row }
 

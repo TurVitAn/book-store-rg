@@ -1,16 +1,8 @@
 RSpec.describe ReviewDecorator do
   let(:review) { build(:review).decorate }
 
-  describe '#user_logo' do
-    let(:creation_user_logo_result) { review.user.email.first }
-
-    it 'returns first letter from email to logo' do
-      expect(review.user_logo).to eq(creation_user_logo_result)
-    end
-  end
-
   describe '#creation_date' do
-    let(:creation_date_result) { review.created_at.strftime('%d/%m/%y') }
+    let(:creation_date_result) { review.created_at.strftime(ReviewDecorator::DATE_FORMAT) }
 
     it 'returns date in format d/m/y' do
       expect(review.creation_date).to eq(creation_date_result)
@@ -18,10 +10,18 @@ RSpec.describe ReviewDecorator do
   end
 
   describe '#username' do
-    let(:creation_username_result) { review.user.email.split(/@/).first }
+    let(:creation_username_result) { ReviewDecorator::DEFAULT_USER_NAME }
 
-    it 'returns username as email to /@/' do
+    it 'returns default username' do
       expect(review.username).to eq(creation_username_result)
+    end
+  end
+
+  describe '#first_letter_username' do
+    let(:creation_first_letter_username_result) { review.username.first }
+
+    it 'returns first letter from username' do
+      expect(review.first_letter_username).to eq(creation_first_letter_username_result)
     end
   end
 end

@@ -3,15 +3,14 @@
   .general-message-wrap.divider-lg
     .clearfix
       %span.img-circle.logo-size.inlide-block.pull-left.logo-empty
-        = review.user_logo
+        = review.first_letter_username
       .ml-70
         %div
           .general-message-date.hidden-xs
             = review.creation_date
           .max-240
-            - if review.is_verified
-              .general-message-verified.pull-right
-                = t('.verified_reviewer')
+            .general-message-verified.pull-right
+              = t('.verified_reviewer')
             .general-message-name
               = review.username
         .mb-15

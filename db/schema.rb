@@ -99,7 +99,6 @@ ActiveRecord::Schema.define(version: 2021_05_08_063355) do
     t.text "text"
     t.integer "rating"
     t.integer "status", default: 0, null: false
-    t.boolean "is_verified", default: false
     t.bigint "user_id"
     t.bigint "book_id"
     t.datetime "created_at", precision: 6, null: false
