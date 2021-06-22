@@ -7,7 +7,7 @@
       .images.clearfix
         - book.book_images.each do |book_image|
           %a.img-link
-            = image_tag(book_image.image.derivation_url(:thumbnail, 200, 200), class: 'img-responsive')
+            = image_tag(book_image.image_url(:small), class: 'img-responsive')
   .col-sm-6
     %h1.mt-res-0
       = book.title

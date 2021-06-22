@@ -12,12 +12,6 @@ module BookStoreRg
       g.test_framework :rspec
     end
 
-    config.upload_server = if ENV['UPLOAD_SERVER'].present?
-                             ENV['UPLOAD_SERVER'].to_sym
-                           elsif Rails.env.production?
-                             :s3
-                           else
-                             :app
-                           end
+    config.upload_server = Rails.env.production? ? :s3 : :app
   end
 end

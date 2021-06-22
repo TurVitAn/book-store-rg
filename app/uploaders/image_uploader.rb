@@ -21,17 +21,12 @@ class ImageUploader < Shrine
     validate_max_dimensions MAX_DIMENSIONS if validate_mime_type ALLOWED_TYPES
   end
 
-  Attacher.derivatives do |original|
-    THUMBNAILS.transform_values do |(width, height)|
-      Image::GenerateThumbnail.call(original, width, height)
-    end
-  end
-
   Attacher.default_url do |derivative: nil, **|
     file&.derivation_url(:thumbnail, *THUMBNAILS.fetch(derivative)) if derivative
   end
 
   derivation :thumbnail do |file, width, height|
-    Image::GenerateThumbnail.call(file, width.to_i, height.to_i)
+    magick = ImageProcessing::MiniMagick.source(file)
+    magick.resize_to_limit!(width, height)
   end
 end
