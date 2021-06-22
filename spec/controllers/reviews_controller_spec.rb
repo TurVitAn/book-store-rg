@@ -9,9 +9,10 @@ RSpec.describe ReviewsController, type: :controller do
 
     context 'with invalid params' do
       let(:params) { attributes_for(:review, book_id: book.id, user_id: user.id, text: '') }
-      let(:errors) { { text_blank: 'Text can\'t be blank' } }
+      let(:errors) { { text_blank: I18n.t('alert.text_blank') } }
 
       it { expect(response).to have_http_status(:found) }
+      it { expect(response).to redirect_to(books_path) }
       it { expect(flash[:alert]).to eq(errors[:text_blank]) }
     end
 
@@ -19,6 +20,7 @@ RSpec.describe ReviewsController, type: :controller do
       let(:params) { attributes_for(:review, book_id: book.id, user_id: user.id) }
 
       it { expect(response).to have_http_status(:found) }
+      it { expect(response).to redirect_to(books_path) }
       it { expect(flash[:notice]).to eq(I18n.t('reviews.create.success')) }
     end
   end

@@ -13,21 +13,6 @@ ActiveAdmin.register Review do
 
   config.filters = false
 
-  controller do
-    private
-
-    def update_review_status_for_member_action(status)
-      review = Review.find(permitted_params[:id])
-      review.update(status: status)
-      redirect_to(admin_review_path(review))
-    end
-
-    def update_review_status(status:, ids:)
-      batch_action_collection.find(ids).each(&status.to_sym)
-      redirect_back(fallback_location: admin_reviews_path)
-    end
-  end
-
   index do
     selectable_column
     id_column
@@ -39,14 +24,6 @@ ActiveAdmin.register Review do
     actions
   end
 
-  member_action :approve, method: :put do
-    update_review_status_for_member_action(:approved)
-  end
-
-  member_action :reject, method: :put do
-    update_review_status_for_member_action(:rejected)
-  end
-
   action_item :approve, only: :show do
     link_to t('links.approve'), approve_admin_review_path(review), method: :put unless review.approved?
   end
@@ -55,11 +32,35 @@ ActiveAdmin.register Review do
     link_to t('links.reject'), reject_admin_review_path(review), method: :put unless review.rejected?
   end
 
+  member_action :approve, method: :put do
+    review.update(status: :approved)
+    redirect_to(admin_review_path(review))
+  end
+
+  member_action :reject, method: :put do
+    review.update(status: :rejected)
+    redirect_to(admin_review_path(review))
+  end
+
   batch_action :approve, if: proc { @current_scope.scope_method != :approved } do |ids|
-    update_review_status(status: :approved!, ids: ids)
+    batch_action_collection.find(ids).each do |review|
+      review.update(status: :approved)
+    end
+    redirect_back(fallback_location: admin_reviews_path)
   end
 
   batch_action :reject, if: proc { @current_scope.scope_method != :rejected } do |ids|
-    update_review_status(status: :rejected!, ids: ids)
+    batch_action_collection.find(ids).each do |review|
+      review.update(status: :rejected)
+    end
+    redirect_back(fallback_location: admin_reviews_path)
+  end
+
+  controller do
+    private
+
+    def review
+      Review.find(permitted_params[:id])
+    end
   end
 end

@@ -6,8 +6,7 @@ class ReviewsController < ApplicationController
     if service.call
       flash[:notice] = t('.success')
     else
-      presenter = ReviewsPresenter.new(errors: service.errors)
-      flash[:alert] = presenter.errors
+      flash[:alert] = ReviewsPresenter.new(errors: service.errors).errors
     end
 
     redirect_back(fallback_location: books_path)
