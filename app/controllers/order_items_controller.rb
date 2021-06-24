@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
   def create
-    persist_order_items(message: t('.success'), set_cookie: true)
+    persist_order_items(message: t('.success'))
   end
 
   def update
@@ -16,11 +16,11 @@ class OrderItemsController < ApplicationController
 
   private
 
-  def persist_order_items(message:, set_cookie: false)
+  def persist_order_items(message:)
     service = Orders::PersistItemService.new(params: order_item_params, order: current_order)
     return redirect_back_with_flash(:alert, service.errors.full_messages.to_sentence) unless service.call
 
-    cookies[:order_id] = service.order.id if set_cookie && !current_order
+    cookies[:order_id] = service.order.id unless current_order
     redirect_back_with_flash(:notice, message)
   end
 

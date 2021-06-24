@@ -1,7 +1,8 @@
 class CouponForm
   include ActiveModel::Model
+  include Virtus.model
 
-  attr_accessor :code
+  attribute :code, String
 
   validates :code, presence: true
   validate :coupon_is_not_exists
