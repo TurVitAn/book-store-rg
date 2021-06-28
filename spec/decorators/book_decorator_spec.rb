@@ -21,7 +21,7 @@ RSpec.describe BookDecorator, type: :decorator do
 
   it '#short_description' do
     expect(book.short_description).to eq(
-      book.description.truncate(described_class::SHORT_DESCRIPTION_LENGTH)
+      book.description.truncate(described_class::SHORT_DESCRIPTION_SIZE)
     )
   end
 

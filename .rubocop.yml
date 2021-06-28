@@ -30,6 +30,7 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Exclude:
+    - 'app/admin/*.rb'
     - 'spec/**/*.rb'
     - 'config/environments/development.rb'
     - 'config/initializers/simple_form_bootstrap.rb'

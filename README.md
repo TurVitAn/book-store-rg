@@ -5,7 +5,12 @@ The web application will let registered users or guests find and buy books using
 
 [website specification](https://drive.google.com/drive/folders/0B3jvg6jQR0D9QlV3RjducDEta3M)
 
-## Deploy for testing on [BookStore-rg](http://bookstore-rg.turvitan.km.ua/) or [Heroku](https://bookstore-rg-turvitan.herokuapp.com/)
+## Deploy for testing on [Heroku](https://bookstore-rg-turvitan.herokuapp.com/) or [BookStore-rg](http://bookstore-rg.turvitan.km.ua/)
+## [Admin](https://bookstore-rg-turvitan.herokuapp.com/admin/login) for testing 
+- **email:    admin@example.com**
+- **password: password**
+
+
 
 ## How to install
 

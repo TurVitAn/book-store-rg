@@ -6,7 +6,7 @@ RSpec.describe SortedBooksQuery do
 
   describe '.call' do
     context 'with category_id parameter' do
-      it 'returns books from category' do
+      it 'returns books from categories' do
         expect(described_class.new(category_id: web_development_category.id).call).to eq([book_from_web_development])
       end
     end

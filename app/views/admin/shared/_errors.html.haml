@@ -1,0 +1,3 @@
+- if errors.present? && errors.messages.key?(field)
+  %p.active-admin-field-error
+    = errors.full_messages_for(field).to_sentence

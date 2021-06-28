@@ -2,6 +2,7 @@
   "name": "book-store-rg",
   "private": true,
   "dependencies": {
+    "@activeadmin/activeadmin": "^2.9.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.2.1",
