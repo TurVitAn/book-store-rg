@@ -1,0 +1,39 @@
+en:
+  settings:
+    index:
+      settings: Settings
+      address: Address
+      privacy: Privacy
+    partials:
+      addresses:
+        billing_address: Billing Address
+        shipping_address: Shipping Address
+      privacy:
+        email: Email
+        password: Password
+        remove_account: Remove Account
+      forms:
+        address:
+          save: Save
+        fields:
+          country: Select a country
+        email:
+          reconfirmation: 'Currently waiting confirmation for: '
+          save: Save
+        password:
+          save: Save
+        remove_account:
+          remove: Please Remove My Account
+          confirmation: Are you sure?
+          confirm_remove: I understand that all data will be lost
+  addresses:
+    validation:
+      names_format: must consist of only a-z and A-Z characters without special symbols
+      address_format: consist of a-z, A-Z, 0-9, ’,’, ‘-’, ‘ ’ only, no special symbols
+      zip_format: consist of 0-9 only, ’-’ no special symbols
+      phone_format: should has plus (+) at the beginning
+      phone_country_code: should contain country code of chosen country in Country drop down list
+    create:
+      success: Your address has been successfully saved
+    update:
+      success: Your address has been successfully updated

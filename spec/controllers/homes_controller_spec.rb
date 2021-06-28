@@ -6,10 +6,7 @@ RSpec.describe HomesController, type: :controller do
 
   describe 'GET /' do
     it { expect(response).to have_http_status(:success) }
-
-    it 'renders the index template' do
-      expect(response).to render_template(:index)
-    end
+    it { expect(response).to render_template(:index) }
 
     context 'with assigns' do
       it 'assigns @newest_books' do
@@ -22,9 +19,6 @@ RSpec.describe HomesController, type: :controller do
     before { get :privacy_policy }
 
     it { expect(response).to have_http_status(:success) }
-
-    it 'renders the index template' do
-      expect(response).to render_template(:privacy_policy)
-    end
+    it { expect(response).to render_template(:privacy_policy) }
   end
 end

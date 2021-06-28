@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'country_select', '~> 5.0'
 gem 'devise', '~> 4.8'
 gem 'draper', '~> 4.0', '>= 4.0.1'
 gem 'factory_bot_rails', '~> 6.1'
