@@ -1,16 +1,13 @@
 class ReviewDecorator < ApplicationDecorator
-  DEFAULT_USER_NAME = 'user'.freeze
-  DATE_FORMAT = '%d/%m/%y'.freeze
-
   delegate_all
 
   def creation_date
-    created_at.strftime(DATE_FORMAT)
+    localize(created_at, format: I18n.t('reviews.creation_date'))
   end
 
   def username
     address = user.billing_address
-    return DEFAULT_USER_NAME unless address
+    return user.email unless address
 
     "#{address.first_name} #{address.last_name}"
   end

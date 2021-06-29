@@ -2,7 +2,7 @@ RSpec.describe ReviewDecorator do
   let(:review) { build(:review).decorate }
 
   describe '#creation_date' do
-    let(:creation_date_result) { review.created_at.strftime(ReviewDecorator::DATE_FORMAT) }
+    let(:creation_date_result) { review.created_at.strftime(I18n.t('reviews.creation_date')) }
 
     it 'returns date in format d/m/y' do
       expect(review.creation_date).to eq(creation_date_result)
@@ -10,7 +10,7 @@ RSpec.describe ReviewDecorator do
   end
 
   describe '#username' do
-    let(:creation_username_result) { ReviewDecorator::DEFAULT_USER_NAME }
+    let(:creation_username_result) { review.user.email }
 
     it 'returns default username' do
       expect(review.username).to eq(creation_username_result)
