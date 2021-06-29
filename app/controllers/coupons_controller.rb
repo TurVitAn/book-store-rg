@@ -1,8 +1,8 @@
 class CouponsController < ApplicationController
   def update
     service = Orders::CouponService.new(coupon_params, current_order)
-    result = service.call ? :notice : :alert
-    flash[result] = service.errors.any? ? service.errors.full_messages.to_sentence : t('.success')
+    service.call ? flash[:notice] = t('.update.success') : flash[:alert] = service.errors.full_messages.to_sentence
+
     redirect_to(cart_path)
   end
 

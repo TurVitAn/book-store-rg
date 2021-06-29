@@ -5,13 +5,16 @@ module Orders
     def initialize(params, order)
       @coupon_form = CouponForm.new(params)
       @order = order
-      @errors = []
     end
 
     def call
-      coupon_form.valid? ? coupon.update(order: order) : @errors = coupon_form.errors
+      unless coupon_form.valid?
+        @errors = coupon_form.errors
+        return false
+      end
 
-      errors.empty?
+      coupon.update(order: order)
+      true
     end
 
     private
