@@ -1,5 +1,6 @@
 class AddressForm
   include ActiveModel::Model
+  include Virtus.model
 
   ADDRESS_MAX_SIZE = 50
   NAME_MAX_SIZE = 50
@@ -11,7 +12,14 @@ class AddressForm
   VALIDATE_PHONE = /\A\+[0-9]+\z/
   VALIDATE_ZIP = /\A[0-9-]+\z/
 
-  attr_accessor :first_name, :last_name, :address, :city, :zip_code, :country, :phone, :address_type
+  attribute :first_name, String
+  attribute :last_name, String
+  attribute :address, String
+  attribute :city, String
+  attribute :zip_code, String
+  attribute :country, String
+  attribute :phone, String
+  attribute :address_type, String
 
   validates :first_name, :last_name, :address, :city, :zip_code, :country, :phone, presence: true
   validates :first_name, :last_name, :country, :city,

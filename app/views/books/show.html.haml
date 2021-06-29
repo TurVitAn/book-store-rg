@@ -1,8 +1,11 @@
 %main.container
-  = link_to url_for(:back), class: 'general-back-link' do
-    .fas.fa-long-arrow-alt-left.mr-15
-      .general-back-link
-        = t('.link.back_to_results')
+  = link_to books_path, class: 'general-back-link' do
+    %i.fas.fa-chevron-left
+    .general-back-link
+      = t('.link.back_to_shop')
   = render partial: 'books/partials/book_description', locals: { book: @book }
-  = render 'books/partials/write_review'
-  = render 'books/partials/reviews'
+  - if user_signed_in?
+    .mb-80.write-review
+      = render partial: 'books/partials/write_review', locals: { form: @review_form }
+  .mb-80.reviews
+    = render partial: 'books/partials/reviews', locals: { reviews: @reviews }

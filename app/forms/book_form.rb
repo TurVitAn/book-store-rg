@@ -1,11 +1,20 @@
 class BookForm
   include ActiveModel::Model
+  include Virtus.model
 
   TITLE_MAX_SIZE = 100
   DESCRIPTION_MIN_SIZE = 50
 
-  attr_accessor :title, :description, :price, :published_at, :height,
-                :width, :depth, :materials, :category_id, :author_ids
+  attribute :title, String
+  attribute :description, String
+  attribute :price, Float
+  attribute :height, Float
+  attribute :width, Float
+  attribute :depth, Float
+  attribute :materials, String
+  attribute :published_at, Date
+  attribute :category_id, Integer
+  attribute :author_ids, Integer
 
   validates :category_id, :title, :description, :price, :height, :width,
             :depth, :materials, :published_at, presence: true

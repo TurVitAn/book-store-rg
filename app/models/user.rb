@@ -5,6 +5,7 @@ class User < ApplicationRecord
           class_name: 'Address', as: :addressable, dependent: :destroy, inverse_of: :addressable
   has_one :shipping_address, -> { where(address_type: Address.address_types[:shipping]) },
           class_name: 'Address', as: :addressable, dependent: :destroy, inverse_of: :addressable
+  has_many :reviews, dependent: :destroy
 
   validates :email, :password, :encrypted_password, presence: true
   validates :password, format: { with: PASSWORD_FORMAT }

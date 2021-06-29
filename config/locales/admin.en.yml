@@ -11,3 +11,10 @@ en:
       saved: Book was successfully saved
   alert:
     blank: can't be blank
+    text_blank: "Text can't be blank"
+  active_admin:
+    approved: approved
+    rejected: rejected
+  links:
+    approve: Approve
+    reject: Reject

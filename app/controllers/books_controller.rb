@@ -6,7 +6,12 @@ class BooksController < ApplicationController
   end
 
   def show
-    book.present? ? @book = book.decorate : record_not_found
+    if book.present?
+      @book = book.decorate
+      @reviews = @book.reviews.includes(:user).approved.decorate
+    else
+      record_not_found
+    end
   end
 
   private

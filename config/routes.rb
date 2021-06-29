@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :books, only: %i[index show]
   resources :addresses, only: :create
   resources :settings, only: :index
+  resources :reviews, only: :create
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

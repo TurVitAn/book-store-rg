@@ -45,10 +45,20 @@ RSpec.describe 'admin/books', type: :feature do
       it { expect(book_page.book_details.category_row.text).to have_content(book.category.name) }
       it { expect(book_page.book_details.materials_row.text).to have_content(book.materials_list) }
 
-      %i[authors_list title description price height width depth].each do |field|
-        it { expect(book_page.book_details).to public_send("have_#{field}_row") }
-        it { expect(book_page.book_details.public_send("#{field}_row").text).to have_content(book.public_send(field)) }
-      end
+      it { expect(book_page.book_details).to have_authors_list_row }
+      it { expect(book_page.book_details.authors_list_row.text).to have_content(book.authors_list) }
+      it { expect(book_page.book_details).to have_title_row }
+      it { expect(book_page.book_details.title_row.text).to have_content(book.title) }
+      it { expect(book_page.book_details).to have_description_row }
+      it { expect(book_page.book_details.description_row.text).to have_content(book.description) }
+      it { expect(book_page.book_details).to have_price_row }
+      it { expect(book_page.book_details.price_row.text).to have_content(book.price) }
+      it { expect(book_page.book_details).to have_height_row }
+      it { expect(book_page.book_details.height_row.text).to have_content(book.height) }
+      it { expect(book_page.book_details).to have_width_row }
+      it { expect(book_page.book_details.width_row.text).to have_content(book.width) }
+      it { expect(book_page.book_details).to have_depth_row }
+      it { expect(book_page.book_details.depth_row.text).to have_content(book.depth) }
     end
   end
 
@@ -58,10 +68,17 @@ RSpec.describe 'admin/books', type: :feature do
     before { new_book_page.load }
 
     context 'with page elements' do
-      %i[category_select authors_checkboxes description_input price_input published_at_input height_input
-         width_input depth_input materials_input create_button cancel_button].each do |element|
-        it { expect(new_book_page.fields).to public_send("have_#{element}") }
-      end
+      it { expect(new_book_page.fields).to have_category_select }
+      it { expect(new_book_page.fields).to have_authors_checkboxes }
+      it { expect(new_book_page.fields).to have_description_input }
+      it { expect(new_book_page.fields).to have_price_input }
+      it { expect(new_book_page.fields).to have_published_at_input }
+      it { expect(new_book_page.fields).to have_height_input }
+      it { expect(new_book_page.fields).to have_width_input }
+      it { expect(new_book_page.fields).to have_depth_input }
+      it { expect(new_book_page.fields).to have_materials_input }
+      it { expect(new_book_page.fields).to have_create_button }
+      it { expect(new_book_page.fields).to have_cancel_button }
     end
 
     context 'when fill in form with invalid params' do
@@ -112,15 +129,22 @@ RSpec.describe 'admin/books', type: :feature do
       it { expect(edit_book_page.fields.category_select.text).to have_content(category.name) }
       it { expect(edit_book_page.fields).to have_create_button }
       it { expect(edit_book_page.fields).to have_cancel_button }
-
-      %i[title description price published_at height width depth materials].each do |field|
-        it { expect(edit_book_page.fields).to public_send("have_#{field}_input") }
-
-        it {
-          expect(edit_book_page.fields.public_send("#{field}_input").value)
-            .to have_content(book.public_send(field))
-        }
-      end
+      it { expect(edit_book_page.fields).to have_title_input }
+      it { expect(edit_book_page.fields.title_input.value).to have_content(book.title) }
+      it { expect(edit_book_page.fields).to have_description_input }
+      it { expect(edit_book_page.fields.description_input.value).to have_content(book.description) }
+      it { expect(edit_book_page.fields).to have_price_input }
+      it { expect(edit_book_page.fields.price_input.value).to have_content(book.price) }
+      it { expect(edit_book_page.fields).to have_published_at_input }
+      it { expect(edit_book_page.fields.published_at_input.value).to have_content(book.published_at) }
+      it { expect(edit_book_page.fields).to have_height_input }
+      it { expect(edit_book_page.fields.height_input.value).to have_content(book.height) }
+      it { expect(edit_book_page.fields).to have_width_input }
+      it { expect(edit_book_page.fields.width_input.value).to have_content(book.width) }
+      it { expect(edit_book_page.fields).to have_depth_input }
+      it { expect(edit_book_page.fields.depth_input.value).to have_content(book.depth) }
+      it { expect(edit_book_page.fields).to have_materials_input }
+      it { expect(edit_book_page.fields.materials_input.value).to have_content(book.materials) }
     end
 
     context 'when fill in form with invalid params' do

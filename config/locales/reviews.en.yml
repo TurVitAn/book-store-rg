@@ -1,0 +1,5 @@
+en:
+  reviews:
+    create:
+      success: Thanks for Review. It will be published as soon as Admin will approve it.
+    creation_date: '%d/%m/%y'
