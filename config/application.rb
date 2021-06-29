@@ -11,5 +11,7 @@ module BookStoreRg
     config.generators do |g|
       g.test_framework :rspec
     end
+
+    config.upload_server = Rails.env.production? ? :s3 : :app
   end
 end

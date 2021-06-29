@@ -3,6 +3,7 @@ module Sections
     module Books
       class List < SitePrism::Section
         element :id_column, '.col-id'
+        element :image_column, '.col-image'
         element :category_column, '.col-category'
         element :title_column, '.col-title'
         element :description_column, '.col-short_description'

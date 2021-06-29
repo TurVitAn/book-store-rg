@@ -2,14 +2,12 @@
   .col-sm-6
     .product-gallery
       .mb-20
-        %img.img-responsive{ src: book_image_responsive }
+      = image_tag(book.image_url(:large), alt: book.title, class: 'img-responsive')
+      .mb-20
       .images.clearfix
-        %a.img-link{ href: '#' }
-          %img{ src: book_image_link }
-        %a.img-link{ href: '#' }
-          %img{ src: book_image_link }
-        %a.img-link{ href: '#' }
-          %img{ src: book_image_link }
+        - book.book_images.each do |book_image|
+          %a.img-link
+            = image_tag(book_image.image_url(:small), class: 'img-responsive')
   .col-sm-6
     %h1.mt-res-0
       = book.title

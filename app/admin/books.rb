@@ -1,6 +1,6 @@
 ActiveAdmin.register Book do
-  permit_params :title, :description, :price, :height, :width, :depth,
-                :materials, :published_at, :category_id, author_ids: []
+  permit_params :title, :description, :price, :height, :width, :depth, :materials, :published_at,
+                :category_id, :image, author_ids: []
 
   includes :category, :authors
 
@@ -29,12 +29,15 @@ ActiveAdmin.register Book do
   end
 
   preserve_default_filters!
-  remove_filter :author_books
+  remove_filter :author_books, :book_images
   filter :authors, as: :select, collection: proc { Author.order(:first_name).decorate }
 
   index do
     selectable_column
     id_column
+    column :image do |book|
+      image_tag(book.image_url(:small), alt: book.title, class: 'admin-image-book')
+    end
     column :category
     column :title
     column :authors_list
@@ -59,6 +62,9 @@ ActiveAdmin.register Book do
       row :width
       row :depth
       row :materials_list
+      row :image do |book|
+        image_tag(book.image_url(:small), alt: book.title, class: 'admin-image-book')
+      end
     end
   end
 
