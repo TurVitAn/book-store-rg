@@ -164,3 +164,12 @@ a.read-less {
 .reconfirmation-email > p {
   display: inline-flex;
 }
+
+.quantity-controller {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-input {
+  pointer-events: none;
+}

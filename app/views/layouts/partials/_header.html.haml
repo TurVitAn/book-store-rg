@@ -8,14 +8,16 @@
         %span.icon-bar
       %a.navbar-brand
         = t('.brand')
-      %a.shop-link.pull-right.visible-xs{ href: '#' }
+      = link_to cart_path, class: 'shop-link pull-right visible-xs' do
         %span.shop-icon
-          %span.shop-quantity 3
-    %a.shop-link.pull-right.hidden-xs{ href: '#' }
+          %span.shop-quantity
+            = presenter.books_in_order
+    = link_to cart_path, class: 'shop-link pull-right hidden-xs' do
       %span.shop-icon
-        %span.shop-quantity 3
+        %span.shop-quantity
+          = presenter.books_in_order
     .navbar-collapse.collapse.pl-30#navbar{ 'aria-expanded': 'false' }
       .visible-xs
-        = render partial: 'layouts/partials/mobile/navigation', locals: { categories: categories }
+        = render partial: 'layouts/partials/mobile/navigation', locals: { categories: presenter.categories }
       .hidden-xs
-        = render partial: 'layouts/partials/navigation', locals: { categories: categories }
+        = render partial: 'layouts/partials/navigation', locals: { categories: presenter.categories }
