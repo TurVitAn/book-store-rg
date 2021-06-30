@@ -6,7 +6,7 @@ RSpec.describe OrderItemsController, type: :controller do
     before { post :create, params: { order_item: params } }
 
     context 'when create new order item' do
-      let(:params) { attributes_for(:order_item, book_id: book.id) }
+      let(:params) { attributes_for(:order_item, book_id: book.id, order_id: order.id) }
 
       it 'has redirect http status' do
         expect(response).to have_http_status(:redirect)
@@ -51,16 +51,13 @@ RSpec.describe OrderItemsController, type: :controller do
 
     context 'with invalid quantity' do
       let(:params) { { quantity: -5, book_id: order_item.book.id } }
-      let(:form) { OrderItemForm.new(params) }
-
-      before { form.validate }
 
       it 'has redirect http status' do
         expect(response).to have_http_status(:redirect)
       end
 
       it 'has alert flash' do
-        expect(flash[:alert]).to eq(form.errors.full_messages_for(:quantity).to_sentence)
+        expect(flash[:alert]).to eq(I18n.t('order_items.alert'))
       end
 
       it 'has order_id in cookies' do

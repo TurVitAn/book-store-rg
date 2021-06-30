@@ -18,7 +18,7 @@ class OrderItemsController < ApplicationController
 
   def persist_order_items(message:)
     service = Orders::PersistItemService.new(params: order_item_params, order: current_order)
-    return redirect_back_with_flash(:alert, service.errors.full_messages.to_sentence) unless service.call
+    return redirect_back_with_flash(:alert, t('order_items.alert')) unless service.call
 
     cookies[:order_id] = service.order.id unless current_order
     redirect_back_with_flash(:notice, message)

@@ -38,7 +38,7 @@ RSpec.describe 'Cart', type: :feature do
     end
 
     context 'when click minus icon with one book' do
-      let(:error_message) { "Quantity must be greater than #{OrderItemForm::INVALID_QUANTITY}" }
+      let(:error_message) { I18n.t('order_items.alert') }
 
       before { cart_page.orders.minus_link.click }
 

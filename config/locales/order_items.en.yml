@@ -6,7 +6,7 @@ en:
       success: Book was successfully added to your order!
     update:
       success: Book count was changed!
-
+    alert: Quantity must be greater than 0 !
 
   carts:
     show:
