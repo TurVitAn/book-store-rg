@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   validates :email, :password, :encrypted_password, presence: true
-  validates :password, format: { with: PASSWORD_FORMAT }
+  validates :password, format: { with: PASSWORD_FORMAT }, if: :password_required?
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable,

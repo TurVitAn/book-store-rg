@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users,
-             controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/passwords' }
+             controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
 
   root 'homes#index'
   get 'privacy_policy', to: 'homes#privacy_policy'
@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   resources :settings, only: :index
   resources :reviews, only: :create
   resources :order_items, only: %i[create update destroy]
+  resources :checkout, only: :index
   resource :cart, only: :show
   resource :coupon, only: :update
+  get '/checkout_login', to: 'homes#checkout_login'
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   mount ImageUploader.derivation_endpoint => '/derivations/image'
