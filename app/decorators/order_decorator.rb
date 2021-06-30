@@ -6,7 +6,7 @@ class OrderDecorator < ApplicationDecorator
   decorates_association :order_items
 
   def items_count
-    order_items.map(&:quantity).sum
+    order_items.pluck(:quantity).sum
   end
 
   def order_total

@@ -30,14 +30,14 @@
         .input-group.quantity-controller
           = link_to order_item_path(item, order_item: { quantity: -1, book_id: item.book.id }),
                     method: :patch, id: 'minus', class: 'input-link' do
-            %i.fa.fa-minus.line-heaght-40
+            %i.fa.fa-minus.line-height-40
           %input.form-control.quantity-input{ type: 'text', value: item.quantity }
           = link_to order_item_path(item, order_item: { quantity: 1, book_id: item.book.id }),
                     method: :patch, id: 'plus', class: 'input-link' do
-            %i.fa.fa-plus.line-heaght-40
+            %i.fa.fa-plus.line-height-40
       %td
         %span.sub-total.font-16.in-gold-500
-          = number_to_currency(item.subtotal_price)
+          = number_to_currency(item.subtotal_order_items_price)
       %td
         = link_to order_item_path(item.id), method: :delete, class: 'close general-cart-close', 'aria-label': 'Close' do
           %span{ 'aria-hidden': 'true' } &times;
