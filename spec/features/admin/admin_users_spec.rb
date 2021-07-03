@@ -1,4 +1,4 @@
-RSpec.describe 'admin/admin_users', type: :feature do
+RSpec.describe 'Admin::AdminUsers', type: :feature do
   let(:admin) { create(:admin_user) }
   let(:login_page) { Pages::Admin::LogIn.new }
 

@@ -5,9 +5,5 @@ class HomesController < ApplicationController
     )
   end
 
-  def checkout_login
-    redirect_to(checkout_index_path) if current_user.present?
-  end
-
   def privacy_policy; end
 end

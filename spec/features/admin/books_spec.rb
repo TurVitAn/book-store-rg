@@ -1,4 +1,4 @@
-RSpec.describe 'admin/books', type: :feature do
+RSpec.describe 'Admin::Books', type: :feature do
   let_it_be(:category) { create(:category) }
   let_it_be(:author) { create(:author).decorate }
   let(:admin) { create(:admin_user) }

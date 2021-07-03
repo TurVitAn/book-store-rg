@@ -1,4 +1,4 @@
-RSpec.describe 'admin/reviews', type: :feature do
+RSpec.describe 'Admin::Reviews', type: :feature do
   let_it_be(:user) { create(:user) }
   let_it_be(:book) { create(:book) }
   let(:admin) { create(:admin_user) }

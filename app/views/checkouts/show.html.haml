@@ -1,0 +1,4 @@
+%main.container
+  = render partial: "checkouts/partials/#{params[:step]}",
+            locals: { order: @order || @checkout_presenter.completed_order, presenter: @checkout_presenter }
+

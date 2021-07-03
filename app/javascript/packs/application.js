@@ -16,6 +16,7 @@ require('packs/book/stars_review')
 require('packs/book/cart')
 require('packs/catalog/pagination')
 require('packs/settings/remove_account')
+require('packs/checkouts/hide_shipping_form')
 require('packs/flash')
 
 Rails.start()

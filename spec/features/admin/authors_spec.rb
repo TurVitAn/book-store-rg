@@ -1,4 +1,4 @@
-RSpec.describe 'admin/categories', type: :feature do
+RSpec.describe 'Admin::Authors', type: :feature do
   let(:admin) { create(:admin_user) }
 
   before { login_as(admin) }

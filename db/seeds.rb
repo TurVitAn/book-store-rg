@@ -21,6 +21,11 @@ unless AdminUser.exists?
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 end
 
+unless Delivery.exists?
+  Delivery.create(kind: 'Нова Пошта', price: 50.00, from_days: 2, to_days: 5)
+  Delivery.create(kind: 'Укрпошта', price: 30.00, from_days: 4, to_days: 10)
+end
+
 Coupon.create(code: 'coupon_10', discount: 10.0)
 Coupon.create(code: 'coupon_25', discount: 25.0)
 Coupon.create(code: 'coupon_30', discount: 30.0)
