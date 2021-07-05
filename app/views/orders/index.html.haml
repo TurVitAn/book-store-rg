@@ -1,0 +1,18 @@
+%main.container.general-main-wrap
+  %h1.mt-0.mb-25
+    = t('.my_orders')
+  %p.lead.small.mb-10.visible-xs
+    = t('.sort_by')
+  .dropdowns.dropdown.general-order-dropdown
+    %a.dropdown-toggle.lead.small{ href: '#', 'data-toggle': 'dropdown', role: 'button',
+                                     'aria-haspopup': 'true', 'aria-expanded': 'false' }
+      = t('.sort_by')
+      %i.fa.fa-angle-down.dropdown-icon.pull-right
+    %ul.dropdown-menu
+      - t('.sorting').map do |key, value|
+        %li
+          = link_to value, orders_path(sort_by: key)
+  .visible-xs
+    = render partial: 'orders/partials/mobile/orders_list', locals: { orders: @orders, presenter: @orders_presenter }
+  .hidden-xs.mb-res-50
+    = render partial: 'orders/partials/orders_list', locals: { orders: @orders, presenter: @orders_presenter }

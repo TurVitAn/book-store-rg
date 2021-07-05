@@ -21,6 +21,14 @@ The web application will let registered users or guests find and buy books using
 - **email:    admin@example.com**
 - **password: password**
 
+## Usage
+
+- ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
+- Rails 6.1.3
+- PostrgeSQL 12
+- Testing: Rspec
+- CI: CircleCI
+
 ## How to install
 
 - Run **'bundler install'** - installation of packages prescribed in *Gemfile*;
@@ -32,10 +40,37 @@ The web application will let registered users or guests find and buy books using
 
 - Go to *localhost:3000*.
 
-## Usage
+### P.s. You also need to Add Credentials:
 
-- ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
-- Rails 6.1.3
-- PostrgeSQL 12
-- Testing: Rspec
-- CI: CircleCI
+`EDITOR='nano' rails credentials:edit`
+
+````
+secret_key_base: ********
+
+host: ********
+link_app: ********
+default_email: ********
+
+aws:
+  access_key_id: ********
+  secret_access_key: ********
+  bucket: ********
+  region: ********
+  
+smtp:
+  address: ********
+  user_name: ********
+  password: ********
+
+facebook:
+  client: ********
+  secret: ********
+
+google_oauth2:
+  client_id: ********
+  client_secret: ********
+
+postgresql:
+  DB_HOST: localhost
+  DB_USER: ********
+  DB_PASSWORD: ********

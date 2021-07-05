@@ -12,11 +12,13 @@
       %p.general-address.mb-30
         = order.creation_date
     %p.general-address
-      = "#{current_user.shipping_address.first_name} #{current_user.shipping_address.last_name}"
+      = current_user.shipping_address.first_name
+      = current_user.shipping_address.last_name
       %br
       = current_user.shipping_address.address
       %br
-      = "#{current_user.shipping_address.city} #{current_user.shipping_address.zip_code}"
+      = current_user.shipping_address.city
+      = current_user.shipping_address.zip_code
       %br
       = current_user.shipping_address.country
       %br

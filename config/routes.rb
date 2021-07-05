@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :settings, only: :index
   resources :reviews, only: :create
   resources :order_items, only: %i[create update destroy]
+  resources :orders, only: %i[index show]
   resources :checkouts, param: :step, only: %i[show update]
   resource :cart, only: :show
   resource :coupon, only: :update
