@@ -69,3 +69,8 @@ facebook:
 google_oauth2:
   client_id: ********
   client_secret: ********
+
+postgresql:
+  DB_HOST: localhost
+  DB_USER: ********
+  DB_PASSWORD: ********

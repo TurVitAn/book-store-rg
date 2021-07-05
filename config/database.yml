@@ -1,20 +1,18 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV['DB_USERNAME'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
+  host: <%= Rails.application.credentials[:postgresql][:DB_HOST] %>
   database: book_store_rg_development
-  password: <%= ENV['DB_PASSWORD'] %>
+  username: <%= Rails.application.credentials[:postgresql][:DB_USER] %>
+  password: <%= Rails.application.credentials[:postgresql][:DB_PASSWORD] %>
 
 test:
   <<: *default
+  host: <%= Rails.application.credentials[:postgresql][:DB_HOST] %>
   database: book_store_rg_test
-  password: <%= ENV['DB_PASSWORD'] %>
-
-production:
-  <<: *default
-  database: book_store_rg_production
-  password: <%= ENV['BOOK_STORE_RG_DATABASE_PASSWORD'] %>
+  username: <%= Rails.application.credentials[:postgresql][:DB_USER] %>
+  password: <%= Rails.application.credentials[:postgresql][:DB_PASSWORD] %>
