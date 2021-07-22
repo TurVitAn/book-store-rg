@@ -1,0 +1,17 @@
+%main.container.general-main-wrap
+  .text-center
+    %h3.general-login-title
+      = t('.forgot_your_password')
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name),
+                                    html: { method: :post, class: 'general-form' }) do |f|
+    = f.label :email, t('.email')
+    = f.input :email,
+        required: true,
+        autofocus: true,
+        label: false,
+        placeholder: t('.enter_email'),
+        input_html: { autocomplete: :on }
+    .text-center
+      = f.button :submit, t('.send_me_reset_password_instructions'), class: 'btn btn-default mb-20'
+    .text-center
+      = link_to t('.cancel'), new_user_session_path, class: 'in-gold-500'

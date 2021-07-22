@@ -17,4 +17,14 @@ RSpec.describe HomesController, type: :controller do
       end
     end
   end
+
+  describe 'GET /privacy_policy' do
+    before { get :privacy_policy }
+
+    it { expect(response).to have_http_status(:success) }
+
+    it 'renders the index template' do
+      expect(response).to render_template(:privacy_policy)
+    end
+  end
 end

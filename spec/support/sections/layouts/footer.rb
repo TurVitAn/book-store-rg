@@ -1,10 +1,11 @@
 module Sections
   module Layouts
     class Footer < SitePrism::Section
-      element :home_link, 'ul.list-inline>li>a.home_link'
-      element :shop_link, 'ul.list-inline>li>a.shop_link'
-      element :orders_link, 'ul.list-inline>li>a.orders_link'
-      element :settings_link, 'ul.list-inline>li>a.settings_link'
+      element :home_link, 'ul.list-inline > li > a.home_link'
+      element :shop_link, 'ul.list-inline > li > a.shop_link'
+      element :orders_link, 'ul.list-inline > li > a.orders_link'
+      element :settings_link, 'ul.list-inline > li > a.settings_link'
+      element :privacy_policy_link, 'ul.list-inline > li > a.privacy_policy_link'
 
       element :email, 'p.general-nav-mail'
       element :phone, 'p.general-nav-number'

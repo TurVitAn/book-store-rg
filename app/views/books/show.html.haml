@@ -1,6 +1,8 @@
 %main.container
-  %i.fas.fa-long-arrow-alt-left
-  = link_to t('.link.back_to_results'), url_for(:back), class: 'general-back-link'
+  = link_to url_for(:back), class: 'general-back-link' do
+    .fas.fa-long-arrow-alt-left.mr-15
+      .general-back-link
+        = t('.link.back_to_results')
   = render partial: 'books/partials/book_description', locals: { book: @book }
   = render 'books/partials/write_review'
   = render 'books/partials/reviews'

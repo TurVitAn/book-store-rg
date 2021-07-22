@@ -4,15 +4,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'devise', '~> 4.8'
 gem 'draper', '~> 4.0', '>= 4.0.1'
 gem 'factory_bot_rails', '~> 6.1'
 gem 'ffaker', '~> 2.18'
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'jbuilder', '~> 2.7'
+gem 'omniauth', '~> 2.0', '>= 2.0.4'
+gem 'omniauth-facebook', '8.0.0'
+gem 'omniauth-google-oauth2', '0.8.1'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.3'
 gem 'sass-rails', '>= 6'
+gem 'simple_form', '~> 5.1'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 
@@ -33,8 +39,11 @@ group :development do
   gem 'bundler-audit', '0.7.0.1'
   gem 'database_consistency', '~> 0.8.13', require: false
   gem 'haml_lint', '~> 0.37.0', require: false
+  gem 'letter_opener_web', '~> 1.4'
   gem 'listen', '~> 3.3'
-  gem 'spring'
+  gem 'overcommit', '~> 0.53.0', require: false
+  gem 'spring', '2.1.1'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 4.1.0'
 end
 

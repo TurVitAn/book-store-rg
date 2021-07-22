@@ -1,0 +1,41 @@
+%button.close{ type: 'button', 'aria-label': 'Close' }
+  %span{ 'aria-hidden': 'true' } &times;
+%ul.nav.navbar-nav
+  %li
+    = link_to t('.home'), root_path, class: 'home_link'
+  %li
+    %a{ type: 'button', 'data-toggle': 'collapse', href: '#menu', 'aria-expanded': 'false', 'aria-controls': 'menu' }
+      = t('.shop')
+    %ul.collapse.list-unstyled.pl-30.mb-10#menu{ 'aria-expanded': 'false' }
+      - categories.each do |category|
+        %li
+          = link_to category.name, books_path(category_id: category.id), class: 'collapse-link'
+  - if current_user
+    %li
+      %a{ type: 'button', 'data-toggle': 'collapse', href: '#menu_account',
+                          'aria-expanded': 'false', 'aria-controls': 'menu' }
+        .fa.fa-user
+        %b
+          = username
+      %ul.collapse.list-unstyled.pl-30.mb-10#menu-account{ 'aria-expanded': 'false' }
+        %li
+          %a.collapse-link{ href: '#' }
+            .fa.fa-cog
+            = t('.link.orders')
+        %li
+          %a.collapse-link{ href: '#' }
+            .fa.fa-cog
+            = t('.link.settings')
+    %li
+      = link_to destroy_user_session_path, method: :delete do
+        .fa.fa-sign-out-alt
+        = t('.link.log_out')
+  - else
+    %li
+      = link_to new_user_session_path do
+        .fas.fa-sign-in-alt
+        = t('.link.log_in')
+    %li
+      = link_to new_user_registration_path do
+        .fas.fa-user-plus
+        = t('.link.sign_up')

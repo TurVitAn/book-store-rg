@@ -7,12 +7,15 @@
             = link_to t('.home'), root_path, class: 'nav-link home_link'
           %li
             = link_to t('.shop'), books_path, class: 'nav-link shop_link'
+          - if user_signed_in?
+            %li
+              %a.nav-link.orders_link{ href: '#' }
+                = t('.orders')
+            %li
+              %a.nav-link.settings_link{ href: '#' }
+                = t('.settings')
           %li
-            %a.nav-link.orders_link{ href: '#' }
-              = t('.orders')
-          %li
-            %a.nav-link.settings_link{ href: '#' }
-              = t('.settings')
+            = link_to t('.privacy_policy'), privacy_policy_path, class: 'nav-link privacy_policy_link'
       .col-sm-3
         %p.general-nav-mail
           = t('.email')

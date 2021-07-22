@@ -1,0 +1,9 @@
+%main.container
+  %h2.text-center
+    = t('.title')
+  %p
+    = t('.header')
+    = succeed ',' do
+      = link_to t('.brand'), Rails.application.credentials[:link_app]
+  %p
+    = t('.lines')

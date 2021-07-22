@@ -4,6 +4,7 @@ require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'test_prof/recipes/rspec/let_it_be'
+require 'devise'
 
 Dir[Rails.root.join('spec/support/config/*.rb')].each { |file| require file }
 Dir[Rails.root.join('spec/support/sections/**/*.rb')].each { |file| require file }
@@ -23,4 +24,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.include ControllerMacros::InstanceMethods, bullet: true
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

@@ -4,5 +4,6 @@
 
   %body
     = render partial: 'layouts/partials/header', locals: { categories: @categories }
+    = render 'layouts/partials/flash'
     = yield
     = render 'layouts/partials/footer', cached: true

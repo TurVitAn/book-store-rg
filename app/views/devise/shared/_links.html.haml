@@ -1,0 +1,14 @@
+- if sign_up?
+  %p.general-sign-text.text-center
+    = t('devise.have_account')
+    = link_to t('.sign_in'), new_session_path(resource_name), class: 'in-gold-500 log_in'
+  %br
+- if log_in?
+  %p.general-sign-text.text-center
+    = link_to t('.sign_up'), new_registration_path(resource_name), class: 'in-gold-500 sign_up'
+  %br
+- if confirmation_instructions?
+  %p.general-sign-text.text-center
+    = link_to t('.didn_t_receive_confirmation_instructions'), new_confirmation_path(resource_name),
+                class: 'in-gold-500 confirmation'
+  %br
